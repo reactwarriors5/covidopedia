@@ -1,6 +1,7 @@
 /* This example requires Tailwind CSS v2.0+ */
 import { Fragment } from 'react'
 import { Popover, Transition } from '@headlessui/react'
+import BrandLogo from '../../../../assets/hospital.svg'
 import {
   BookmarkAltIcon,
   CalendarIcon,
@@ -19,18 +20,18 @@ import { ChevronDownIcon } from '@heroicons/react/solid'
 
 const solutions = [
   {
-    name: 'Analytics',
+    name: 'About',
     description: 'Get a better understanding of where your traffic is coming from.',
     href: '#',
     icon: ChartBarIcon,
   },
   {
-    name: 'Engagement',
+    name: 'Covid information',
     description: 'Speak directly to your customers in a more meaningful way.',
     href: '#',
     icon: CursorClickIcon,
   },
-  { name: 'Security', description: "Your customers' data will be safe and secure.", href: '#', icon: ShieldCheckIcon },
+  { name: 'Vaccine', description: "Your customers' data will be safe and secure.", href: '#', icon: ShieldCheckIcon },
   {
     name: 'Integrations',
     description: "Connect with third-party tools that you're already using.",
@@ -38,16 +39,13 @@ const solutions = [
     icon: ViewGridIcon,
   },
   {
-    name: 'Automations',
-    description: 'Build strategic funnels that will drive your customers to convert',
+    name: 'Emergency Contacts',
+    // description: 'Build strategic funnels that will drive your customers to convert',
     href: '#',
     icon: RefreshIcon,
   },
 ]
-const callsToAction = [
-  { name: 'Watch Demo', href: '#', icon: PlayIcon },
-  { name: 'Contact Sales', href: '#', icon: PhoneIcon },
-]
+
 const resources = [
   {
     name: 'Help Center',
@@ -69,11 +67,7 @@ const resources = [
   },
   { name: 'Security', description: 'Understand how we take your privacy seriously.', href: '#', icon: ShieldCheckIcon },
 ]
-const recentPosts = [
-  { id: 1, name: 'Boost your conversion rate', href: '#' },
-  { id: 2, name: 'How to use search engine optimization to drive traffic to your site', href: '#' },
-  { id: 3, name: 'Improve your customer experience', href: '#' },
-]
+
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
@@ -90,9 +84,10 @@ const Navbar = () => {
                 <span className="sr-only">Workflow</span>
                 <img
                   className="h-8 w-auto sm:h-10"
-                  src="https://tailwindui.com/img/logos/workflow-mark-indigo-600.svg"
+                  src="../../../../assets/hospital.svg"
                   alt=""
                 />
+                <img className="h-8 w-auto sm:h-10" src="data:text/html;base64,PEhUTUw+PEhFQUQ+PFRJVExFPkVycm9yPC9USVRMRT48L0hFQUQ+PEJPRFk+CkFuIGVycm9yIG9jY3VycmVkIHdoaWxlIHByb2Nlc3NpbmcgeW91ciByZXF1ZXN0LjxwPgpSZWZlcmVuY2UmIzMyOyYjMzU7MTk5JiM0Njs2Y2M0MTEwMiYjNDY7MTYzMjI4NDc2MiYjNDY7NmEyMWUyOAo8L0JPRFk+PC9IVE1MPgo=" />
               </a>
             </div>
             <div className="-mr-2 -my-2 md:hidden">
@@ -111,7 +106,7 @@ const Navbar = () => {
                         'group bg-white rounded-md inline-flex items-center text-base font-medium hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500'
                       )}
                     >
-                      <span>Solutions</span>
+                      <span>Covid</span>
                       <ChevronDownIcon
                         className={classNames(
                           open ? 'text-gray-600' : 'text-gray-400',
@@ -142,24 +137,12 @@ const Navbar = () => {
                                 <item.icon className="flex-shrink-0 h-6 w-6 text-indigo-600" aria-hidden="true" />
                                 <div className="ml-4">
                                   <p className="text-base font-medium text-gray-900">{item.name}</p>
-                                  <p className="mt-1 text-sm text-gray-500">{item.description}</p>
+                                  {/* <p className="mt-1 text-sm text-gray-500">{item.description}</p> */}
                                 </div>
                               </a>
                             ))}
                           </div>
-                          <div className="px-5 py-5 bg-gray-50 space-y-6 sm:flex sm:space-y-0 sm:space-x-10 sm:px-8">
-                            {callsToAction.map((item) => (
-                              <div key={item.name} className="flow-root">
-                                <a
-                                  href={item.href}
-                                  className="-m-3 p-3 flex items-center rounded-md text-base font-medium text-gray-900 hover:bg-gray-100"
-                                >
-                                  <item.icon className="flex-shrink-0 h-6 w-6 text-gray-400" aria-hidden="true" />
-                                  <span className="ml-3">{item.name}</span>
-                                </a>
-                              </div>
-                            ))}
-                          </div>
+
                         </div>
                       </Popover.Panel>
                     </Transition>
@@ -171,7 +154,7 @@ const Navbar = () => {
                 Service
               </a>
               <a href="#" className="text-base font-medium text-gray-500 hover:text-gray-900">
-                Docs
+                MediFarma
               </a>
 
               <Popover className="relative">
@@ -220,24 +203,8 @@ const Navbar = () => {
                             ))}
                           </div>
                           <div className="px-5 py-5 bg-gray-50 sm:px-8 sm:py-8">
-                            <div>
-                              <h3 className="text-sm tracking-wide font-medium text-gray-500 uppercase">Recent Posts</h3>
-                              <ul role="list" className="mt-4 space-y-4">
-                                {recentPosts.map((post) => (
-                                  <li key={post.id} className="text-base truncate">
-                                    <a href={post.href} className="font-medium text-gray-900 hover:text-gray-700">
-                                      {post.name}
-                                    </a>
-                                  </li>
-                                ))}
-                              </ul>
-                            </div>
-                            <div className="mt-5 text-sm">
-                              <a href="#" className="font-medium text-indigo-600 hover:text-indigo-500">
-                                {' '}
-                                View all posts <span aria-hidden="true">&rarr;</span>
-                              </a>
-                            </div>
+
+
                           </div>
                         </div>
                       </Popover.Panel>
