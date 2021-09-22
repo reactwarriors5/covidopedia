@@ -1,7 +1,7 @@
 /* This example requires Tailwind CSS v2.0+ */
 import { Fragment } from 'react'
 import { Popover, Transition } from '@headlessui/react'
-import BrandLogo from '../../../../assets/hospital.svg'
+// import BrandLogo from '../../../../assets/hospital.svg'
 import {
   BookmarkAltIcon,
   CalendarIcon,
@@ -84,10 +84,9 @@ const Navbar = () => {
                 <span className="sr-only">Workflow</span>
                 <img
                   className="h-8 w-auto sm:h-10"
-                  src="../../../../assets/hospital.svg"
+                  src="/assets/hospital.svg"
                   alt=""
                 />
-                <img className="h-8 w-auto sm:h-10" src="data:text/html;base64,PEhUTUw+PEhFQUQ+PFRJVExFPkVycm9yPC9USVRMRT48L0hFQUQ+PEJPRFk+CkFuIGVycm9yIG9jY3VycmVkIHdoaWxlIHByb2Nlc3NpbmcgeW91ciByZXF1ZXN0LjxwPgpSZWZlcmVuY2UmIzMyOyYjMzU7MTk5JiM0Njs2Y2M0MTEwMiYjNDY7MTYzMjI4NDc2MiYjNDY7NmEyMWUyOAo8L0JPRFk+PC9IVE1MPgo=" />
               </a>
             </div>
             <div className="-mr-2 -my-2 md:hidden">
