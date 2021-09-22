@@ -1,13 +1,23 @@
 import React from 'react';
-
+import Image from 'next/image'
 const Faq = () => {
     return (
         
 <div class="bg-lightblue py-20 px-4">
+<h2 class="text-3xl font-extrabold leading-9 border-b-2 border-gray-100 text-gray-900 mb-12">
+        FAQs
+    </h2>
     <div class="mx-auto max-w-6xl flex flex-col md:flex-row">
-        <h2 class="mr-8 w-full md:w-1/3 text-3xl font-extrabold leading-9">
+        {/* <h2 class="mr-8 w-full md:w-1/3 text-3xl font-extrabold leading-9">
             Frequently-asked questions
-        </h2>
+        </h2> */}
+       
+       <div className=" mr-32 w-full md:w-1/3 ">
+        <Image className="object-contain" src="/noman-images/Faq1-image.jpg" height={660} width={400} alt="noman"/>
+        </div>
+       
+       
+       
         <dl class="w-full md:w-2/3">
             <dt class="mb-4">
                 <h3 class="text-xl font-semibold">
