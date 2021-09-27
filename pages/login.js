@@ -1,12 +1,20 @@
-import React from "react";
-import SignIn from "../components/Auth/SignIn/SignIn";
+import React, { useState } from 'react'
+import SignIn from '../components/Auth/SignIn/SignIn'
+import SignUp from '../components/Auth/SignUp/SignUp'
 
 const login = () => {
+  const [newUser, setNewUser] = useState(false)
+  const handleRender = userType => setNewUser(userType)
+
   return (
     <>
-      <SignIn />
+      {newUser ? (
+        <SignUp handleRender={handleRender} />
+      ) : (
+        <SignIn handleRender={handleRender} />
+      )}
     </>
-  );
-};
+  )
+}
 
-export default login;
+export default login
