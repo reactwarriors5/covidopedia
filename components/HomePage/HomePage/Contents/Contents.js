@@ -2,7 +2,7 @@ import React from 'react';
 
 const Contents = () => {
     return (
-        <section className="text-gray-400 body-font bg-gray-800">
+        <section className="text-gray-400 body-font bg-gray-800 my-16">
             <div className="container px-5 py-24 mx-auto">
                 <div className="flex flex-wrap w-full mb-20 flex-col items-center text-center">
                     <h1 className="sm:text-3xl text-2xl font-medium title-font mb-2 text-white">Exactly What Facilities We Provided</h1>
