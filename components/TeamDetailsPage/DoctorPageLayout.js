@@ -1,18 +1,22 @@
 import React from 'react';
-import AboutDoctor from './AboutDoctor';
-import ContactDoctor from './ContactDoctor';
-import DoctorExperience from './DoctorExperience';
-import DoctorHero from './DoctorHero';
-import SkillsOfDoctor from './SkillsOfDoctor';
+import Content from './Content';
+import ContentSection from './ContentSection';
+import LaboratoryServices from './LaboratoryServices';
+import Team from './Team';
+import TeamBanner from './TeamBanner';
+import TeamFaq from './TeamFaq';
+import TeamMember from './TeamMember';
+
 
 const DoctorPageLayout = () => {
     return (
         <div>
-            <DoctorHero/>
-            <AboutDoctor/>
-            <DoctorExperience/>
-            <SkillsOfDoctor/>
-            <ContactDoctor/>
+            <TeamBanner/>
+            <ContentSection/>
+          
+            <LaboratoryServices/>
+            <TeamMember/>
+            <TeamFaq/>
         </div>
     );
 };
