@@ -1,5 +1,6 @@
 import Head from "next/head";
 import HomePage from "../components/HomePage/HomePage/HomePage/HomePage";
+import Link from 'next/link'
 
 export default function Home() {
   return (
@@ -8,7 +9,6 @@ export default function Home() {
         <title>Covidopedia</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
- 
       <HomePage />
     </div>
   );

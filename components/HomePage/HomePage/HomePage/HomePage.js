@@ -1,12 +1,14 @@
 import React from "react";
-import Faq from "../../../Faq/Faq";
+import DoctorPageLayout from "../../../TeamDetailsPage/DoctorPageLayout";
+
+
 import Navbar from "../Navbar/Navbar";
 
 const HomePage = () => {
   return (
     <main>
-      <Navbar />
-      <Faq/>
+      <Navbar />   
+      <DoctorPageLayout/>
     </main>
   );
 };
