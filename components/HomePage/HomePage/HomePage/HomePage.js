@@ -1,16 +1,12 @@
 import React from 'react'
 import BannerComp from '../Hero/BannerComp'
-import Hero from '../Hero/Hero'
-import Navbar from '../Navbar/Navbar'
-import OurTeam from '../OurTeam/OurTeam'
-import { Team } from '../OurTeam/Team'
+import Vendors from '../Vendors/Vendors'
 
 const HomePage = () => {
   return (
     <main>
       <BannerComp />
-      <OurTeam />
-      <Team />
+      <Vendors />
     </main>
   )
 }

@@ -9,15 +9,15 @@ const Hero2 = () => {
         backgroundPosition: 'center',
         backgroundSize: 'cover',
         backgroundAttachment: 'fixed',
+        height: '550px',
       }}
-      className='bg-gray-800 text-coolGray-100 h-screen'
+      className='bg-gray-800 text-coolGray-100 '
     >
-      <div className='container flex flex-col justify-center p-6 mx-auto sm:py-12 lg:py-24 lg:flex-row lg:justify-between'>
+      <div className='container flex flex-col justify-center p-6 mx-auto lg:flex-row lg:justify-between'>
         <div className='flex flex-col justify-center p-6 text-center rounded-sm lg:max-w-md xl:max-w-lg lg:text-left'>
-          <h1 className='text-5xl font-bold text-white leading-none sm:text-6xl'>
+          <h1 className='text-4xl font-bold text-white leading-none sm:text-5xl'>
             Doctor a designation where
-            <span className='text-indigo-400'> passion</span> and profession
-            co-exist.
+            <span className='text-indigo-400'> passion</span> and profession.
           </h1>
           <p className='mt-6 text-gray-300 mb-8 text-lg sm:mb-12'>
             Where Compassion and Healing Come Together.

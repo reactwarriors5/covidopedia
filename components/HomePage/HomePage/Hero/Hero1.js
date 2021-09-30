@@ -9,12 +9,13 @@ const Hero1 = () => {
         backgroundPosition: 'center',
         backgroundSize: 'cover',
         backgroundAttachment: 'fixed',
+        height: '550px',
       }}
-      className='text-coolGray-100 h-screen'
+      className='text-coolGray-100 '
     >
-      <div className='container flex flex-col justify-center p-6 mx-auto sm:py-12 lg:py-24 lg:flex-row lg:justify-between'>
+      <div className='container flex flex-col justify-center p-6 mx-auto lg:flex-row lg:justify-between'>
         <div className='flex flex-col justify-center p-6 text-center rounded-sm lg:max-w-md xl:max-w-lg lg:text-left'>
-          <h1 className='text-5xl font-bold text-white leading-none sm:text-6xl'>
+          <h1 className='text-4xl font-bold text-white leading-none sm:text-5xl'>
             For a healthy life keep your
             <span className='text-indigo-400'> friends</span>, family, and
             doctor close.
