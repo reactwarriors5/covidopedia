@@ -24,7 +24,7 @@ const ContentSection = () => {
                             </div>
                         </div>
                         <div className="w-3/4 ">
-                            <h6 className="mb-2 font-semibold leading-5 rounded-lg hover:bg-indigo-300 text-center  p-5 shadow-md ">
+                            <h6 className="mb-2 font-semibold leading-5 rounded-lg hover:bg-indigo-300 md:bg-purple-500 text-center  p-5 shadow-md ">
                             Neurology
                             </h6>
                             
