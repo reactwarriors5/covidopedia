@@ -1,5 +1,6 @@
 import React from "react";
-import DoctorPageLayout from "../../../TeamDetailsPage/DoctorPageLayout";
+import DepartmentPageLayout from "../../../DepartmentPages/DepartmentPageLayout";
+
 
 
 import Navbar from "../Navbar/Navbar";
@@ -8,7 +9,7 @@ const HomePage = () => {
   return (
     <main>
       <Navbar />   
-      <DoctorPageLayout/>
+      <DepartmentPageLayout/>
     </main>
   );
 };

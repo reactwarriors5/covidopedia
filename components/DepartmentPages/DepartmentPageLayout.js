@@ -1,24 +1,24 @@
 import React from 'react';
-import ContentSection from './ContentSection';
+import DepartmentSection from './DepartmentSection';
 import LaboratoryServices from './LaboratoryServices';
 import MedicalServices from './MedicalServices';
-import TeamBanner from './TeamBanner';
-import TeamFaq from './TeamFaq';
 import TeamMember from './TeamMember';
+import DepartmentFaq from './DepartmentFaq';
+import DepartmentBanner from './DepartmentBanner';
 
 
-const DoctorPageLayout = () => {
+const DepartmentPageLayout = () => {
     return (
         <div>
-            <TeamBanner/>
-            <ContentSection/>
+            <DepartmentBanner/>
+            <DepartmentSection/>
             <LaboratoryServices/>
             <MedicalServices/>
             <TeamMember/>
-            <TeamFaq/>
+            <DepartmentFaq/>
            
         </div>
     );
 };
 
-export default DoctorPageLayout;
+export default DepartmentPageLayout;

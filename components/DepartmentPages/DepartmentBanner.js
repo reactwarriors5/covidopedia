@@ -1,6 +1,6 @@
 import React from 'react';
 // violet
-const TeamBanner = () => {
+const DepartmentBanner = () => {
     return (
         <section>
             <div
@@ -20,5 +20,5 @@ const TeamBanner = () => {
     );
 };
 
-export default TeamBanner;
+export default DepartmentBanner;
 

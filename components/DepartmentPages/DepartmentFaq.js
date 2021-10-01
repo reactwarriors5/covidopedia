@@ -1,6 +1,6 @@
 import React from 'react';
 
-const TeamFaq = () => {
+const DepartmentFaq = () => {
     return (
         <div class="grid grid-cols-3 gap-4">
 
@@ -37,4 +37,4 @@ const TeamFaq = () => {
     );
 };
 
-export default TeamFaq;
+export default DepartmentFaq;

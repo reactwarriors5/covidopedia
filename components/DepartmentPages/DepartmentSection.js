@@ -1,6 +1,6 @@
 import React from 'react';
 
-const ContentSection = () => {
+const DepartmentSection = () => {
     return (
         <div className=" mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
             <div className="grid max-w-screen-lg gap-4 lg:grid-cols-2 sm:mx-auto">
@@ -202,4 +202,4 @@ const ContentSection = () => {
     );
 };
 
-export default ContentSection;
+export default DepartmentSection;
