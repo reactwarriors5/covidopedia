@@ -3,6 +3,7 @@ import 'antd/dist/antd.css'
 import Head from "next/head";
 import HomePage from "../components/HomePage/HomePage/HomePage/HomePage";
 import ServiceDetailsPage from "../components/ServiceDetailsPage/ServiceDetailsPage/ServiceDetailsPage";
+import Link from 'next/link'
 
 export default function Home() {
   return (
@@ -12,8 +13,6 @@ export default function Home() {
         <link rel='icon' href='/favicon.ico' />
       </Head>
       <HomePage />
-  
-      {/* <HomePage /> */}
       <ServiceDetailsPage />
     </>
   )

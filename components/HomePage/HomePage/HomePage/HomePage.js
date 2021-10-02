@@ -1,4 +1,6 @@
-import React from 'react'
+
+import React from "react";
+import DepartmentPageLayout from "../../../DepartmentPages/DepartmentPageLayout";
 import BookAppointment from "../BookAppointment/BookAppointment";
 import Departments from "../Departments/Departments";
 import BannerComp from '../Hero/BannerComp'
@@ -15,6 +17,7 @@ const HomePage = () => {
       <BannerComp />
       <BookAppointment />
       <Departments />
+      <DepartmentPageLayout/>
       <Contents />
       <Vendors />
       <Testimonial />
