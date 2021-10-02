@@ -1,3 +1,11 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.container {
+  @apply px-8;
+}
+
+.btn-brand {
+  @apply px-8 py-3 font-semibold text-gray-800 bg-transparent border-2 border-blue-300 rounded-sm hover:bg-blue-400 hover:text-white hover:border-transparent;
+}
