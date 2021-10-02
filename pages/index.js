@@ -1,14 +1,16 @@
 import Head from "next/head";
 import HomePage from "../components/HomePage/HomePage/HomePage/HomePage";
+import ServiceDetailsPage from "../components/ServiceDetailsPage/ServiceDetailsPage/ServiceDetailsPage";
 
 export default function Home() {
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen py-2">
+    <div>
       <Head>
         <title>Covidopedia</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <HomePage />
+      {/* <HomePage /> */}
+      <ServiceDetailsPage />
     </div>
   );
 }
