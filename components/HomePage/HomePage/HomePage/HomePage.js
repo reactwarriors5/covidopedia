@@ -7,13 +7,11 @@ import BannerComp from '../Hero/BannerComp'
 import Vendors from '../Vendors/Vendors'
 import Contents from "../Contents/Contents";
 import Footer from "../Footer/Footer";
-import Navbar from "../Navbar/Navbar";
 import Testimonial from "../Testimonial/Testimonial";
 
 const HomePage = () => {
   return (
     <main>
-      {/* <Navbar /> */}
       <BannerComp />
       <BookAppointment />
       <Departments />
