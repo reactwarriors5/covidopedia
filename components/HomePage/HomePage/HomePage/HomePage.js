@@ -13,7 +13,7 @@ import Testimonial from "../Testimonial/Testimonial";
 const HomePage = () => {
   return (
     <main>
-      <Navbar />
+      {/* <Navbar /> */}
       <BannerComp />
       <BookAppointment />
       <Departments />
