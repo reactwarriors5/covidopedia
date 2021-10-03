@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
-import SignIn from '../components/Auth/SignIn/SignIn'
-import SignUp from '../components/Auth/SignUp/SignUp'
+import SignIn from '../components/AuthNew/SignIn/SignIn'
+import SignUp from '../components/AuthNew/SignUp/SignUp'
+import Navbar from '../components/HomePage/HomePage/Navbar/Navbar'
 
 const login = () => {
   const [newUser, setNewUser] = useState(false)
@@ -8,6 +9,7 @@ const login = () => {
 
   return (
     <>
+      <Navbar />
       {newUser ? (
         <SignUp handleRender={handleRender} />
       ) : (
