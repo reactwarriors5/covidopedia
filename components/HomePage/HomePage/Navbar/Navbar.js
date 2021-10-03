@@ -1,3 +1,5 @@
+<<<<<<< HEAD
+=======
 import React from "react";
 import Link from "next/link";
 // import logo from "../../../../images/logo-n.png";
@@ -125,3 +127,4 @@ const Navbar = () => {
 };
 
 export default Navbar;
+>>>>>>> development

@@ -1,25 +1,57 @@
-import React, { useState } from 'react'
+import axios from 'axios'
+import React, { useState } from 'react';
+import {firebaseAuth, googleProvider} from "../../../helpers/firebaseConfig";
+
+
 
 const SignUp = ({ handleRender }) => {
-  const [user, setUser] = useState({
+  /* const [user, setUser] = useState({
     name: '',
     email: '',
     password: '',
     role: 0,
-  })
+  }) */
+const [userName, setUserName] = useState("");
+const [userPassword, setUserPassword] = useState("");
+const [userEmail, setUserEmail] = useState("");
+const [userRole, setUserRole] = useState("");
+
+  const register = ()=>{
+
+    console.log(userName, userEmail, userPassword)
+    axios.post('http://localhost:5000/api/user/signup',{
+      name: userName,
+      password: userPassword,
+      email: userEmail
+      // role: userRole
+
+    }).then((response) =>{
+      console.log("success", response)
+    }).catch(error => {
+      console.log(error.response)
+})
+  }
 
   //Handle form state
   const handleChange = e => {
-    const newUserInfo = { ...user }
+    /* const newUserInfo = { ...user }
     newUserInfo[e.target.name] = e.target.value
-    setUser(newUserInfo)
+    setUser(newUserInfo) */
   }
   //Handle Form Submit
   const handleSubmit = e => {
     e.preventDefault()
-
-    console.table(user)
+    console.log("success")
+     register();
+    // console.table(user)
+    
   }
+
+  //firebase google login 
+  const loginWithGoogle=() =>{
+    return firebaseAuth().signInWithRedirect(googleProvider);
+    //return authenticate(loginWithFirebase(googleProvider));
+}
 
   return (
     <section className='my-8'>
@@ -57,39 +89,34 @@ const SignUp = ({ handleRender }) => {
             Sign up to Covidopedia today for free
           </h1>
           <form
-            onSubmit={handleSubmit}
+             onSubmit={handleSubmit}
             className='space-y-6 ng-untouched ng-pristine ng-valid'
           >
-            <div className='space-y-1 text-sm'>
+            {/* <div className='space-y-1 text-sm'>
               <label className='block text-gray-600' htmlFor='role'>
                 Account Type
               </label>
               <select
                 id='role'
-                onChange={e =>
-                  setUser({ ...user, role: parseInt(e.target.value) })
-                }
+               onChange={e=> setUserRole(e.target.value)}
                 className='block w-52 py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-primary-500 focus:border-primary-500'
                 name='role'
               >
-                <option value={0}>User</option>
-                <option value={1}>Doctor</option>
-                <option value={2}>Vendor</option>
+                <option >User</option>
+                <option >Doctor</option>
+                <option >Vendor</option>
               </select>
-            </div>
+            </div> */}
             <div className='space-y-1 text-sm'>
               <label htmlFor='name' className='block text-gray-600'>
                 Name
               </label>
               <input
                 className='w-full px-4 py-3 text-gray-800 border border-indigo-300 rounded-md bg-indigo-50'
-                onChange={handleChange}
-                value={user.name}
-                name='name'
-                id='name'
-                type='text'
+                onChange={(e)=>setUserName(e.target.value)}
+               type='text'
                 placeholder='Your full name'
-                required
+                
               />
             </div>
 
@@ -99,13 +126,10 @@ const SignUp = ({ handleRender }) => {
               </label>
               <input
                 className='w-full px-4 py-3 text-gray-800 border border-indigo-300 rounded-md bg-indigo-50'
-                onChange={handleChange}
-                value={user.email}
-                name='email'
-                id='email'
-                type='email'
+                onChange={(e)=>setUserEmail(e.target.value)}
+                type='text'
                 placeholder='Your email address'
-                required
+                
               />
             </div>
             <div className='space-y-1 text-sm'>
@@ -114,13 +138,10 @@ const SignUp = ({ handleRender }) => {
               </label>
               <input
                 className='w-full px-4 py-3 text-gray-800 border border-indigo-300 rounded-md bg-indigo-50'
-                onChange={handleChange}
-                value={user.password}
-                name='password'
-                id='password'
-                type='password'
+                onChange={(e)=>setUserPassword(e.target.value)}
+                type='text'
                 placeholder='Your password'
-                required
+                
               />
             </div>
             <div className='flex flex-col items-start justify-between sm:items-center sm:flex-row'>
@@ -145,7 +166,7 @@ const SignUp = ({ handleRender }) => {
             <div className='flex-1 h-px bg-gray-300 sm:w-16'></div>
           </div>
           <div className='flex justify-center space-x-4'>
-            <button aria-label='Log in with Google' className='p-3 rounded-sm'>
+            <button onClick={loginWithGoogle}  aria-label='Log in with Google' className='p-3 rounded-sm'>
               <svg
                 xmlns='http://www.w3.org/2000/svg'
                 viewBox='0 0 32 32'

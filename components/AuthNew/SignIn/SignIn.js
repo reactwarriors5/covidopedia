@@ -1,23 +1,46 @@
 import React, { useState } from 'react'
+import axios from 'axios';
 
 const SignIn = ({ handleRender }) => {
-  const [user, setUser] = useState({
+ /*  const [user, setUser] = useState({
     email: '',
     password: '',
-  })
+  }) */
+  const [userPassword, setUserPassword] = useState("");
+const [userEmail, setUserEmail] = useState("");
+
+  const login = ()=>{
+
+    // console.log(userName, userEmail, userPassword)
+    axios.post('http://localhost:5000/api/user/login',{
+      // name: userName,
+      password: userPassword,
+      email: userEmail
+      // role: userRole
+
+    }).then((response) =>{
+      console.log("success", response)
+    }).catch(error => {
+      console.log(error.response)
+})
+  }
 
   //Handle form state
-  const handleChange = e => {
+  /* const handleChange = e => {
     const newUserInfo = { ...user }
     newUserInfo[e.target.name] = e.target.value
     setUser(newUserInfo)
-  }
+  } */
   //Handle Form Submit
   const handleSubmit = e => {
+    login();
+
     e.preventDefault()
 
-    console.table(user)
+    console.log("success")
+    // console.table(user)
   }
+
   return (
     <section className='my-8'>
       <div className='flex justify-center mt-12'>
@@ -33,8 +56,7 @@ const SignIn = ({ handleRender }) => {
               </label>
               <input
                 type='email'
-                onChange={handleChange}
-                value={user.email}
+                onChange={e=>setUserEmail(e.target.value)}
                 name='email'
                 id='email'
                 placeholder='Email'
@@ -47,8 +69,7 @@ const SignIn = ({ handleRender }) => {
               </label>
               <input
                 type='password'
-                onChange={handleChange}
-                value={user.value}
+                onChange={e=>setUserPassword(e.target.value)}
                 name='password'
                 id='password'
                 placeholder='Password'
