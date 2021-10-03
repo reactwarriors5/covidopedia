@@ -8,12 +8,17 @@
   "dependencies": {
     "@headlessui/react": "^1.4.1",
     "@heroicons/react": "^1.0.4",
+<<<<<<< HEAD
     "heroicons-react": "^1.4.1",
     "axios": "^0.21.4",
     "firebase": "^9.1.0",
     "dotenv": "^10.0.0",
+=======
+>>>>>>> development
     "antd": "^4.16.13",
+    "i": "^0.3.7",
     "next": "latest",
+    "npm": "^7.24.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2"
   },

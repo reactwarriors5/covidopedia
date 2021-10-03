@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 const DepartmentCard = ({ departments }) => {
   console.log(departments.img);
@@ -23,13 +24,13 @@ const DepartmentCard = ({ departments }) => {
             {departments.title}
           </a>
           <p className="my-8 text-gray-700">{departments.description}</p>
-          <a
-            href="/login"
+          <Link
+            href="/departmentDetails"
             aria-label=""
             className="inline-flex items-center font-semibold text-indigo-400 hover:text-purple-800"
           >
-            Learn more
-          </a>
+            <a>Learn more</a>
+          </Link>
         </div>
       </div>
     </div>

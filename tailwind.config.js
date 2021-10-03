@@ -8,6 +8,7 @@ module.exports = {
         Emergency: "url('/images/images-adnan/emergency-CTA.jpg')",
         BookAppointment: "url('/images/images-adnan/appointment.jpg')",
         Testimonial: "url('/images/images-adnan/testimonial.jpg')",
+        vendorBg: `url("/asset/images-atik/meteor.svg")`,
       }),
       zIndex: {
         "-10": "-10",
