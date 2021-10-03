@@ -1,60 +1,52 @@
-import React from 'react'
+import React from "react";
 
 const Vendors = () => {
   return (
-    <div
-      style={{
-        backgroundImage: `url("/asset/images-atik/meteor.svg")`,
-        backgroundRepeat: 'no-repeat',
-        backgroundPosition: 'center',
-        backgroundSize: 'cover',
-        backgroundAttachment: 'fixed',
-      }}
-    >
-      <div className='px-4 py-16 mx-auto  sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20'>
-        <div className='mx-auto mb-8 lg:max-w-xl text-center'>
-          <h2 className='text-3xl font-bold  text-gray-700  md:text-5xl mb-4'>
-            Discover Our <span className='text-indigo-500'>Vendors</span>
+    <div className="bg-vendorBg">
+      <div className="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
+        <div className="mx-auto mb-8 text-center lg:max-w-xl">
+          <h2 className="mb-4 text-3xl font-bold text-gray-700 md:text-5xl">
+            Discover Our <span className="text-indigo-500">Vendors</span>
           </h2>
 
-          <p className='text-base text-gray-700 md:text-lg'>
+          <p className="text-base text-gray-700 md:text-lg">
             A heritage in care. A reputation in excellence. Advancing the
             boundaries of medicine. Caring for the growing needs of our
             community.
           </p>
         </div>
-        <div className='flex flex-col space-y-4 text-center sm:items-center sm:justify-center sm:flex-row sm:space-y-0 sm:space-x-4 mb-12'>
+        <div className="flex flex-col mb-12 space-y-4 text-center sm:items-center sm:justify-center sm:flex-row sm:space-y-0 sm:space-x-4">
           <a
-            href='#'
-            className='p-2 font-semibold rounded bg-indigo-500 hover:bg-indigo-600  text-white'
+            href="#"
+            className="p-2 font-semibold text-white bg-indigo-500 rounded hover:bg-indigo-600"
           >
             Buy Medicine
           </a>
           <a
-            href='#'
-            className='p-2 font-semibold border rounded border-purple-300 hover:border-indigo-500'
+            href="#"
+            className="p-2 font-semibold border border-purple-300 rounded hover:border-indigo-500"
           >
             View All Vendors
           </a>
         </div>
 
-        <div className='grid gap-10 mx-auto sm:grid-cols-2 lg:grid-cols-4 lg:max-w-screen-lg'>
+        <div className="grid gap-10 mx-auto sm:grid-cols-2 lg:grid-cols-4 lg:max-w-screen-lg">
           <div>
-            <div className=' text-center mb-8 md:mb-0'>
+            <div className="mb-8 text-center  md:mb-0">
               <img
-                className='rounded-full w-1/2 md:w-80 mx-auto -mb-24'
-                src='/asset/images-atik/vendor-1.jpg'
-                alt='Avatar Jacky'
+                className="w-1/2 mx-auto -mb-24 rounded-full md:w-80"
+                src="/asset/images-atik/vendor-1.jpg"
+                alt="Avatar Jacky"
               />
-              <div className='bg-white shadow-lg rounded-lg pt-28 pb-10 text-gray-400'>
-                <h3 className='font-title text-gray-800 text-xl'>
+              <div className="pb-10 text-gray-400 bg-white rounded-lg shadow-lg pt-28">
+                <h3 className="text-xl text-gray-800 font-title">
                   Moments Hospice
                 </h3>
-                <p className='font-body text-indigo-400'>Antipyretics</p>
-                <div className='flex items-center space-x-3 mt-2 justify-center'>
+                <p className="text-indigo-400 font-body">Antipyretics</p>
+                <div className="flex items-center justify-center mt-2 space-x-3">
                   <a
-                    href='#'
-                    className='p-1 font-body border rounded border-gray-300 hover:bg-indigo-500 hover:text-white hover:border-none'
+                    href="#"
+                    className="p-1 border border-gray-300 rounded font-body hover:bg-indigo-500 hover:text-white hover:border-none"
                   >
                     View Shop
                   </a>
@@ -63,21 +55,21 @@ const Vendors = () => {
             </div>
           </div>
           <div>
-            <div className=' text-center mb-8 md:mb-0'>
+            <div className="mb-8 text-center  md:mb-0">
               <img
-                className='w-1/2 md:w-80 rounded-full mx-auto -mb-24'
-                src='/asset/images-atik/vendor-2.jpg'
-                alt='Avatar Jacky'
+                className="w-1/2 mx-auto -mb-24 rounded-full md:w-80"
+                src="/asset/images-atik/vendor-2.jpg"
+                alt="Avatar Jacky"
               />
-              <div className='bg-white shadow-lg rounded-lg pt-28 pb-10 text-gray-400'>
-                <h3 className='font-title text-gray-800 text-xl'>
+              <div className="pb-10 text-gray-400 bg-white rounded-lg shadow-lg pt-28">
+                <h3 className="text-xl text-gray-800 font-title">
                   CPR – Medical
                 </h3>
-                <p className='font-body text-indigo-400'>Analgesics</p>
-                <div className='flex items-center space-x-3 mt-2 justify-center'>
+                <p className="text-indigo-400 font-body">Analgesics</p>
+                <div className="flex items-center justify-center mt-2 space-x-3">
                   <a
-                    href='#'
-                    className='p-1 font-body border rounded border-gray-300 hover:bg-indigo-500 hover:text-white hover:border-none'
+                    href="#"
+                    className="p-1 border border-gray-300 rounded font-body hover:bg-indigo-500 hover:text-white hover:border-none"
                   >
                     View Shop
                   </a>
@@ -86,19 +78,19 @@ const Vendors = () => {
             </div>
           </div>
           <div>
-            <div className=' text-center mb-8 md:mb-0'>
+            <div className="mb-8 text-center  md:mb-0">
               <img
-                className='w-1/2 md:w-80 rounded-full mx-auto -mb-24'
-                src='/asset/images-atik/vendor-3.jpg'
-                alt='Avatar Jacky'
+                className="w-1/2 mx-auto -mb-24 rounded-full md:w-80"
+                src="/asset/images-atik/vendor-3.jpg"
+                alt="Avatar Jacky"
               />
-              <div className='bg-white shadow-lg rounded-lg pt-28 pb-10 text-gray-400'>
-                <h3 className='font-title text-gray-800 text-xl'>UN Drugged</h3>
-                <p className='font-body text-indigo-400'>Antimalarial</p>
-                <div className='flex items-center space-x-3 mt-2 justify-center'>
+              <div className="pb-10 text-gray-400 bg-white rounded-lg shadow-lg pt-28">
+                <h3 className="text-xl text-gray-800 font-title">UN Drugged</h3>
+                <p className="text-indigo-400 font-body">Antimalarial</p>
+                <div className="flex items-center justify-center mt-2 space-x-3">
                   <a
-                    href='#'
-                    className='p-1 font-body border rounded border-gray-300 hover:bg-indigo-500 hover:text-white hover:border-none'
+                    href="#"
+                    className="p-1 border border-gray-300 rounded font-body hover:bg-indigo-500 hover:text-white hover:border-none"
                   >
                     View Shop
                   </a>
@@ -107,21 +99,21 @@ const Vendors = () => {
             </div>
           </div>
           <div>
-            <div className=' text-center mb-8 md:mb-0'>
+            <div className="mb-8 text-center  md:mb-0">
               <img
-                className='w-1/2 md:w-80 rounded-full mx-auto -mb-24'
-                src='/asset/images-atik/vendor-4.jpg'
-                alt='Avatar Jacky'
+                className="w-1/2 mx-auto -mb-24 rounded-full md:w-80"
+                src="/asset/images-atik/vendor-4.jpg"
+                alt="Avatar Jacky"
               />
-              <div className='bg-white shadow-lg rounded-lg pt-28 pb-10 text-gray-400'>
-                <h3 className='font-title text-gray-800 text-xl'>
+              <div className="pb-10 text-gray-400 bg-white rounded-lg shadow-lg pt-28">
+                <h3 className="text-xl text-gray-800 font-title">
                   Canadian Valley
                 </h3>
-                <p className='font-body text-indigo-400'>Antibiotics</p>
-                <div className='flex items-center space-x-3 mt-2 justify-center'>
+                <p className="text-indigo-400 font-body">Antibiotics</p>
+                <div className="flex items-center justify-center mt-2 space-x-3">
                   <a
-                    href='#'
-                    className='p-1 font-body border rounded border-gray-300 hover:bg-indigo-500 hover:text-white hover:border-none'
+                    href="#"
+                    className="p-1 border border-gray-300 rounded font-body hover:bg-indigo-500 hover:text-white hover:border-none"
                   >
                     View Shop
                   </a>
@@ -132,7 +124,7 @@ const Vendors = () => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Vendors
+export default Vendors;
