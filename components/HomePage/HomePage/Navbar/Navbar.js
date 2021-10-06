@@ -8,8 +8,15 @@ import { MenuIcon, XIcon } from '@heroicons/react/solid'
 import { useSelector } from 'react-redux';
 import { selectUser } from '../../../../features/userSlice/userSlice';
 const Navbar = () => {
+  const logout = async () => {
+    // make state null
+    const { data } = await axios.get(`${process.env.NEXT_PUBLIC_API}/logout`)
+    toast.warning(data.message)
+    router.push('/login')
+  }
   const user = useSelector(selectUser);
   console.log(user);
+
   return (
     <section className='sticky z-10 drop-shadow-lg'>
       <Popover className='relative bg-white'>
@@ -49,6 +56,15 @@ const Navbar = () => {
                 >
                   <a>Sign in</a>
                 </Link>
+
+
+                <button
+                  onClick={logout}
+                  className='inline-flex items-center justify-center px-4 py-2 ml-4 text-base font-medium text-gray-700 border border-transparent rounded-md shadow-sm whitespace-nowrap font-body bg-primary hover:bg-indigo-300'
+                >
+                  Log Out
+                </button>
+
                 {
                   user !== null ? <p>{user.userEmail}</p> :
 
@@ -59,6 +75,7 @@ const Navbar = () => {
                     <a> Sign up</a>
                   </Link>
                 }
+
               </div>
             </Popover.Group>
           </div>
@@ -107,12 +124,12 @@ const Navbar = () => {
                   </Link>
                 </div>
                 <div>
-                  <Link
-                    href='/login'
-                    className='flex items-center justify-center w-full px-4 py-2 text-base font-medium text-gray-700 border border-transparent rounded-md shadow-sm font-body bg-primary hover:bg-indigo-300'
+                  <button
+                    onClick={logout}
+                    className='inline-flex items-center justify-center px-4 py-2 ml-4 text-base font-medium text-gray-700 border border-transparent rounded-md shadow-sm whitespace-nowrap font-body bg-primary hover:bg-indigo-300'
                   >
-                    <a>Sign up</a>
-                  </Link>
+                    Log Out
+                  </button>
                   <p className='mt-6 font-medium text-center text-secondary font-body'>
                     Existing customer?{' '}
                     <Link
