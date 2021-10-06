@@ -32,12 +32,12 @@ const Navbar = () => {
                 >
                   <a>Home</a>
                 </Link>
-                {/* <Link
-                  href="/admin/dashboard"
+                <Link
+                  href="/adminDashboard"
                   className="text-base font-body text-secondary hover:text-gray-900"
                 >
                   Admin
-                </Link> */}
+                </Link>
 
                 <Link
                   href="/login"
@@ -91,12 +91,12 @@ const Navbar = () => {
                   >
                     <a> Home</a>
                   </Link>
-                  {/* <Link
-                    href="/admin/dashboard"
+                  <Link
+                    href="/adminDashboard"
                     className="text-base font-body text-secondary hover:text-gray-700"
                   >
                     Admin
-                  </Link> */}
+                  </Link>
                 </div>
                 <div>
                   <Link
