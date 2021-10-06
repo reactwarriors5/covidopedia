@@ -6,6 +6,12 @@ import { Popover, Transition } from '@headlessui/react'
 import { MenuIcon, XIcon } from '@heroicons/react/solid'
 
 const Navbar = () => {
+  const logout = async () => {
+    // make state null
+    const { data } = await axios.get(`${process.env.NEXT_PUBLIC_API}/logout`)
+    toast.warning(data.message)
+    router.push('/login')
+  }
   return (
     <section className='sticky z-10 drop-shadow-lg'>
       <Popover className='relative bg-white'>
@@ -45,12 +51,13 @@ const Navbar = () => {
                 >
                   <a>Sign in</a>
                 </Link>
-                <Link
-                  href='/login'
+
+                <button
+                  onClick={logout}
                   className='inline-flex items-center justify-center px-4 py-2 ml-4 text-base font-medium text-gray-700 border border-transparent rounded-md shadow-sm whitespace-nowrap font-body bg-primary hover:bg-indigo-300'
                 >
-                  <a> Sign up</a>
-                </Link>
+                  Log Out
+                </button>
               </div>
             </Popover.Group>
           </div>
@@ -99,12 +106,12 @@ const Navbar = () => {
                   </Link> */}
                 </div>
                 <div>
-                  <Link
-                    href='/login'
-                    className='flex items-center justify-center w-full px-4 py-2 text-base font-medium text-gray-700 border border-transparent rounded-md shadow-sm font-body bg-primary hover:bg-indigo-300'
+                  <button
+                    onClick={logout}
+                    className='inline-flex items-center justify-center px-4 py-2 ml-4 text-base font-medium text-gray-700 border border-transparent rounded-md shadow-sm whitespace-nowrap font-body bg-primary hover:bg-indigo-300'
                   >
-                    <a>Sign up</a>
-                  </Link>
+                    Log Out
+                  </button>
                   <p className='mt-6 font-medium text-center text-secondary font-body'>
                     Existing customer?{' '}
                     <Link
