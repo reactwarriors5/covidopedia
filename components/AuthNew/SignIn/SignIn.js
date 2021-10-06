@@ -1,44 +1,38 @@
 import React, { useState } from 'react'
-import axios from 'axios';
+import axios from 'axios'
+import { useRouter } from 'next/router'
 
 const SignIn = ({ handleRender }) => {
- /*  const [user, setUser] = useState({
+  const router = useRouter()
+  const [user, setUser] = useState({
     email: '',
     password: '',
-  }) */
-  const [userPassword, setUserPassword] = useState("");
-const [userEmail, setUserEmail] = useState("");
+  })
 
-  const login = ()=>{
-
-    // console.log(userName, userEmail, userPassword)
-    axios.post('http://localhost:5000/api/user/login',{
-      // name: userName,
-      password: userPassword,
-      email: userEmail
-      // role: userRole
-
-    }).then((response) =>{
-      console.log("success", response)
-    }).catch(error => {
-      console.log(error.response)
-})
-  }
+  const login = () => {}
 
   //Handle form state
-  /* const handleChange = e => {
+  const handleChange = e => {
     const newUserInfo = { ...user }
     newUserInfo[e.target.name] = e.target.value
     setUser(newUserInfo)
-  } */
+  }
   //Handle Form Submit
   const handleSubmit = e => {
-    login();
-
     e.preventDefault()
-
-    console.log("success")
-    // console.table(user)
+    axios
+      .post('http://localhost:8000/api/login', {
+        ...user,
+      })
+      .then(response => {
+        console.log('success', response)
+        setTimeout(() => {
+          router.push('/')
+        }, 1000)
+      })
+      .catch(error => {
+        console.log(error.response)
+      })
   }
 
   return (
@@ -56,7 +50,7 @@ const [userEmail, setUserEmail] = useState("");
               </label>
               <input
                 type='email'
-                onChange={e=>setUserEmail(e.target.value)}
+                onChange={handleChange}
                 name='email'
                 id='email'
                 placeholder='Email'
@@ -69,7 +63,7 @@ const [userEmail, setUserEmail] = useState("");
               </label>
               <input
                 type='password'
-                onChange={e=>setUserPassword(e.target.value)}
+                onChange={handleChange}
                 name='password'
                 id='password'
                 placeholder='Password'

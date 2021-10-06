@@ -1,57 +1,46 @@
 import axios from 'axios'
-import React, { useState } from 'react';
-import {firebaseAuth, googleProvider} from "../../../helpers/firebaseConfig";
-
-
+import React, { useState } from 'react'
+import { firebaseAuth, googleProvider } from '../../../helpers/firebaseConfig'
+import { useRouter } from 'next/router'
 
 const SignUp = ({ handleRender }) => {
-  /* const [user, setUser] = useState({
+  const router = useRouter()
+  const [user, setUser] = useState({
     name: '',
     email: '',
     password: '',
-    role: 0,
-  }) */
-const [userName, setUserName] = useState("");
-const [userPassword, setUserPassword] = useState("");
-const [userEmail, setUserEmail] = useState("");
-const [userRole, setUserRole] = useState("");
-
-  const register = ()=>{
-
-    console.log(userName, userEmail, userPassword)
-    axios.post('http://localhost:5000/api/user/signup',{
-      name: userName,
-      password: userPassword,
-      email: userEmail
-      // role: userRole
-
-    }).then((response) =>{
-      console.log("success", response)
-    }).catch(error => {
-      console.log(error.response)
-})
-  }
+  })
 
   //Handle form state
   const handleChange = e => {
-    /* const newUserInfo = { ...user }
+    const newUserInfo = { ...user }
     newUserInfo[e.target.name] = e.target.value
-    setUser(newUserInfo) */
+    setUser(newUserInfo)
   }
   //Handle Form Submit
   const handleSubmit = e => {
     e.preventDefault()
-    console.log("success")
-     register();
-    // console.table(user)
-    
+
+    axios
+      .post('http://localhost:8000/api/register', {
+        ...user,
+      })
+      .then(response => {
+        console.log('success', response)
+        setTimeout(() => {
+          handleRender(false)
+        }, 1000)
+      })
+      .catch(error => {
+        console.log(error.response)
+      })
   }
 
-  //firebase google login 
-  const loginWithGoogle=() =>{
-    return firebaseAuth().signInWithRedirect(googleProvider);
+  //firebase google login
+  const loginWithGoogle = () => {
+    return firebaseAuth().signInWithRedirect(googleProvider)
     //return authenticate(loginWithFirebase(googleProvider));
-}
+  }
 
   return (
     <section className='my-8'>
@@ -89,7 +78,7 @@ const [userRole, setUserRole] = useState("");
             Sign up to Covidopedia today for free
           </h1>
           <form
-             onSubmit={handleSubmit}
+            onSubmit={handleSubmit}
             className='space-y-6 ng-untouched ng-pristine ng-valid'
           >
             {/* <div className='space-y-1 text-sm'>
@@ -112,11 +101,11 @@ const [userRole, setUserRole] = useState("");
                 Name
               </label>
               <input
+                name='name'
                 className='w-full px-4 py-3 text-gray-800 border border-indigo-300 rounded-md bg-indigo-50'
-                onChange={(e)=>setUserName(e.target.value)}
-               type='text'
+                onChange={handleChange}
+                type='text'
                 placeholder='Your full name'
-                
               />
             </div>
 
@@ -125,11 +114,11 @@ const [userRole, setUserRole] = useState("");
                 Email
               </label>
               <input
+                name='email'
                 className='w-full px-4 py-3 text-gray-800 border border-indigo-300 rounded-md bg-indigo-50'
-                onChange={(e)=>setUserEmail(e.target.value)}
-                type='text'
+                onChange={handleChange}
+                type='email'
                 placeholder='Your email address'
-                
               />
             </div>
             <div className='space-y-1 text-sm'>
@@ -137,11 +126,11 @@ const [userRole, setUserRole] = useState("");
                 Password
               </label>
               <input
+                name='password'
                 className='w-full px-4 py-3 text-gray-800 border border-indigo-300 rounded-md bg-indigo-50'
-                onChange={(e)=>setUserPassword(e.target.value)}
-                type='text'
+                onChange={handleChange}
+                type='password'
                 placeholder='Your password'
-                
               />
             </div>
             <div className='flex flex-col items-start justify-between sm:items-center sm:flex-row'>
@@ -151,11 +140,12 @@ const [userRole, setUserRole] = useState("");
                   Agree to Privacy Policy
                 </span>
               </label>
-              <input
+              <button
                 type='submit'
-                className='w-full cursor-pointer p-3 mt-5 bg-indigo-600 text-center rounded-sm text-gray-50 sm:w-auto sm:mt-0'
-                value='Sign up'
-              />
+                className='w-full p-3 mt-5 bg-indigo-600 text-center rounded-sm text-gray-50 sm:w-auto sm:mt-0'
+              >
+                Sign up
+              </button>
             </div>
           </form>
           <div className='flex items-center pt-4 space-x-1'>
@@ -166,7 +156,11 @@ const [userRole, setUserRole] = useState("");
             <div className='flex-1 h-px bg-gray-300 sm:w-16'></div>
           </div>
           <div className='flex justify-center space-x-4'>
-            <button onClick={loginWithGoogle}  aria-label='Log in with Google' className='p-3 rounded-sm'>
+            <button
+              onClick={loginWithGoogle}
+              aria-label='Log in with Google'
+              className='p-3 rounded-sm'
+            >
               <svg
                 xmlns='http://www.w3.org/2000/svg'
                 viewBox='0 0 32 32'
