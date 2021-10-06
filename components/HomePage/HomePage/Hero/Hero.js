@@ -8,7 +8,6 @@ const Hero = () => {
         backgroundRepeat: 'no-repeat',
         backgroundPosition: 'center',
         backgroundSize: 'cover',
-        backgroundAttachment: 'fixed',
         height: '550px',
       }}
       className='text-coolGray-100'
