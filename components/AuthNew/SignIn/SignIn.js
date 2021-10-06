@@ -1,59 +1,63 @@
 import React, { useState } from 'react'
-import axios from 'axios';
+import axios from 'axios'
+import { useRouter } from 'next/router'
+import Link from 'next/link'
+import { toast } from 'react-toastify'
+import { SyncOutlined } from '@ant-design/icons'
 import { useDispatch } from 'react-redux';
-
 import { loggin } from '../../../features/userSlice/userSlice';
 
 const SignIn = ({ handleRender }) => {
- /*  const [user, setUser] = useState({
+  const [loading, setLoading] = useState(false)
+  const router = useRouter()
+  const [user, setUser] = useState({
     email: '',
     password: '',
-  }) */
-const [userPassword, setUserPassword] = useState("");
-const [userEmail, setUserEmail] = useState("");
-
-  const login = ()=>{
-    // console.log(userEmail, userPassword)
-    axios.post('http://localhost:5000/api/user/login',{
-      // name: userName,
-      password: userPassword,
-      email: userEmail
-      // role: userRole
-    
-    }).then((response) =>{
-      console.log("success", response)
-    }).catch(error => {
-      console.log(error.response)
-})
-  }
+  })
+ const dispatch = useDispatch();
 
   //Handle form state
-  // const handleChange = e => {
-  //   const newUserInfo = { ...user }
-  //   newUserInfo[e.target.name] = e.target.value
-  //   setUser(newUserInfo)
-  // } 
-  const dispatch = useDispatch();
+  const handleChange = e => {
+    const newUserInfo = { ...user }
+    newUserInfo[e.target.name] = e.target.value
+    setUser(newUserInfo)
+  }
   //Handle Form Submit
   const handleSubmit = e => {
-    login();
     e.preventDefault()
-    console.log("success")
-    // console.table(user)
-    dispatch(
-      loggin({
-          userEmail: userEmail,
-          userPassword: userPassword,
-          loggedIn: true,
+    setLoading(true)
+    axios
+      .post(`${process.env.NEXT_PUBLIC_API}/login`, {
+        ...user,
       })
-    );
+      .then(response => {
+        console.log('success', response)
+         dispatch(
+             loggin({
+                // userEmail: userEmail,
+                // userPassword: userPassword,
+                 //loggedIn: true,
+      })
+    )
+        toast.info('Welcome to Covidopedia!')
+        router.push('/')
+      })
+      .catch(error => {
+        console.log(error.response)
+        toast.error(error.response.data)
+        setLoading(false)
+      })
+ 
+
   }
 
   return (
     <section className='my-8'>
       <div className='flex justify-center mt-12'>
         <div className='w-full max-w-md p-8 space-y-3 text-gray-800 rounded-xl bg-gray-50'>
-          <h1 className='text-2xl font-bold text-center'>Login</h1>
+          <h1 className='text-3xl font-mono text-gray-500 text-center'>
+            LOGIN
+          </h1>
           <form
             onSubmit={handleSubmit}
             className='space-y-6 ng-untouched ng-pristine ng-valid'
@@ -64,7 +68,7 @@ const [userEmail, setUserEmail] = useState("");
               </label>
               <input
                 type='email'
-                onChange={e=>setUserEmail(e.target.value)}
+                onChange={handleChange}
                 name='email'
                 id='email'
                 placeholder='Email'
@@ -77,21 +81,24 @@ const [userEmail, setUserEmail] = useState("");
               </label>
               <input
                 type='password'
-                onChange={e=>setUserPassword(e.target.value)}
+                onChange={handleChange}
                 name='password'
                 id='password'
                 placeholder='Password'
                 className='w-full px-4 py-3 text-gray-800 border border-indigo-300 rounded-md bg-indigo-50'
               />
               <div className='flex justify-end text-xs text-gray-600'>
-                <a href='#'>Forgot Password?</a>
+                <Link href='/forgot-password'>
+                  <a>Forgot password</a>
+                </Link>
               </div>
             </div>
             <button
               type='submit'
               className='block w-full p-3 text-center bg-indigo-600 rounded-sm text-gray-50'
+              disabled={loading}
             >
-              Sign in
+              {loading ? <SyncOutlined spin /> : 'SUBMIT'}
             </button>
           </form>
           <div className='flex items-center pt-4 space-x-1'>
@@ -131,7 +138,7 @@ const [userEmail, setUserEmail] = useState("");
             </button>
           </div>
           <p className='text-xs text-center text-gray-600 sm:px-6'>
-            Don't have an account?
+            Don't have an account?{' '}
             <a
               href='#'
               onClick={() => handleRender(true)}
