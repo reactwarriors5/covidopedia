@@ -1,6 +1,14 @@
-import React from 'react';
+import React, { useState,useEffect } from 'react';
+import servicedata from './FakeData/servicedata.json';
+import MedicalServiceDetails from './MedicalServiceDetails';
+
 
 const MedicalServices = () => {
+
+    const [services,setServices]=useState([]);
+
+    useEffect(()=>setServices(servicedata),[]);
+ 
     return (
         <div class="grid grid-cols-3 gap-2">
             <div className="border-2  w-2/3 h-20 ml-32 shadow-md rounded-md">
@@ -11,48 +19,10 @@ const MedicalServices = () => {
                 <p className="mb-3">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Veritatis dolorem, esse quia similique eos, dicta eligendi minus dignissimos dolores tenetur sapiente laboriosam? Repellendus error quidem similique,
                     sunt mollitia eaque inventore fugit ipsa omnis non doloremque!</p>
                 <div className="grid grid-cols-2">
-                    <div className="grid grid-cols-2 mb-10">
-                        <div className="justify-center">
-                            <img className="w-20 h-20 justify-center p-2" src="https://www.pngrepo.com/png/44997/180/doctor.png" alt="" />
-                        </div>
-                        <div>
-                            <h3 className="pb-2 font-bold">Standards of Treatment</h3>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus, accusamus.</p>
-                        </div>
+                   {
+                       services.map((service)=><MedicalServiceDetails service={service}></MedicalServiceDetails>)
+                   }
 
-                    </div>
-
-                    <div className="grid grid-cols-2 mb-10">
-                        <div className="justify-center">
-                            <img className="w-20 h-20 justify-center p-2" src="https://www.pngrepo.com/png/43219/180/loupe.png" alt="" />
-                        </div>
-                        <div>
-                            <h3 className="pb-2 font-bold">Infection Prevention</h3>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus, accusamus.</p>
-                        </div>
-
-                    </div>
-
-                    <div className="grid grid-cols-2">
-                        <div className="justify-center">
-                            <img className="w-20 h-20 justify-center p-2" src="https://www.pngrepo.com/png/251286/180/valentines-note.png" alt="" />
-                        </div>
-                        <div>
-                            <h3 className="pb-2 font-bold">Well Communication</h3>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus, accusamus.</p>
-                        </div>
-
-                    </div>
-                    <div className="grid grid-cols-2">
-                        <div className="justify-center">
-                            <img className="w-20 h-20 justify-center p-2" src="https://www.pngrepo.com/png/276284/180/shield.png" alt="" />
-                        </div>
-                        <div>
-                            <h3 className="pb-2 font-bold">25+ Years Experience</h3>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus, accusamus.</p>
-                        </div>
-
-                    </div>
                 </div>
             </div>
         </div>
