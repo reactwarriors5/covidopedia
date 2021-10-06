@@ -1,23 +1,25 @@
 import React, { useState } from 'react'
 import axios from 'axios';
+import { useDispatch } from 'react-redux';
+
+import { loggin } from '../../../features/userSlice/userSlice';
 
 const SignIn = ({ handleRender }) => {
  /*  const [user, setUser] = useState({
     email: '',
     password: '',
   }) */
-  const [userPassword, setUserPassword] = useState("");
+const [userPassword, setUserPassword] = useState("");
 const [userEmail, setUserEmail] = useState("");
 
   const login = ()=>{
-
-    // console.log(userName, userEmail, userPassword)
+    // console.log(userEmail, userPassword)
     axios.post('http://localhost:5000/api/user/login',{
       // name: userName,
       password: userPassword,
       email: userEmail
       // role: userRole
-
+    
     }).then((response) =>{
       console.log("success", response)
     }).catch(error => {
@@ -26,19 +28,25 @@ const [userEmail, setUserEmail] = useState("");
   }
 
   //Handle form state
-  /* const handleChange = e => {
-    const newUserInfo = { ...user }
-    newUserInfo[e.target.name] = e.target.value
-    setUser(newUserInfo)
-  } */
+  // const handleChange = e => {
+  //   const newUserInfo = { ...user }
+  //   newUserInfo[e.target.name] = e.target.value
+  //   setUser(newUserInfo)
+  // } 
+  const dispatch = useDispatch();
   //Handle Form Submit
   const handleSubmit = e => {
     login();
-
     e.preventDefault()
-
     console.log("success")
     // console.table(user)
+    dispatch(
+      loggin({
+          userEmail: userEmail,
+          userPassword: userPassword,
+          loggedIn: true,
+      })
+    );
   }
 
   return (

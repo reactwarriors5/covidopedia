@@ -5,7 +5,11 @@ import { Fragment } from 'react'
 import { Popover, Transition } from '@headlessui/react'
 import { MenuIcon, XIcon } from '@heroicons/react/solid'
 
+import { useSelector } from 'react-redux';
+import { selectUser } from '../../../../features/userSlice/userSlice';
 const Navbar = () => {
+  const user = useSelector(selectUser);
+  console.log(user);
   return (
     <section className='sticky z-10 drop-shadow-lg'>
       <Popover className='relative bg-white'>
@@ -45,12 +49,16 @@ const Navbar = () => {
                 >
                   <a>Sign in</a>
                 </Link>
-                <Link
-                  href='/login'
-                  className='inline-flex items-center justify-center px-4 py-2 ml-4 text-base font-medium text-gray-700 border border-transparent rounded-md shadow-sm whitespace-nowrap font-body bg-primary hover:bg-indigo-300'
-                >
-                  <a> Sign up</a>
-                </Link>
+                {
+                  user !== null ? <p>{user.userEmail}</p> :
+
+                  <Link
+                    href='/login'
+                    className='inline-flex items-center justify-center px-4 py-2 ml-4 text-base font-medium text-gray-700 border border-transparent rounded-md shadow-sm whitespace-nowrap font-body bg-primary hover:bg-indigo-300'
+                  >
+                    <a> Sign up</a>
+                  </Link>
+                }
               </div>
             </Popover.Group>
           </div>
