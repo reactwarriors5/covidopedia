@@ -39,7 +39,7 @@ const SignUp = ({ handleRender }) => {
       })
       .catch(error => {
         setLoading(false)
-        toast.error(err.response.data)
+        toast.error(error.response.data)
         console.log(error.response)
       })
   }
