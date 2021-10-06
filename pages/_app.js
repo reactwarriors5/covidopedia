@@ -3,8 +3,11 @@ import 'tailwindcss/tailwind.css'
 import { ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 import Head from 'next/head'
+import store from '../app/store';
+import { Provider } from 'react-redux'
 
 function MyApp({ Component, pageProps }) {
+
   return (
     <>
       <Head>
@@ -16,12 +19,15 @@ function MyApp({ Component, pageProps }) {
         ></script>
         <title>Covidopedia | Your Health Our Priority</title>
       </Head>
-
-      <ToastContainer position='top-center' autoClose={2000} />
-
-      <Component {...pageProps} />
+      <Provider store={store}>
+           <ToastContainer position='top-center' autoClose={2000} />
+           <Component {...pageProps} />
+      </Provider>
     </>
   )
+
+ 
+
 }
 
 export default MyApp

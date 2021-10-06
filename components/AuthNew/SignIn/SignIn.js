@@ -4,6 +4,8 @@ import { useRouter } from 'next/router'
 import Link from 'next/link'
 import { toast } from 'react-toastify'
 import { SyncOutlined } from '@ant-design/icons'
+import { useDispatch } from 'react-redux';
+import { loggin } from '../../../features/userSlice/userSlice';
 
 const SignIn = ({ handleRender }) => {
   const [loading, setLoading] = useState(false)
@@ -12,6 +14,7 @@ const SignIn = ({ handleRender }) => {
     email: '',
     password: '',
   })
+ const dispatch = useDispatch();
 
   //Handle form state
   const handleChange = e => {
@@ -29,6 +32,13 @@ const SignIn = ({ handleRender }) => {
       })
       .then(response => {
         console.log('success', response)
+         dispatch(
+             loggin({
+                // userEmail: userEmail,
+                // userPassword: userPassword,
+                 //loggedIn: true,
+      })
+    )
         toast.info('Welcome to Covidopedia!')
         router.push('/')
       })
@@ -37,6 +47,8 @@ const SignIn = ({ handleRender }) => {
         toast.error(error.response.data)
         setLoading(false)
       })
+ 
+
   }
 
   return (
