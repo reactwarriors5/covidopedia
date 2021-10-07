@@ -29,7 +29,7 @@ const testimonialData = [
 
 const Testimonial = () => {
   return (
-    <section className="relative z-10 object-cover py-16 mt-16 mb-16 bg-center bg-no-repeat bg-cover lg:mt-24 lg:mb-40 lg:pt-16 lg:pb-72 bg-Testimonial">
+    <section className="relative z-10 object-cover py-16 mb-16 bg-center bg-no-repeat bg-cover lg:mb-40 lg:pt-16 lg:pb-72 bg-Testimonial">
       {/* overlay div */}
       <div className="absolute inset-0 bg-gray-900 opacity-75 -z-10"></div>
       {/* container div */}
