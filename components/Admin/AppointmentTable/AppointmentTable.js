@@ -12,6 +12,26 @@ const appointmentInfo = [
     image:
       "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=4&w=256&h=256&q=60",
   },
+  {
+    doctorName: "Jane Cooper",
+    patientName: "Morgan Cooper",
+    department: "Neurology",
+    amount: "$300",
+    status: "Confirmed",
+    appointmentTime: "09 Oct, 2021, GMT 6.30 p.m.",
+    image:
+      "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=4&w=256&h=256&q=60",
+  },
+  {
+    doctorName: "Jane Cooper",
+    patientName: "Morgan Cooper",
+    department: "Neurology",
+    amount: "$300",
+    status: "Confirmed",
+    appointmentTime: "09 Oct, 2021, GMT 6.30 p.m.",
+    image:
+      "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=4&w=256&h=256&q=60",
+  },
 ];
 
 const AppointmentTable = () => {
@@ -26,31 +46,31 @@ const AppointmentTable = () => {
                   <tr>
                     <th
                       scope="col"
-                      className="px-6 py-3 text-xs font-medium tracking-wider text-center text-gray-500 uppercase"
+                      className="px-6 py-3 text-xs font-medium tracking-wider text-left text-gray-500 uppercase"
                     >
                       Doctor Name
                     </th>
                     <th
                       scope="col"
-                      className="px-6 py-3 text-xs font-medium tracking-wider text-center text-gray-500 uppercase"
+                      className="px-6 py-3 text-xs font-medium tracking-wider text-left text-gray-500 uppercase"
                     >
                       Department
                     </th>
                     <th
                       scope="col"
-                      className="px-6 py-3 text-xs font-medium tracking-wider text-center text-gray-500 uppercase"
+                      className="px-6 py-3 text-xs font-medium tracking-wider text-left text-gray-500 uppercase"
                     >
                       Patient Name
                     </th>
                     <th
                       scope="col"
-                      className="px-6 py-3 text-xs font-medium tracking-wider text-center text-gray-500 uppercase"
+                      className="px-6 py-3 text-xs font-medium tracking-wider text-left text-gray-500 uppercase"
                     >
                       Appointment Time
                     </th>
                     <th
                       scope="col"
-                      className="px-6 py-3 text-xs font-medium tracking-wider text-center text-gray-500 uppercase"
+                      className="px-6 py-3 text-xs font-medium tracking-wider text-left text-gray-500 uppercase"
                     >
                       Amount
                     </th>
@@ -66,7 +86,7 @@ const AppointmentTable = () => {
                 {/* table body here...can be transferred into another component */}
                 <tbody className="bg-white divide-y divide-gray-200">
                   {appointmentInfo.map((appointmentData, idx) => (
-                    <tr key={appointmentData.idx}>
+                    <tr key={idx}>
                       <td className="px-6 py-4 whitespace-nowrap">
                         <div className="flex items-center">
                           <div className="flex-shrink-0 w-10 h-10">

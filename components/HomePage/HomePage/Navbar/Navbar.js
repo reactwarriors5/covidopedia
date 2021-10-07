@@ -1,30 +1,43 @@
 import React from 'react'
+import axios from 'axios'
+import { loggin } from '../../../../features/userSlice/userSlice'
 import Link from 'next/link'
+import { toast } from 'react-toastify'
 // import logo from "../../../../images/logo-n.png";
 import { Fragment } from 'react'
 import { Popover, Transition } from '@headlessui/react'
 import { MenuIcon, XIcon } from '@heroicons/react/solid'
-
-import { useSelector } from 'react-redux';
-import { selectUser } from '../../../../features/userSlice/userSlice';
+import { useDispatch } from 'react-redux'
+import { useRouter } from 'next/router'
+import { useSelector } from 'react-redux'
+import { selectUser } from '../../../../features/userSlice/userSlice'
 const Navbar = () => {
+  const dispatch = useDispatch()
+  const router = useRouter()
+  // Logout user and clear state
   const logout = async () => {
     // make state null
     const { data } = await axios.get(`${process.env.NEXT_PUBLIC_API}/logout`)
+    window.location.reload()
+    // dispatch(
+    //   loggin({
+    //     user: null,
+    //   })
+    // )
     toast.warning(data.message)
-    router.push('/login')
   }
-  const user = useSelector(selectUser);
-  console.log(user);
+  const user = useSelector(selectUser)
 
   return (
-    <section className='sticky z-10 drop-shadow-lg'>
+    <section className='sticky z-30 drop-shadow-lg'>
       <Popover className='relative bg-white'>
         <div className='container px-4 mx-auto sm:px-6'>
           <div className='flex items-center justify-between py-6 border-b-2 border-gray-100 md:justify-start md:space-x-10'>
             <div className='flex justify-start lg:w-0 lg:flex-1'>
               <Link href='/' className='sr-only'>
-                <a>Covidopedia</a>
+                <a className='font-mono text-2xl font-semibold tracking-widest text-indigo-600'>
+                  COVIDOPEDIA
+                </a>
                 {/* <img className="w-auto h-8 sm:h-10" src={logo} alt="" /> */}
               </Link>
             </div>
@@ -37,45 +50,40 @@ const Navbar = () => {
             </div>
             <Popover.Group as='nav' className='hidden md:flex '>
               <div className='items-center space-x-10 md:flex md:justify-end '>
-                <Link
-                  href='/'
-                  className='text-base font-body text-secondary hover:text-gray-900'
-                >
-                  <a>Home</a>
+                <Link href='/'>
+                  <a className='text-base font-semibold text-indigo-600 font-body text-secondary'>
+                    Home
+                  </a>
                 </Link>
-                <Link
-                  href="/adminDashboard"
-                  className="text-base font-body text-secondary hover:text-gray-900"
-                >
-                  Admin
-                </Link>
-
-                <Link
-                  href='/login'
-                  className='text-base whitespace-nowrap font-body text-secondary hover:text-gray-900'
-                >
-                  <a>Sign in</a>
-                </Link>
-
-
-                <button
-                  onClick={logout}
-                  className='inline-flex items-center justify-center px-4 py-2 ml-4 text-base font-medium text-gray-700 border border-transparent rounded-md shadow-sm whitespace-nowrap font-body bg-primary hover:bg-indigo-300'
-                >
-                  Log Out
-                </button>
-
-                {
-                  user !== null ? <p>{user.userEmail}</p> :
-
-                  <Link
-                    href='/login'
-                    className='inline-flex items-center justify-center px-4 py-2 ml-4 text-base font-medium text-gray-700 border border-transparent rounded-md shadow-sm whitespace-nowrap font-body bg-primary hover:bg-indigo-300'
-                  >
-                    <a> Sign up</a>
-                  </Link>
-                }
-
+                {user === null && (
+                  <>
+                    <Link href='/login'>
+                      <a className='text-base font-semibold text-gray-800 whitespace-nowrap hover:text-gray-900'>
+                        Sign in
+                      </a>
+                    </Link>
+                    <Link href='/login'>
+                      <a className='inline-flex items-center justify-center px-4 py-2 text-base font-semibold text-center text-white bg-indigo-600 rounded-full shadow-md hover:text-white hover:bg-indigo-700 focus:outline-none'>
+                        Sign up
+                      </a>
+                    </Link>
+                  </>
+                )}
+                {user !== null && user.user && (
+                  <>
+                    <Link href='/adminDashboard'>
+                      <a className='text-base font-semibold text-gray-800 whitespace-nowrap hover:text-gray-900'>
+                        {user?.user?.name}
+                      </a>
+                    </Link>
+                    <button
+                      onClick={logout}
+                      className='text-base px-2 py-2 rounded-lg font-semibold text-white whitespace-nowrap bg-indigo-500 '
+                    >
+                      Log Out
+                    </button>
+                  </>
+                )}
               </div>
             </Popover.Group>
           </div>
@@ -110,33 +118,29 @@ const Navbar = () => {
               </div>
               <div className='px-5 py-6 space-y-6'>
                 <div className='grid grid-cols-1 gap-y-4'>
-                  <Link
-                    href='/'
-                    className='text-base font-body text-secondary hover:text-gray-900'
-                  >
-                    <a> Home</a>
+                  <Link href='/'>
+                    <a className='text-base font-semibold text-indigo-600 font-body text-secondary'>
+                      Home
+                    </a>
                   </Link>
-                  <Link
-                    href="/adminDashboard"
-                    className="text-base font-body text-secondary hover:text-gray-700"
-                  >
-                    Admin
+                  <Link href='/adminDashboard'>
+                    <a className='text-base font-semibold text-indigo-600 font-body text-secondary'>
+                      Admin
+                    </a>
                   </Link>
                 </div>
                 <div>
-                  <button
-                    onClick={logout}
-                    className='inline-flex items-center justify-center px-4 py-2 ml-4 text-base font-medium text-gray-700 border border-transparent rounded-md shadow-sm whitespace-nowrap font-body bg-primary hover:bg-indigo-300'
-                  >
-                    Log Out
-                  </button>
+                  <Link href='#' onClick={logout}>
+                    <a className='text-base font-semibold text-gray-800 whitespace-nowrap hover:text-gray-900'>
+                      Log Out
+                    </a>
+                  </Link>
                   <p className='mt-6 font-medium text-center text-secondary font-body'>
                     Existing customer?{' '}
-                    <Link
-                      href='/login'
-                      className='text-primary font-body hover:text-gray-800'
-                    >
-                      <a>Sign in</a>
+                    <Link href='/login'>
+                      <a className='text-sm font-semibold text-indigo-600 whitespace-nowrap hover:text-indigo-900'>
+                        Sign in
+                      </a>
                     </Link>
                   </p>
                 </div>
