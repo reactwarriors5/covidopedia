@@ -106,14 +106,16 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }) => {
           </button>
         </div>
 
-        <div className="flex items-center p-2 mt-4 space-x-4">
+        <div className="flex items-center p-2 mt-4 space-x-2">
           <img
             src="https://source.unsplash.com/100x100/?portrait" // src change when login function applied //
             alt="admin-img"
             className="w-12 h-12 rounded-full"
           />
           <div>
-            <h4 className="pr-2 text-2xl font-semibold">Leroy Jenkins</h4>
+            <h4 className="pr-2 text-xl font-semibold text-indigo-50">
+              COVIDOPEDIA
+            </h4>
           </div>
         </div>
         <div className="divide-y divide-gray-100">
@@ -125,12 +127,13 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }) => {
                   className="flex items-center justify-start space-y-5"
                   key={menu.title}
                 >
-                  <FontAwesomeIcon className="mt-5 mr-3" icon={menu.icon} />
-                  <Link
-                    href={menu.url}
-                    className="px-2 py-3 space-x-3 rounded-md text-hero"
-                  >
-                    <a>{menu.title}</a>
+                  <FontAwesomeIcon
+                    size="lg"
+                    className="mt-5 mr-3"
+                    icon={menu.icon}
+                  />
+                  <Link href={menu.url} className="px-2 py-3 space-x-3 ">
+                    <a className="text-lg text-white">{menu.title}</a>
                   </Link>
                 </li>
               );
@@ -139,9 +142,13 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }) => {
           {/* static menus here */}
           <ul className="pt-4 space-y-1 lg:pb-48 pb-96">
             <li className="flex items-center justify-start ml-3">
-              <FontAwesomeIcon className="mt-1 mr-3" icon={faSignOutAlt} />
+              <FontAwesomeIcon
+                size="lg"
+                className="mt-1 mr-3"
+                icon={faSignOutAlt}
+              />
               <Link href="/" className="p-2 space-x-3 rounded-md text-hero">
-                <a>Logout</a>
+                <a className="text-lg text-white">Logout</a>
               </Link>
             </li>
           </ul>
