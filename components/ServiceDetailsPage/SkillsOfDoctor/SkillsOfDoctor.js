@@ -1,9 +1,12 @@
 import React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { fab } from '@fortawesome/free-brands-svg-icons'
+import { faCheck } from '@fortawesome/free-solid-svg-icons'
 
 const SkillsOfDoctor = () => {
     return (
-        <section class="mx-32 body-font overflow-hidden">
-            <div class="container px-5 py-24 mx-auto">
+        <section class="lg:mx-20 mx-4 body-font overflow-hidden">
+            <div class=" py-24 mx-auto">
                 <div class="flex flex-wrap -m-12">
                 <div class="p-12 md:w-1/2 flex flex-col items-start">
                     <h2 class="text-4xl font-bold">Skills of Doctor</h2><br />
@@ -71,20 +74,58 @@ const SkillsOfDoctor = () => {
                 <div class="p-12 md:w-1/2 flex flex-col items-start">
                     <h2 class="text-4xl font-bold">Benefits of Doctor</h2><br />
                     <p class="leading-relaxed mb-8">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.</p>
-                    <div class="grid grid-cols-2 gap-4">
+                    <div class="grid grid-cols-2 gap-3">
                         <div class="">
-                            <p>Routine and medical care</p><br />
-                            <p>Excellence in Healthcare every</p><br />
-                            <p>Building a healthy environment.</p><br />
-                            <p>Routine and medical care</p><br />
+                        <div className="flex justify-start mt-2 gap-2">
+                            <FontAwesomeIcon className='bg-blue-300 mt-1' icon={faCheck}></FontAwesomeIcon>
+                            <p>Routine and medical care</p>
+                        </div>
+                        <div className="flex justify-start mt-2 gap-2">
+                            <FontAwesomeIcon className='bg-blue-300 mt-1' icon={faCheck}></FontAwesomeIcon>
                             <p>Excellence in Healthcare every</p>
                         </div>
-                        <div class="">
-                            <p>Routine and medical care</p><br />
-                            <p>Excellence in Healthcare every</p><br />
-                            <p>Building a healthy environment.</p><br />
-                            <p>Routine and medical care</p><br />
+                        <div className="flex justify-start mt-2 gap-2">
+                            <FontAwesomeIcon className='bg-blue-300 mt-1' icon={faCheck}></FontAwesomeIcon>
+                            <p>Routine and medical care</p>
+                        </div>
+                        <div className="flex justify-start mt-2 gap-2">
+                            <FontAwesomeIcon className='bg-blue-300 mt-1' icon={faCheck}></FontAwesomeIcon>
+                            <p>Building a healthy environment.</p>
+                        </div>
+                        <div className="flex justify-start mt-2 gap-2">
+                            <FontAwesomeIcon className='bg-blue-300 mt-1' icon={faCheck}></FontAwesomeIcon>
+                            <p>Routine and medical care</p>
+                        </div>
+                        <div className="flex justify-start mt-2 gap-2">
+                            <FontAwesomeIcon className='bg-blue-300 mt-1' icon={faCheck}></FontAwesomeIcon>
                             <p>Excellence in Healthcare every</p>
+                        </div>    
+                        </div>
+                        <div class="">
+                        <div className="flex justify-start mt-2 gap-2">
+                            <FontAwesomeIcon className='bg-blue-300 mt-1' icon={faCheck}></FontAwesomeIcon>
+                            <p>Routine and medical care</p>
+                        </div>
+                        <div className="flex justify-start mt-2 gap-2">
+                            <FontAwesomeIcon className='bg-blue-300 mt-1' icon={faCheck}></FontAwesomeIcon>
+                            <p>Excellence in Healthcare every</p>
+                        </div>
+                        <div className="flex justify-start mt-2 gap-2">
+                            <FontAwesomeIcon className='bg-blue-300 mt-1' icon={faCheck}></FontAwesomeIcon>
+                            <p>Routine and medical care</p>
+                        </div>
+                        <div className="flex justify-start mt-2 gap-2">
+                            <FontAwesomeIcon className='bg-blue-300 mt-1' icon={faCheck}></FontAwesomeIcon>
+                            <p>Building a healthy environment.</p>
+                        </div>
+                        <div className="flex justify-start mt-2 gap-2">
+                            <FontAwesomeIcon className='bg-blue-300 mt-1' icon={faCheck}></FontAwesomeIcon>
+                            <p>Routine and medical care</p>
+                        </div>
+                        <div className="flex justify-start mt-2 gap-2">
+                            <FontAwesomeIcon className='bg-blue-300 mt-1' icon={faCheck}></FontAwesomeIcon>
+                            <p>Excellence in Healthcare every</p>
+                        </div>  
                         </div>
                     </div>
                 </div>
