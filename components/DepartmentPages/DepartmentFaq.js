@@ -6,9 +6,9 @@ const DepartmentFaq = () => {
 
             <div class="..."></div>
             <div class="col-span-2 ...">
+            <h2 class="mb-2 ml-4 mt-8 text-xl font-bold leading-none text-start sm:text-4xl">Frequently Asked Questions</h2>
                 <section class="bg-coolGray-100 text-coolGray-800">
-                    <div class="container flex flex-col justify-center p-4 mx-auto md:p-8">
-                        <h2 class="mb-12 text-4xl font-bold leading-none text-start sm:text-5xl">Frequently Asked Questions</h2>
+                    <div class="container flex flex-col  justify-center  mx-auto md:p-8">
                         <div class="flex flex-col divide-y sm:px-8 lg:px-12 xl:px-32 divide-coolGray-300">
                             <details>
                                 <summary class="py-2 outline-none cursor-pointer focus:underline">Optio maiores eligendi molestiae totam dolores similique?</summary>
