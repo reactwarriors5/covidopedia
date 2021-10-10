@@ -8,6 +8,7 @@ import Footer from '../Footer/Footer'
 import Testimonial from '../Testimonial/Testimonial'
 import TeamMember from '../../../DepartmentPages/TeamMember'
 import Navbar from '../Navbar/Navbar'
+import DoctorRegistrationForm from '../../../DoctorRegistrationForm/DoctorRegistrationForm'
 
 const HomePage = () => {
   return (
