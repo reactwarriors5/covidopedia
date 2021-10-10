@@ -2,14 +2,14 @@ import React from 'react';
 import { useState, useEffect } from 'react';
 import { labServices } from './FakeData/labServices';
 
+
 const LaboratoryServices = () => {
     const [services, setServices] = useState([])
-    useEffect(() => {
-        setServices(labServices);
-        console.log(services);
-    }, [])
-    return (
+    
+    useEffect(() => setServices(labServices), [])
 
+
+    return (
         <div className="grid grid-cols-3 gap-2 mt-10 ">
             <div className="ml-32 flex w-90 bg-purple-200 h-16 rounded-sm shadow-md hover:bg-indigo-300">
                 <div className="mt-6 px-4">
