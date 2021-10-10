@@ -1,10 +1,17 @@
 import React from 'react';
+import { useState, useEffect } from 'react';
+import { labServices } from './FakeData/labServices';
 
 const LaboratoryServices = () => {
+    const [services, setServices] = useState([])
+    useEffect(() => {
+        setServices(labServices);
+        console.log(services);
+    }, [])
     return (
 
         <div className="grid grid-cols-3 gap-2 mt-10 ">
-            <div  className="ml-32 flex w-90 bg-purple-200 h-16 rounded-sm shadow-md hover:bg-indigo-300">
+            <div className="ml-32 flex w-90 bg-purple-200 h-16 rounded-sm shadow-md hover:bg-indigo-300">
                 <div className="mt-6 px-4">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-file-earmark-pdf" viewBox="0 0 16 16">
                         <path d="M14 14V4.5L9.5 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2zM9.5 3A1.5 1.5 0 0 0 11 4.5h2V14a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h5.5v2z" />
@@ -22,46 +29,22 @@ const LaboratoryServices = () => {
                         <p className="text-justify">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi dolorum possimus optio </p>
                     </div>
                     <ul>
-                        <li className="flex mb-2">
-                            <div className="mt-1">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
-                                </svg>
-                            </div>
-                            Excellence in Healthcare every
-                        </li>
-                        <li className="flex mb-2">
-                            <div className="mt-1">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
-                                </svg>
-                            </div>
-                            Building a healthy environment
-                        </li>
-                        <li className="flex mb-2">
-                            <div className="mt-1">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
-                                </svg>
-                            </div>
-                            Routine and medical care
-                        </li>
-                        <li className="flex mb-2">
-                            <div className="mt-1">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
-                                </svg>
-                            </div>
-                            Excellence in Healthcare every
-                        </li>
-                        <li className="flex mb-2">
-                            <div className="mt-1">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
-                                </svg>
-                            </div>
-                            Excellence in Healthcare every
-                        </li>
+                        {
+                            services.map((service) => {
+                                return (
+                                    <>
+                                        <li className="flex mb-2">
+                                            <div className="mt-1">
+                                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                                                </svg>
+                                            </div>
+                                            <h6>{service.name}</h6>
+                                        </li>
+                                    </>
+                                )
+                            })
+                        }
                     </ul>
 
                 </div>
