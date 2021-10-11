@@ -2,8 +2,8 @@ import React from 'react';
 
 const DoctorRegistrationForm = () => {
     return (
-        <div class="flex h-screen bg-gray-200 items-center justify-center  mt-32 mb-32">
-            <div class="grid bg-white rounded-lg shadow-xl w-11/12 md:w-9/12 lg:w-1/2">
+        <div class="flex h-screen bg-white items-center justify-center  mt-5 mb-10">
+            <div class="grid bg-white rounded-lg shadow-lg bg-gray-100 w-11/12 md:w-9/12 lg:w-1/2">
 
                 <div class="flex justify-center">
                     <div class="flex">

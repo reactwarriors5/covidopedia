@@ -17,7 +17,7 @@ const sideBarMenus = [
   },
   {
     title: 'Registered Doctors',
-    url: '/registeredDoctors',
+    url: '/doctorRegistration',
     icon: faUserMd,
   },
   {
