@@ -3,7 +3,7 @@ import Image from "next/image";
 
 const BookAppointment = () => {
   return (
-    <section className="container">
+    <section className="container mt-16">
       <div className="grid items-center grid-cols-1 lg:grid-cols-3 xl:grid-cols-3 lg:gap-8 xl:gap-8">
         {/* emergency CTA */}
         <div className="relative z-10 flex items-center object-cover w-full h-full px-6 py-8 text-center text-white bg-center bg-no-repeat bg-cover bg-Emergency">
@@ -20,7 +20,7 @@ const BookAppointment = () => {
                 />
               </div>
               <div className="text-left">
-                <h4 className="text-xl ">Emergency Cases</h4>
+                <h4 className="text-xl text-white">Emergency Cases</h4>
                 <span className="text-2xl font-bold text-blue-300">
                   1-800-123-4560
                 </span>
@@ -30,7 +30,9 @@ const BookAppointment = () => {
               Sed do eiusmod tempor minim ur incididunt ut labore et dolore
               magna aliqua enim ad minim veniam quis nostrud.
             </p>
-            <button class="btn-brand my-3 w-full text-white">Contact Us</button>
+            <button className="w-full my-3 text-white btn-brand">
+              Contact Us
+            </button>
           </div>
         </div>
         <div className="relative z-10 object-cover w-full h-full col-span-2 bg-center bg-no-repeat bg-cover bg-BookAppointment">
@@ -120,7 +122,7 @@ const BookAppointment = () => {
                 />
               </div>
             </div>
-            <button className="mt-10 btn-brand">Make Appointment</button>
+            <button className="mt-10 btn-brand-alt">Make Appointment</button>
           </div>
         </div>
       </div>
