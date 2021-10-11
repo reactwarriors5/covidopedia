@@ -5,7 +5,7 @@ import { labServices } from './FakeData/labServices';
 
 const LaboratoryServices = () => {
     const [services, setServices] = useState([])
-    
+
     useEffect(() => setServices(labServices), [])
 
 

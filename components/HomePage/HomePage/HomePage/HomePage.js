@@ -19,6 +19,7 @@ const HomePage = () => {
       <TeamMember />
       <Departments />
       <Contents />
+      <DoctorRegistrationForm/>
       <Vendors />
       <Testimonial />
       <Footer />
