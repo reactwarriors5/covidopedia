@@ -9,6 +9,7 @@ export const userSlice = createSlice({
         loggin: (state,action) => {
             state.user = action.payload;
         },
+        
     }
 })
 
