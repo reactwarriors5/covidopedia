@@ -12,11 +12,11 @@ import {
 const sideBarMenus = [
   {
     title: 'Dashboard',
-    url: '/adminDashboard',
+    url: '/dashboard',
     icon: faTh,
   },
   {
-    title: 'Registered Doctors',
+    title: 'Register As Doctors',
     url: '/doctorRegistration',
     icon: faUserMd,
   },

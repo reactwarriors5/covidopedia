@@ -18,12 +18,13 @@ const Navbar = () => {
   const logout = async () => {
     // make state null
     const { data } = await axios.get(`${process.env.NEXT_PUBLIC_API}/logout`)
-    window.location.reload()
-    // dispatch(
-    //   loggin({
-    //     user: null,
-    //   })
-    // )
+    window.localStorage.removeItem('user')
+    // window.location.reload()
+    dispatch(
+      loggin({
+        user: null,
+      })
+    )
     toast.warning(data.message)
   }
   const user = useSelector(selectUser)
@@ -71,7 +72,7 @@ const Navbar = () => {
                 )}
                 {user !== null && user.user && (
                   <>
-                    <Link href='/adminDashboard'>
+                    <Link href='/dashboard'>
                       <a className='text-base font-semibold text-gray-800 whitespace-nowrap hover:text-gray-900'>
                         {user?.user?.name}
                       </a>
