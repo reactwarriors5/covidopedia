@@ -6,20 +6,18 @@ import storage from 'redux-persist/lib/storage';
 import { combineReducers } from 'redux';
 import { persistReducer } from 'redux-persist';
 
-// const reducers = combineReducers({
-//     user: userReducer,
-// });
+const rootReducer= combineReducers({
+    user: userReducer,
+    doctor:doctorReducer,
+});
 
 const persistConfig = {
     key: 'root',
     storage,
 };
-const persistedReducer = persistReducer(persistConfig, userReducer);
+const persistedReducer = persistReducer(persistConfig, rootReducer);
 
 export default configureStore({
 
-    reducer:{
-        user: userReducer,
-        doctor:doctorReducer,
-
+    reducer:persistedReducer,
 });
