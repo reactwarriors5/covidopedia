@@ -6,6 +6,7 @@ import Head from 'next/head'
 import store from '../app/store'
 import { Provider } from 'react-redux'
 import '@fortawesome/fontawesome-svg-core/styles.css'
+
 function MyApp({ Component, pageProps }) {
   return (
     <>
