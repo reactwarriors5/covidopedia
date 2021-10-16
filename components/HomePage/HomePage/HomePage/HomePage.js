@@ -22,7 +22,7 @@ const HomePage = () => {
       <Testimonial />
       <Footer />
     </main>
-  );
-};
+  )
+}
 
-export default HomePage;
+export default HomePage
