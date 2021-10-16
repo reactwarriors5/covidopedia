@@ -1,0 +1,32 @@
+[
+    {
+        "doctorName": "Oliver Aguilerra",
+        "specialist": "Cardiology Specialist",
+        "doctorImage": "https://doctery-demo.themesion.com/demo1/wp-content/uploads/sites/2/2020/01/team-01.jpg"
+    },
+    {
+        "doctorName": "Marta Clermont",
+        "specialist": "Dermatologist",
+        "doctorImage": "https://doctery-demo.themesion.com/demo1/wp-content/uploads/sites/2/2020/01/team-02.jpg"
+    },
+    {
+        "doctorName": "Jennifer Winds",
+        "specialist": "Neurology Specialist",
+        "doctorImage": "https://doctery-demo.themesion.com/demo1/wp-content/uploads/sites/2/2019/05/team-03.jpg"
+    },
+    {
+        "doctorName": "Alice Melbourne",
+        "specialist": "Medicine Specialist",
+        "doctorImage": "https://doctery-demo.themesion.com/demo1/wp-content/uploads/sites/2/2019/05/team-04.jpg"
+    },
+    {
+        "doctorName": "Merry Anderson",
+        "specialist": "Gastrologic Specialist",
+        "doctorImage": "https://doctery-demo.themesion.com/demo1/wp-content/uploads/sites/2/2019/04/team-05.jpg"
+    },
+    {
+        "doctorName": "Andrew Larkin",
+        "specialist": "General Doctor",
+        "doctorImage": "https://doctery-demo.themesion.com/demo1/wp-content/uploads/sites/2/2019/03/team-06.jpg"
+    }
+]

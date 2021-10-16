@@ -1,6 +1,8 @@
 import React from 'react';
 
+
 const AboutDoctor = () => {
+  
     return (
         <div className="lg:mx-20 mx-4">
             <h1 className="text-4xl font-bold">About Doctor</h1><br />

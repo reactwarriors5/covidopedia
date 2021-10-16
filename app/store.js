@@ -1,5 +1,6 @@
 import { configureStore } from "@reduxjs/toolkit";
 import userReducer from "../features/userSlice/userSlice";
+import doctorReducer from "../features/doctorSlice/doctorSlice";
 
 import storage from 'redux-persist/lib/storage';
 import { combineReducers } from 'redux';
@@ -16,7 +17,9 @@ const persistConfig = {
 const persistedReducer = persistReducer(persistConfig, userReducer);
 
 export default configureStore({
-    reducer: {
-        user: persistedReducer,
-    },
+
+    reducer:{
+        user: userReducer,
+        doctor:doctorReducer,
+
 });

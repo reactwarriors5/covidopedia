@@ -19,6 +19,7 @@ const Navbar = () => {
   // Logout user and clear state
   const handleLogout = async (e) => {
     // make state null
+
     const { data } = await axios.get(`${process.env.NEXT_PUBLIC_API}/logout`);
     window.location.reload();
     // dispatch(
@@ -75,7 +76,7 @@ const Navbar = () => {
                 )}
                 {user !== null && user.user && (
                   <>
-                    <Link href='/adminDashboard'>
+                    <Link href='/dashboard'>
                       <a className='text-base font-semibold text-gray-800 whitespace-nowrap hover:text-gray-900'>
                         {user?.user?.name}
                       </a>

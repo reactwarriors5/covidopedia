@@ -31,13 +31,14 @@ const SignIn = ({ handleRender }) => {
         ...user,
       })
       .then(response => {
-        // console.log('success', response)
+        console.log('success', response.data)
 
         dispatch(
           loggin({
             user: response.data,
           })
         )
+        window.localStorage.setItem('user', JSON.stringify(response.data))
         toast.info('Welcome to Covidopedia!')
         router.push('/')
       })

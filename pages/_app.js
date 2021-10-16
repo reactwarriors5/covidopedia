@@ -7,6 +7,7 @@ import store from '../app/store'
 import { Provider } from 'react-redux'
 import '@fortawesome/fontawesome-svg-core/styles.css'
 
+
 import { PersistGate } from 'redux-persist/integration/react';
 import { persistStore } from 'redux-persist';
 let persistor = persistStore(store);
