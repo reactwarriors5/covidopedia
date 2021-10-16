@@ -1,14 +1,14 @@
 import React, { useState } from "react";
-import AppointmentData from "../AppointmentData/AppointmentData";
-import Sidebar from "../Sidebar/Sidebar";
+import Sidebar from "../../Sidebar/Sidebar";
+import MyAppointmentData from "../MyAppointmentData/MyAppointmentData";
 
-const Appointments = () => {
+const MyAppointments = () => {
   const [sidebarOpen, setSidebarOpen] = useState(false);
   return (
     <>
       <div className="lg:flex">
         <Sidebar sidebarOpen={sidebarOpen} setSidebarOpen={setSidebarOpen} />
-        <AppointmentData
+        <MyAppointmentData
           sidebarOpen={sidebarOpen}
           setSidebarOpen={setSidebarOpen}
         />
@@ -17,4 +17,4 @@ const Appointments = () => {
   );
 };
 
-export default Appointments;
+export default MyAppointments;
