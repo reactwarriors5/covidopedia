@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react'
 import Image from 'next/image'
 import { Modal, Button } from 'antd';
@@ -45,9 +46,10 @@ const DoctorDetails = () => {
           <p className='mb-5 text-gray-800'>Fax 123456789</p>
         <AppointmentModal/>
         </div>
+
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default DoctorDetails
+export default DoctorDetails;

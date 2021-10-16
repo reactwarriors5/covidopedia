@@ -2,11 +2,13 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 import { selectADoctor } from '../../../features/doctorSlice/doctorSlice';
 // violet
+
 const Banner = () => {
     const doctorUser = useSelector(selectADoctor)
     console.log(doctorUser);
     return (
         <section>
+
             <div
                 className="w-full h-auto bg-no-repeat bg-cover"
                 style={{ backgroundImage: `url("https://image.shutterstock.com/image-photo/medical-physician-doctor-hands-healthcare-260nw-261024704.jpg")` }}
@@ -22,6 +24,7 @@ const Banner = () => {
                         {'>'} TEAM MEMBERS {'>'}
                         {'>'}  {doctorUser.doctor.doctorName}</p>
                     <br /><br /><br />
+
                 </div>
             </div>
 
