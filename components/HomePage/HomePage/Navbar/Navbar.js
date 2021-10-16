@@ -1,7 +1,9 @@
-import React from "react";
-import axios from "axios";
-import Link from "next/link";
-import { toast } from "react-toastify";
+import React from 'react'
+import axios from 'axios'
+import { logout } from '../../../../features/userSlice/userSlice'
+import Link from 'next/link'
+import { toast } from 'react-toastify'
+
 // import logo from "../../../../images/logo-n.png";
 import { Fragment } from "react";
 import { Popover, Transition } from "@headlessui/react";
@@ -15,7 +17,7 @@ const Navbar = () => {
   const dispatch = useDispatch();
   const router = useRouter();
   // Logout user and clear state
-  const logout = async () => {
+  const handleLogout = async (e) => {
     // make state null
     const { data } = await axios.get(`${process.env.NEXT_PUBLIC_API}/logout`);
     window.location.reload();
@@ -24,9 +26,11 @@ const Navbar = () => {
     //     user: null,
     //   })
     // )
-    toast.warning(data.message);
-  };
-  const user = useSelector(selectUser);
+    e.preventDefault();
+    dispatch(logout());
+    toast.warning(data.message)
+  }
+  const user = useSelector(selectUser)
 
   return (
     <section className="sticky z-30 drop-shadow-lg">
@@ -69,21 +73,22 @@ const Navbar = () => {
                     </Link>
                   </>
                 )}
-                {/* {user !== null && user.user && ( */}
-                <>
-                  <Link href="/adminDashboard">
-                    <a className="text-base font-semibold text-gray-800 whitespace-nowrap hover:text-gray-900">
-                      {/* {user?.user?.name} */} Admin
-                    </a>
-                  </Link>
-                  <button
-                    onClick={logout}
-                    className="px-2 py-2 text-base font-semibold text-white bg-indigo-500 rounded-lg whitespace-nowrap "
-                  >
-                    Log Out
-                  </button>
-                </>
-                {/* )} */}
+                {user !== null && user.user && (
+                  <>
+                    <Link href='/adminDashboard'>
+                      <a className='text-base font-semibold text-gray-800 whitespace-nowrap hover:text-gray-900'>
+                        {user?.user?.name}
+                      </a>
+                    </Link>
+                    <button
+                      // onClick={logout}
+                      onClick={(e) => handleLogout(e)} // nadim
+                      className='text-base px-2 py-2 rounded-lg font-semibold text-white whitespace-nowrap bg-indigo-500 '
+                    >
+                      Log Out
+                    </button>
+                  </>
+                )}
               </div>
             </Popover.Group>
           </div>
@@ -130,8 +135,12 @@ const Navbar = () => {
                   </Link>
                 </div>
                 <div>
-                  <Link href="#" onClick={logout}>
-                    <a className="text-base font-semibold text-gray-800 whitespace-nowrap hover:text-gray-900">
+                  <Link href='#' 
+                    // onClick={logout}
+                    onClick={(e) => handleLogout(e)} //nadim
+                  >
+                    <a className='text-base font-semibold text-gray-800 whitespace-nowrap hover:text-gray-900'>
+
                       Log Out
                     </a>
                   </Link>
