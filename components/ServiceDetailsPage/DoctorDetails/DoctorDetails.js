@@ -32,9 +32,9 @@ const DoctorDetails = () => {
                         <p class="col-span-2">123456789</p>
                     </div>
                 </div>
-            </div>
-        </div>
-    );
+      </div>
+    </div>
+  );
 };
 
 export default DoctorDetails;

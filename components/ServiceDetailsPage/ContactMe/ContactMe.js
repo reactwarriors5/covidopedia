@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'
 
 const ContactMe = () => {
     return (
@@ -30,5 +30,4 @@ const ContactMe = () => {
       </div>
     );
 };
-
 export default ContactMe;
