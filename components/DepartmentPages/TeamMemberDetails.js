@@ -6,7 +6,7 @@ import { doctorInfo} from '../../features/doctorSlice/doctorSlice';
 
 
 const TeamMemberDetails = (props) => {
-    const { doctorName, specialist, doctorImage } = props.doctor;
+    const { name, image } = props.doctor;
     const dispatch = useDispatch();
 
     const handleDoctor=()=>{
@@ -21,12 +21,12 @@ const TeamMemberDetails = (props) => {
         <div className="flex flex-col items-center">
             <img
                 className="object-cover mb-2 rounded-full shadow w-52 h-52"
-                src={doctorImage}
+                src={image}
                 alt="Person"
             />
             <div className="flex flex-col items-center">
-                <p className="text-lg font-bold">{doctorName}</p>
-                <p className="text-sm text-gray-800">{specialist}</p>
+                <p className="text-lg font-bold">{name}</p>
+                <p className="text-sm text-gray-800">Cardiology Specialist</p>
                 <button onClick={handleDoctor} className="flex items-center justify-center mt-4">
                     <Link
                         href="/doctorDetailsPage"
