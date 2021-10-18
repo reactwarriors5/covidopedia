@@ -31,7 +31,7 @@ const TeamMemberDetails = props => {
           className='flex items-center justify-center mt-4'
         >
           <Link
-            href='/doctorDetailsPage/'
+            href={`/doctorDetailsPage/${_id}`}
             className='p-1 border border-gray-300 rounded font-body hover:bg-indigo-500 hover:text-white hover:border-none'
           >
             <a>See Details</a>
