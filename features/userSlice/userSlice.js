@@ -10,11 +10,11 @@ export const userSlice = createSlice({
       state.user = action.payload
     },
     reducers: {
-        loggin: (state,action) => {
-            state.user = action.payload;
-        },
-        
-    }
+      loggin: (state, action) => {
+        state.user = action.payload
+      },
+    },
+  },
 })
 
 export const { loggin } = userSlice.actions

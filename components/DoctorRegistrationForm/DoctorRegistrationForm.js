@@ -47,6 +47,7 @@ const DoctorRegistrationForm = () => {
 
     try {
       // Get Image URL
+      setLoading(true)
       let { data } = await axios.post(
         `${process.env.NEXT_PUBLIC_API}/doctor/upload-image`,
         {
@@ -56,9 +57,11 @@ const DoctorRegistrationForm = () => {
       console.log(data)
       // set image in the state
       setDoctor({ ...doctor, image: data.display_url })
+      setLoading(false)
     } catch (err) {
       console.log(err)
       toast.error('Image upload failed. Try again.')
+      setLoading(false)
     }
   }
 
