@@ -1,10 +1,10 @@
 
 import React, { useState } from 'react'
 import Image from 'next/image'
-import { Modal, Button } from 'antd';
-import AppointmentModal from '../../Modal/AppointmentModal';
+
 import { useSelector } from 'react-redux';
 import { selectADoctor} from '../../../features/doctorSlice/doctorSlice';
+import AppointmentModal from '../Modal/AppointmentModal';
 
 
 const DoctorDetails = () => {
