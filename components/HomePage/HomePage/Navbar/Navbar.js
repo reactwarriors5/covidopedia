@@ -32,7 +32,7 @@ const Navbar = () => {
     toast.warning(data.message)
   }
   const user = useSelector(selectUser)
-
+  console.log(user);
   return (
     <section className="sticky z-30 drop-shadow-lg">
       <Popover className="relative bg-white">
