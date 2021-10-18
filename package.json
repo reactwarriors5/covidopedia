@@ -15,6 +15,7 @@
     "@headlessui/react": "^1.4.1",
     "@heroicons/react": "^1.0.4",
     "@reduxjs/toolkit": "^1.6.2",
+    "@stripe/stripe-js": "^1.20.2",
     "antd": "^4.16.13",
     "axios": "^0.21.4",
     "firebase": "^9.1.0",
