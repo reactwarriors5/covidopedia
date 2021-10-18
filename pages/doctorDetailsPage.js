@@ -5,6 +5,7 @@ import AboutDoctor from '../components/ServiceDetailsPage/AboutDoctor/AboutDocto
 import Banner from '../components/ServiceDetailsPage/Banner/Banner'
 import ContactMe from '../components/ServiceDetailsPage/ContactMe/ContactMe'
 import DoctorDetails from '../components/ServiceDetailsPage/DoctorDetails/DoctorDetails'
+import DoctorExperience from '../components/ServiceDetailsPage/DoctorExperience/DoctorExperience'
 import SkillsOfDoctor from '../components/ServiceDetailsPage/SkillsOfDoctor/SkillsOfDoctor'
 
 const ServiceDetailsPage = () => {
@@ -15,6 +16,7 @@ const ServiceDetailsPage = () => {
       <DoctorDetails />
       <AboutDoctor />
       <SkillsOfDoctor />
+      <DoctorExperience />
       <ContactMe />
       <Footer />
     </div>
