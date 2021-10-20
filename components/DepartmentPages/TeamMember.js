@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from "react";
-import TeamMemberDetails from "./TeamMemberDetails";
 import axios from 'axios'
-import doctorData from './FakeData/doctorData.json'
 import TeamMemberDetails from './TeamMemberDetails'
 axios.defaults.withCredentials = true
 
