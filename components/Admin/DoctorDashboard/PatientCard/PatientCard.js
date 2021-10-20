@@ -1,6 +1,8 @@
 import React from "react";
 
 const PatientCard = ({ patientCardData }) => {
+  
+  
   return (
     <section>
       <div className="items-center py-4">
@@ -15,18 +17,14 @@ const PatientCard = ({ patientCardData }) => {
               {/* patient info */}
               <div className="mb-8">
                 <h4 className="pt-8 text-xl font-bold tracking-wider text-indigo-800 uppercase title-font">
-                  {patientCardData.patientName}
+                  {patientCardData.patient.name}
                 </h4>
                 <p className="text-sm font-bold text-gray-800 pt-7">
                   {" "}
                   Patient ID :{" "}
                   <span className="font-medium text-gray-500">
-                    {patientCardData.patientId}
+                    1811048
                   </span>{" "}
-                </p>
-                <p className="pt-1 text-sm font-medium text-gray-500">
-                  {" "}
-                  {patientCardData.patientAddress}
                 </p>
               </div>
 
@@ -36,28 +34,28 @@ const PatientCard = ({ patientCardData }) => {
                 <div className="flex items-center justify-between ">
                   <p className="mr-4 font-bold text-gray-800"> Contact No : </p>
                   <span className="text-gray-500 ">
-                    {patientCardData.patientPhone}
+                    +8801815621324
                   </span>{" "}
                 </div>
                 {/* age */}
                 <div className="flex items-center justify-between pt-3">
                   <p className="mr-4 font-bold text-gray-800"> Age : </p>
                   <span className="text-gray-500 ">
-                    {patientCardData.patientAge}
+                    24
                   </span>{" "}
                 </div>
                 {/* gender */}
                 <div className="flex items-center justify-between pt-3">
                   <p className="mr-4 font-bold text-gray-800"> Gender : </p>
                   <span className="text-gray-500 ">
-                    {patientCardData.patientGender}
+                    Male
                   </span>{" "}
                 </div>
                 {/* Blood Group */}
                 <div className="flex items-center justify-between pt-3">
                   <p className="mr-4 font-bold text-gray-800">
                     {" "}
-                    Blood Group :{" "}
+                    Blood Group :{" "}O(+ve)
                   </p>
                   <span className="text-gray-500 ">
                     {patientCardData.patientBloodGroup}
