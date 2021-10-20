@@ -14,6 +14,7 @@ const DoctorRegistrationForm = () => {
     degree: '',
     experience: '',
     image: '',
+    fee: '',
   })
 
   //Handle form state
@@ -47,6 +48,7 @@ const DoctorRegistrationForm = () => {
 
     try {
       // Get Image URL
+      setLoading(true)
       let { data } = await axios.post(
         `${process.env.NEXT_PUBLIC_API}/doctor/upload-image`,
         {
@@ -56,9 +58,11 @@ const DoctorRegistrationForm = () => {
       console.log(data)
       // set image in the state
       setDoctor({ ...doctor, image: data.display_url })
+      setLoading(false)
     } catch (err) {
       console.log(err)
       toast.error('Image upload failed. Try again.')
+      setLoading(false)
     }
   }
 
@@ -178,6 +182,20 @@ const DoctorRegistrationForm = () => {
               <option>Two year</option>
               <option>Three year</option>
             </select>
+          </div>
+
+          <div className='grid grid-cols-1 mt-5 mx-7'>
+            <label className='uppercase md:text-sm text-xs text-gray-500 text-light font-semibold'>
+              Appointment Fee
+            </label>
+            <input
+              className='py-2 px-3 rounded-lg border-2 border-purple-300 mt-1 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent'
+              type='text'
+              onChange={handleChange}
+              value={doctor.fee}
+              name='fee'
+              placeholder='Enter Appointment Fee'
+            />
           </div>
 
           <div className='grid grid-cols-1 mt-5 mx-7'>
