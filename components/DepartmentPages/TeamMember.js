@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import doctorData from './FakeData/doctorData.json';
 import TeamMemberDetails from "./TeamMemberDetails";
 import axios from 'axios'
 
