@@ -33,13 +33,6 @@ const AppointmentModal = ({ doctorId, doctorFee }) => {
     setPatient(newPatientInfo)
   }
 
-  //   let name, value
-  //   const handleChange = e => {
-  //     name = e.target.name
-  //     value = e.target.value
-  //     setPatient({ ...patient, [name]: value })
-  //   }
-
   const fetchPatientApp = async () => {
     const { data } = await axios.get(
       `${process.env.NEXT_PUBLIC_API}/patient-appointments`
@@ -78,6 +71,7 @@ const AppointmentModal = ({ doctorId, doctorFee }) => {
         visible={isModalVisible}
         onOk={handleOk}
         onCancel={handleCancel}
+        footer={null}
       >
         <form onSubmit={handleSubmit}>
           <div>
@@ -138,10 +132,10 @@ const AppointmentModal = ({ doctorId, doctorFee }) => {
           </div>
           <div>
             <button
-              className='w-full px-4 py-2 mt-5 font-bold rounded shadow focus:outline-none focus:ring hover:ring focus:ring-opacity-50 bg-purple-600 focus:ring-violet-600 hover:ring-violet-600 text-coolGray-50'
+              className='w-full px-4 py-2 mt-5 font-bold rounded shadow focus:outline-none focus:ring hover:ring focus:ring-opacity-50 bg-purple-600 focus:ring-violet-600 hover:ring-violet-600 text-white'
               type='submit'
             >
-              Send
+              Proceed to pay
             </button>
           </div>
         </form>
