@@ -115,7 +115,7 @@ const SignUp = ({ handleRender }) => {
             </div>
             <div className='flex flex-col items-start justify-between sm:items-center sm:flex-row'>
               <label className='flex items-center'>
-                <input type='checkbox' className='form-checkbox' />
+                <input type='checkbox' className='form-checkbox' required />
                 <span className='block ml-2 text-xs font-medium text-gray-700 cursor-pointer'>
                   Agree to Privacy Policy
                 </span>

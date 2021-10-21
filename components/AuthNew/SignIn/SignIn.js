@@ -31,7 +31,7 @@ const SignIn = ({ handleRender }) => {
         ...user,
       })
       .then(response => {
-        // console.log('success', response)
+        console.log('success', response.data)
 
         dispatch(
           loggin({

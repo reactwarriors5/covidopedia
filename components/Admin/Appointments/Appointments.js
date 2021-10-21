@@ -2,10 +2,10 @@ import React, { useState } from "react";
 import AppointmentData from "../AppointmentData/AppointmentData";
 import Sidebar from "../Sidebar/Sidebar";
 
-const UploadCourse = () => {
+const Appointments = () => {
   const [sidebarOpen, setSidebarOpen] = useState(false);
   return (
-    <div>
+    <>
       <div className="lg:flex">
         <Sidebar sidebarOpen={sidebarOpen} setSidebarOpen={setSidebarOpen} />
         <AppointmentData
@@ -13,8 +13,8 @@ const UploadCourse = () => {
           setSidebarOpen={setSidebarOpen}
         />
       </div>
-    </div>
+    </>
   );
 };
 
-export default UploadCourse;
+export default Appointments;

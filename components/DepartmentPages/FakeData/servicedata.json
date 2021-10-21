@@ -1,0 +1,22 @@
+[
+    {
+        "serviceName":"Standard Treatment",
+        "description":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus, accusamus.",
+        "iconImage":"https://www.pngrepo.com/png/44997/180/doctor.png"
+    },
+    {
+        "serviceName":"Infection Prevention",
+        "description":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus, accusamus.",
+        "iconImage":"https://www.pngrepo.com/png/43219/180/loupe.png"
+    },
+    {
+        "serviceName":"Well Communication",
+        "description":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus, accusamus.",
+        "iconImage":"https://www.pngrepo.com/png/251286/180/valentines-note.png"
+    },
+    {
+        "serviceName":"25+ Years Experience",
+        "description":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus, accusamus.",
+        "iconImage":"https://www.pngrepo.com/png/276284/180/shield.png"
+    }
+]

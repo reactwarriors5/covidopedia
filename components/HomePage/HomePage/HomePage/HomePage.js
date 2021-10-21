@@ -8,6 +8,7 @@ import Footer from "../Footer/Footer";
 import Testimonial from "../Testimonial/Testimonial";
 import TeamMember from "../../../DepartmentPages/TeamMember";
 import Navbar from "../Navbar/Navbar";
+import CovidPortal from "../CovidPortal/CovidPortal";
 
 const HomePage = () => {
   return (
@@ -15,6 +16,7 @@ const HomePage = () => {
       <Navbar />
       <BannerComp />
       <BookAppointment />
+      <CovidPortal />
       <Departments />
       <TeamMember />
       <Contents />

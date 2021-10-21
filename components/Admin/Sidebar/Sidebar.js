@@ -1,6 +1,11 @@
 import React, { useEffect, useRef } from 'react'
 import Link from 'next/link'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { logout } from '../../../features/userSlice/userSlice'
+import { useDispatch } from 'react-redux'
+import axios from 'axios'
+import { toast } from 'react-toastify'
+import { useRouter } from 'next/router'
 import {
   faTh,
   faUserMd,
@@ -8,31 +13,12 @@ import {
   faSignOutAlt,
   faCalendarCheck,
 } from '@fortawesome/free-solid-svg-icons'
-
-const sideBarMenus = [
-  {
-    title: 'Dashboard',
-    url: '/adminDashboard',
-    icon: faTh,
-  },
-  {
-    title: 'Registered Doctors',
-    url: '/registeredDoctors',
-    icon: faUserMd,
-  },
-  {
-    title: 'Appointments',
-    url: '/allAppointments',
-    icon: faCalendarCheck,
-  },
-  {
-    title: 'Vendors List',
-    url: '/allVendors',
-    icon: faClinicMedical,
-  },
-]
+import { useSelector } from 'react-redux'
+import { selectUser } from '../../../features/userSlice/userSlice'
 
 const Sidebar = ({ sidebarOpen, setSidebarOpen }) => {
+  const user = useSelector(selectUser)
+
   //   const location = useLocation();
   //   const { pathname } = location;
   //   const page = pathname.split("/")[1];
@@ -65,6 +51,17 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }) => {
     document.addEventListener('keydown', keyHandler)
     return () => document.removeEventListener('keydown', keyHandler)
   })
+
+  const dispatch = useDispatch()
+  const router = useRouter()
+
+  const handleLogout = async () => {
+    // make state null
+    const { data } = await axios.get(`${process.env.NEXT_PUBLIC_API}/logout`)
+    dispatch(logout())
+    router.push('/login')
+    toast.warning(data.message)
+  }
 
   return (
     <section className='w-64'>
@@ -108,7 +105,11 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }) => {
 
         <div className='flex items-center p-2 mt-4 space-x-2'>
           <img
-            src='https://source.unsplash.com/100x100/?portrait' // src change when login function applied //
+            src={
+              user !== null && user.user && user.user.role === 'doctor'
+                ? user.user.image
+                : 'https://source.unsplash.com/100x100/?portrait'
+            } // src change when login function applied //
             alt='admin-img'
             className='w-12 h-12 rounded-full'
           />
@@ -122,26 +123,86 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }) => {
         </div>
         <div className='divide-y divide-gray-100'>
           <ul className='my-5 ml-3 space-y-1'>
-            {/* map here */}
-            {sideBarMenus.map(menu => {
-              return (
-                <li
-                  className='flex items-center justify-start space-y-5'
-                  key={menu.title}
-                >
+            {/* sidebar url here */}
+            <li className='flex items-center justify-start space-y-5'>
+              <FontAwesomeIcon size='lg' className='mt-5 mr-3' icon={faTh} />
+              <Link href='/dashboard' className='px-2 py-3 space-x-3 '>
+                <a className='text-lg text-white'>Dashboard</a>
+              </Link>
+            </li>
+
+            {user !== null && user.user && user.user.role === 'user' && (
+              <>
+                <li className='flex items-center justify-start space-y-5'>
                   <FontAwesomeIcon
                     size='lg'
                     className='mt-5 mr-3'
-                    icon={menu.icon}
+                    icon={faCalendarCheck}
                   />
-                  <Link href={menu.url} className='px-2 py-3 space-x-3 '>
-                    <a className='text-lg text-white'>{menu.title}</a>
+                  <Link
+                    href='/allAppointments'
+                    className='px-2 py-3 space-x-3 '
+                  >
+                    <a className='text-lg text-white'>Appointments</a>
                   </Link>
                 </li>
-              )
-            })}
+                <li className='flex items-center justify-start space-y-5'>
+                  <FontAwesomeIcon
+                    size='lg'
+                    className='mt-5 mr-3'
+                    icon={faUserMd}
+                  />
+                  <Link
+                    href='/doctorRegistration'
+                    className='px-2 py-3 space-x-3 '
+                  >
+                    <a className='text-lg text-white'>Register as a Doctor</a>
+                  </Link>
+                </li>
+              </>
+            )}
+
+            {user !== null && user.user && user.user.role === 'doctor' && (
+              <>
+                <li className='flex items-center justify-start space-y-5'>
+                  <FontAwesomeIcon
+                    size='lg'
+                    className='mt-5 mr-3'
+                    icon={faCalendarCheck}
+                  />
+                  <Link href='/myAppointments' className='px-2 py-3 space-x-3 '>
+                    <a className='text-lg text-white'>My Appointments</a>
+                  </Link>
+                </li>
+
+                <li className='flex items-center justify-start space-y-5'>
+                  <FontAwesomeIcon
+                    size='lg'
+                    className='mt-5 mr-3'
+                    icon={faUserMd}
+                  />
+                  <Link href='/myPatients' className='px-2 py-3 space-x-3 '>
+                    <a className='text-lg text-white'>My Patients</a>
+                  </Link>
+                </li>
+              </>
+            )}
+            {user !== null && user.user && user.user.role === 'admin' && (
+              <>
+                <li className='flex items-center justify-start space-y-5'>
+                  <FontAwesomeIcon
+                    size='lg'
+                    className='mt-5 mr-3'
+                    icon={faClinicMedical}
+                  />
+                  <Link href='/allVendors' className='px-2 py-3 space-x-3 '>
+                    <a className='text-lg text-white'>Vendors List</a>
+                  </Link>
+                </li>
+              </>
+            )}
           </ul>
-          {/* static menus here */}
+          {/* logout menu here */}
           <ul className='pt-4 space-y-1 lg:pb-48 pb-96'>
             <li className='flex items-center justify-start ml-3'>
               <FontAwesomeIcon
@@ -149,9 +210,12 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }) => {
                 className='mt-1 mr-3'
                 icon={faSignOutAlt}
               />
-              <Link href='/' className='p-2 space-x-3 rounded-md text-hero'>
-                <a className='text-lg text-white'>Logout</a>
-              </Link>
+              <div
+                onClick={() => handleLogout()}
+                className='p-2 cursor-pointer  space-x-3 rounded-md text-hero'
+              >
+                <p className='text-lg text-white'>Logout</p>
+              </div>
             </li>
           </ul>
         </div>

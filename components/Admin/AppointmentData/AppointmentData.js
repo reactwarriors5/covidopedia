@@ -2,7 +2,7 @@ import React from "react";
 import AppointmentTable from "../AppointmentTable/AppointmentTable";
 import DashboardHeader from "../DashboardHeader/DashboardHeader";
 
-const CourseForm = ({ sidebarOpen, setSidebarOpen }) => {
+const AppointmentData = ({ sidebarOpen, setSidebarOpen }) => {
   return (
     <section className="flex-1">
       {/* common component */}
@@ -18,4 +18,4 @@ const CourseForm = ({ sidebarOpen, setSidebarOpen }) => {
   );
 };
 
-export default CourseForm;
+export default AppointmentData;

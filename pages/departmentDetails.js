@@ -13,8 +13,9 @@ const DepartmentDetails = () => {
       <Navbar />
       <DepartmentBanner />
       <DepartmentSection />
-      <LaboratoryServices />
       <MedicalServices />
+      <LaboratoryServices />
+     
       {/* <TeamMember /> */}
       <DepartmentFaq />
     </div>

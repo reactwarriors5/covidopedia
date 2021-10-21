@@ -1,13 +1,15 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Image from 'next/image'
+import { Modal, Button } from 'antd'
+import AppointmentModal from '../../ServiceDetailsPage/Modal/AppointmentModal'
 
-const DoctorDetails = () => {
+const DoctorDetails = ({ doctor }) => {
   return (
     <div className='px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-2 lg:py-20'>
       <div className='flex flex-col overflow-hidden bg-white border rounded shadow-sm lg:flex-row sm:mx-auto'>
         <div className='relative lg:w-1/2'>
           <img
-            src='https://us.123rf.com/450wm/rido/rido2002/rido200200099/141040315-happy-smiling-african-doctor-looking-at-camera-in-medical-office-portrait-of-black-man-doctor-workin.jpg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=750&amp;w=1260'
+            src={doctor.image}
             alt=''
             className='object-cover w-full lg:absolute h-80 lg:h-full'
           />
@@ -21,10 +23,10 @@ const DoctorDetails = () => {
         </div>
         <div className='flex flex-col justify-center p-8 bg-white lg:p-16 lg:pl-10 lg:w-1/2'>
           <h5 className='mb-3 text-3xl font-extrabold leading-none sm:text-4xl'>
-            Smith Johnson
+            {doctor.name}
           </h5>
           <p className='mb-5 text-gray-800'>
-            <span className='font-bold'>DERMATOLOGIST</span>
+            <span className='font-bold'>{doctor.department}</span>
           </p>
           <p className='mb-5 text-gray-800'>
             Highly qualified and practical experienced doctor with a diversity
@@ -35,6 +37,9 @@ const DoctorDetails = () => {
           <p className='mb-5 text-gray-800'>Email info@creativesplanet.com</p>
           <p className='mb-5 text-gray-800'>Website www.creativesplanet.com</p>
           <p className='mb-5 text-gray-800'>Fax 123456789</p>
+          {doctor && doctor.fee && (
+            <AppointmentModal doctorId={doctor._id} doctorFee={doctor.fee} />
+          )}
         </div>
       </div>
     </div>

@@ -1,8 +1,9 @@
 import React from 'react'
 import axios from 'axios'
-import { loggin } from '../../../../features/userSlice/userSlice'
+import { logout } from '../../../../features/userSlice/userSlice'
 import Link from 'next/link'
 import { toast } from 'react-toastify'
+
 // import logo from "../../../../images/logo-n.png";
 import { Fragment } from 'react'
 import { Popover, Transition } from '@headlessui/react'
@@ -11,23 +12,21 @@ import { useDispatch } from 'react-redux'
 import { useRouter } from 'next/router'
 import { useSelector } from 'react-redux'
 import { selectUser } from '../../../../features/userSlice/userSlice'
+
 const Navbar = () => {
   const dispatch = useDispatch()
   const router = useRouter()
   // Logout user and clear state
-  const logout = async () => {
+  const handleLogout = async e => {
+    e.preventDefault()
     // make state null
     const { data } = await axios.get(`${process.env.NEXT_PUBLIC_API}/logout`)
-    window.location.reload()
-    // dispatch(
-    //   loggin({
-    //     user: null,
-    //   })
-    // )
+    dispatch(logout())
+    router.push('/login')
     toast.warning(data.message)
   }
   const user = useSelector(selectUser)
-
+  console.log(user)
   return (
     <section className='sticky z-30 drop-shadow-lg'>
       <Popover className='relative bg-white'>
@@ -35,7 +34,7 @@ const Navbar = () => {
           <div className='flex items-center justify-between py-6 border-b-2 border-gray-100 md:justify-start md:space-x-10'>
             <div className='flex justify-start lg:w-0 lg:flex-1'>
               <Link href='/' className='sr-only'>
-                <a className='font-mono text-2xl font-semibold tracking-widest text-indigo-600'>
+                <a className='font-mono text-3xl font-semibold tracking-widest text-indigo-800'>
                   COVIDOPEDIA
                 </a>
                 {/* <img className="w-auto h-8 sm:h-10" src={logo} alt="" /> */}
@@ -71,13 +70,13 @@ const Navbar = () => {
                 )}
                 {user !== null && user.user && (
                   <>
-                    <Link href='/adminDashboard'>
+                    <Link href='/dashboard'>
                       <a className='text-base font-semibold text-gray-800 whitespace-nowrap hover:text-gray-900'>
                         {user?.user?.name}
                       </a>
                     </Link>
                     <button
-                      onClick={logout}
+                      onClick={e => handleLogout(e)}
                       className='text-base px-2 py-2 rounded-lg font-semibold text-white whitespace-nowrap bg-indigo-500 '
                     >
                       Log Out
@@ -130,7 +129,11 @@ const Navbar = () => {
                   </Link>
                 </div>
                 <div>
-                  <Link href='#' onClick={logout}>
+                  <Link
+                    href='#'
+                    // onClick={logout}
+                    onClick={e => handleLogout(e)}
+                  >
                     <a className='text-base font-semibold text-gray-800 whitespace-nowrap hover:text-gray-900'>
                       Log Out
                     </a>
