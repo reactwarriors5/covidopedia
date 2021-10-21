@@ -37,6 +37,9 @@ const DoctorDetails = ({ doctor }) => {
           <p className='mb-5 text-gray-800'>Email info@creativesplanet.com</p>
           <p className='mb-5 text-gray-800'>Website www.creativesplanet.com</p>
           <p className='mb-5 text-gray-800'>Fax 123456789</p>
+          <h1 className='mb-3 text-3xl font-extrabold leading-none sm:text-4xl'>
+            Make Appointment
+          </h1>
           {doctor && doctor.fee && (
             <AppointmentModal doctorId={doctor._id} doctorFee={doctor.fee} />
           )}
