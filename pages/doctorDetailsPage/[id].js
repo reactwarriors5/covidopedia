@@ -27,14 +27,18 @@ const ServiceDetailsPage = () => {
 
   return (
     <div>
-      <Navbar />
-      <Banner />
-      {doctor && <DoctorDetails doctor={doctor} />}
-      <AboutDoctor />
-      <SkillsOfDoctor />
-      <DoctorExperience />
-      <ContactMe />
-      <Footer />
+      {doctor && (
+        <>
+          <Navbar />
+          <Banner />
+          <DoctorDetails doctor={doctor} />
+          <AboutDoctor />
+          <SkillsOfDoctor />
+          <DoctorExperience />
+          <ContactMe />
+          <Footer />
+        </>
+      )}
     </div>
   )
 }
