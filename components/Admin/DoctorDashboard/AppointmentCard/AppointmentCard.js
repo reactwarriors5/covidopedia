@@ -1,6 +1,7 @@
 import React from "react";
 
 const AppointmentCard = ({ appointmentCardData }) => {
+  // console.log(appointmentCardData)
   return (
     <div className="items-center px-8 py-3 lg:px-8">
       <div className="p-6 mx-auto bg-white border rounded-lg shadow-md lg:w-full">
@@ -9,26 +10,27 @@ const AppointmentCard = ({ appointmentCardData }) => {
           <div className="flex items-start justify-start w-full lg:justify-start lg:w-1/2">
             {/* image here */}
             <img
-              src="https://source.unsplash.com/100x100/?portrait"
+              src="https://storage.googleapis.com/indie-hackers.appspot.com/avatars/300x300_DUFTlhOdmSdoT9F4r1Woo40pyML2.webp"
               alt="placeholder"
               className="rounded-lg"
             />
             {/* patient details here */}
             <div className="flex flex-col w-full text-gray-500 lg:ml-4">
               <h4 className="my-4 text-lg font-bold tracking-widest text-indigo-600 uppercase lg:mt-0 title-font">
-                {appointmentCardData.patientName}
+                {appointmentCardData.patient.name}
               </h4>
               <p className="mb-3 text-base leading-relaxed text-gray-600">
-                {appointmentCardData.appointmentTime}
+                {appointmentCardData.createdAt}
               </p>
               <p className="mb-3 text-base leading-relaxed text-gray-600">
-                {appointmentCardData.patientAddress}
+                {/* {appointmentCardData.patientAddress} */}
+                Dhaka
               </p>
               <p className="mb-3 text-base leading-relaxed text-gray-600">
-                {appointmentCardData.patientEmail}
+                {/* {appointmentCardData.patientEmail} */}
               </p>
               <p className="mb-3 text-base leading-relaxed text-gray-600">
-                {appointmentCardData.patientPhone}
+                {/* {appointmentCardData.patientPhone} */}
               </p>
             </div>
           </div>
