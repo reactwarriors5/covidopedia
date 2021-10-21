@@ -33,12 +33,6 @@ const AppointmentModal = ({ doctorId, doctorFee }) => {
     setPatient(newPatientInfo)
   }
 
-  const fetchPatientApp = async () => {
-    const { data } = await axios.get(
-      `${process.env.NEXT_PUBLIC_API}/patient-appointments`
-    )
-    console.log(data)
-  }
   const handleSubmit = async e => {
     e.preventDefault()
     console.log(patient)
@@ -63,9 +57,7 @@ const AppointmentModal = ({ doctorId, doctorFee }) => {
         Book an Appointment
       </Button>
       <br />
-      <Button type='primary' onClick={() => fetchPatientApp()}>
-        Get Patient Appointments
-      </Button>
+
       <Modal
         title='Appointment'
         visible={isModalVisible}
