@@ -15,7 +15,7 @@
 }
 
 .btn-brand-alt {
-  @apply px-8 py-3 font-semibold text-white bg-indigo-600 border-2 border-indigo-700 rounded-sm hover:bg-indigo-700 hover:border-transparent;
+  @apply px-8 py-3 font-semibold text-white bg-indigo-600 border-2 border-indigo-700 rounded-sm hover:text-white hover:bg-indigo-800 hover:border-transparent;
 }
 .btn-home {
   @apply px-6 py-2 font-semibold text-white bg-indigo-600 border-2 border-indigo-700 rounded-md hover:bg-indigo-700 hover:border-transparent;
