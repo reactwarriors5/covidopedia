@@ -5,33 +5,6 @@ import DashboardHeader from "../../DashboardHeader/DashboardHeader";
 import axios from 'axios'
 axios.defaults.withCredentials = true
 
-// const appointmentCardData = [
-//   {
-//     patientId: "P0001",
-//     patientName: "Shakil Atik",
-//     patientPhone: "+8801555222555",
-//     appointmentTime: "06 OCT 2021, 10.15 A.M",
-//     patientEmail: "example@atik.com",
-//     patientAddress: "Savar, Dhaka, Bangladesh",
-//   },
-//   {
-//     patientId: "P0001",
-//     patientName: "Shakil Atik",
-//     patientPhone: "+8801555222555",
-//     appointmentTime: "06 OCT 2021, 10.15 A.M",
-//     patientEmail: "example@atik.com",
-//     patientAddress: "Savar, Dhaka, Bangladesh",
-//   },
-//   {
-//     patientId: "P0001",
-//     patientName: "Shakil Atik",
-//     patientPhone: "+8801555222555",
-//     appointmentTime: "06 OCT 2021, 10.15 A.M",
-//     patientEmail: "example@atik.com",
-//     patientAddress: "Savar, Dhaka, Bangladesh",
-//   },
-// ];
-
 const MyAppointmentData = ({ sidebarOpen, setSidebarOpen }) => {
   const [appointmentCardData,setAppointmentCardData]=useState([]);
 
