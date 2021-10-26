@@ -3,12 +3,12 @@ import { useRouter } from 'next/router'
 import axios from 'axios'
 axios.defaults.withCredentials = true
 import Navbar from '../../components/HomePage/HomePage/Navbar/Navbar'
-import AboutDoctor from '../../components/ServiceDetailsPage/AboutDoctor/AboutDoctor'
-import Banner from '../../components/ServiceDetailsPage/Banner/Banner'
-import ContactMe from '../../components/ServiceDetailsPage/ContactMe/ContactMe'
+// import AboutDoctor from '../../components/ServiceDetailsPage/AboutDoctor/AboutDoctor'
+import Banner from '../../components/ServiceDetailsPage/Banner/Banner';
 import DoctorDetails from '../../components/ServiceDetailsPage/DoctorDetails/DoctorDetails'
-import DoctorExperience from '../../components/ServiceDetailsPage/DoctorExperience/DoctorExperience'
-import SkillsOfDoctor from '../../components/ServiceDetailsPage/SkillsOfDoctor/SkillsOfDoctor'
+import DoctorDetailsTab from "../../components/ServiceDetailsPage/DoctorDetailsTab/DoctorDetailsTab"
+// import DoctorExperience from '../../components/ServiceDetailsPage/DoctorExperience/DoctorExperience'
+// import SkillsOfDoctor from '../../components/ServiceDetailsPage/SkillsOfDoctor/SkillsOfDoctor'
 import Footer from '../../components/HomePage/HomePage/Footer/Footer'
 
 const ServiceDetailsPage = () => {
@@ -26,14 +26,14 @@ const ServiceDetailsPage = () => {
   }, [id])
 
   return (
-    <div>
+    <div className="bg-gray-100">
       <Navbar />
       <Banner />
       {doctor && <DoctorDetails doctor={doctor} />}
-      <AboutDoctor />
+      <DoctorDetailsTab />
+      {/* <AboutDoctor />
       <SkillsOfDoctor />
-      <DoctorExperience />
-      <ContactMe />
+      <DoctorExperience /> */}
       <Footer />
     </div>
   )
