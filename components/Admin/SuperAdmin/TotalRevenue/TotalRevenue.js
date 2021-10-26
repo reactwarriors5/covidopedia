@@ -1,5 +1,6 @@
 import React from 'react';
 import Sidebar from '../../Sidebar/Sidebar';
+import BarChart from '../BarChart/BarChart';
 import RevenueData from '../RevenueData/RevenueData';
 
 const TotalRevenue = ({ sidebarOpen, setSidebarOpen }) => {
@@ -12,6 +13,8 @@ const TotalRevenue = ({ sidebarOpen, setSidebarOpen }) => {
                     sidebarOpen={sidebarOpen}
                     setSidebarOpen={setSidebarOpen}
                 />
+
+             
             </div>
         </>
     );
