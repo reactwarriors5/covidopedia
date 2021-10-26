@@ -1,9 +1,10 @@
-import React from 'react';
-import { useSelector } from 'react-redux';
-import { selectADoctor } from '../../../features/doctorSlice/doctorSlice';
+import React from 'react'
+// import { useSelector } from 'react-redux'
+// import { selectADoctor } from '../../../features/doctorSlice/doctorSlice'
 // violet
 
 const Banner = () => {
+
     const doctorUser = useSelector(selectADoctor)
     console.log(doctorUser);
     return (

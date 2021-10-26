@@ -1,35 +1,22 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import AppointmentCard from "../AppointmentCard/AppointmentCard";
 import DashboardHeader from "../../DashboardHeader/DashboardHeader";
 
-const appointmentCardData = [
-  {
-    patientId: "P0001",
-    patientName: "Shakil Atik",
-    patientPhone: "+8801555222555",
-    appointmentTime: "06 OCT 2021, 10.15 A.M",
-    patientEmail: "example@atik.com",
-    patientAddress: "Savar, Dhaka, Bangladesh",
-  },
-  {
-    patientId: "P0001",
-    patientName: "Shakil Atik",
-    patientPhone: "+8801555222555",
-    appointmentTime: "06 OCT 2021, 10.15 A.M",
-    patientEmail: "example@atik.com",
-    patientAddress: "Savar, Dhaka, Bangladesh",
-  },
-  {
-    patientId: "P0001",
-    patientName: "Shakil Atik",
-    patientPhone: "+8801555222555",
-    appointmentTime: "06 OCT 2021, 10.15 A.M",
-    patientEmail: "example@atik.com",
-    patientAddress: "Savar, Dhaka, Bangladesh",
-  },
-];
+import axios from 'axios'
+axios.defaults.withCredentials = true
 
 const MyAppointmentData = ({ sidebarOpen, setSidebarOpen }) => {
+  const [appointmentCardData,setAppointmentCardData]=useState([]);
+
+  useEffect(() => {
+    const getAppointments = async () => {
+      const { data } = await axios.get(`${process.env.NEXT_PUBLIC_API}/doctor-appointments`)
+      setAppointmentCardData(data)
+      console.log(data)
+    }
+    getAppointments()
+  }, [])
+
   return (
     <section className="flex-1">
       {/* common component */}

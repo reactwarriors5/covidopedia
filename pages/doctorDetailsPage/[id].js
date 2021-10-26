@@ -27,6 +27,8 @@ const ServiceDetailsPage = () => {
 
   return (
     <div className="bg-gray-100">
+    {doctor && (
+     <>
       <Navbar />
       <Banner />
       {doctor && <DoctorDetails doctor={doctor} />}
@@ -35,7 +37,8 @@ const ServiceDetailsPage = () => {
       <SkillsOfDoctor />
       <DoctorExperience /> */}
       <Footer />
-    </div>
+    </>
+      )}
   )
 }
 

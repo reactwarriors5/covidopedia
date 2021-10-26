@@ -1,40 +1,19 @@
-import React from "react";
-import { useState } from "react";
-
-const appointmentInfo = [
-  {
-    doctorName: "Jane Cooper",
-    patientName: "Morgan Cooper",
-    department: "Neurology",
-    amount: "$300",
-    status: "Confirmed",
-    appointmentTime: "09 Oct, 2021, GMT 6.30 p.m.",
-    image:
-      "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=4&w=256&h=256&q=60",
-  },
-  {
-    doctorName: "Jane Cooper",
-    patientName: "Morgan Cooper",
-    department: "Neurology",
-    amount: "$300",
-    status: "Confirmed",
-    appointmentTime: "09 Oct, 2021, GMT 6.30 p.m.",
-    image:
-      "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=4&w=256&h=256&q=60",
-  },
-  {
-    doctorName: "Jane Cooper",
-    patientName: "Morgan Cooper",
-    department: "Neurology",
-    amount: "$300",
-    status: "Confirmed",
-    appointmentTime: "09 Oct, 2021, GMT 6.30 p.m.",
-    image:
-      "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=4&w=256&h=256&q=60",
-  },
-];
+import React, { useEffect, useState } from "react";
+import axios from 'axios'
+axios.defaults.withCredentials = true
 
 const AppointmentTable = () => {
+  const [appointmentInfo,setAppointmentInfo]=useState([]);
+
+  const getAppointments = async () => {
+    const { data } = await axios.get(`${process.env.NEXT_PUBLIC_API}/patient-appointments`)
+    setAppointmentInfo(data)
+    console.log(data)
+  }
+
+  useEffect(() => {
+    getAppointments()
+  }, [])
   return (
     <section>
       <div className="flex flex-col">
@@ -92,41 +71,41 @@ const AppointmentTable = () => {
                           <div className="flex-shrink-0 w-10 h-10">
                             <img
                               className="w-10 h-10 rounded-full"
-                              src={appointmentData.image}
+                              src={appointmentData.doctor.image}
                               alt=""
                             />
                           </div>
                           <div className="ml-4">
                             <div className="text-sm font-medium text-gray-900">
-                              {appointmentData.doctorName}
+                              {appointmentData.doctor.name}
                             </div>
                           </div>
                         </div>
                       </td>
                       <td className="px-6 py-4 whitespace-nowrap">
                         <div className="text-sm text-gray-500">
-                          {appointmentData.department}
+                          {appointmentData.doctor.department}
                         </div>
                       </td>
                       <td className="px-6 py-4 whitespace-nowrap">
                         <div className="text-sm text-gray-500">
-                          {appointmentData.patientName}
+                          {appointmentData.name}
                         </div>
                       </td>
                       <td className="px-6 py-4 text-sm text-gray-500 whitespace-nowrap">
                         <div className="text-sm text-gray-500">
-                          {appointmentData.appointmentTime}
+                        12/08/2021
                         </div>
                       </td>
 
                       <td className="px-6 py-4 text-sm text-gray-500 whitespace-nowrap">
                         <div className="text-sm text-gray-500">
-                          {appointmentData.amount}
+                          $70
                         </div>
                       </td>
                       <td className="px-6 py-4 text-sm text-gray-500 whitespace-nowrap">
                         <div className="text-sm text-gray-500">
-                          {appointmentData.status}
+                          pending
                         </div>
                       </td>
                     </tr>

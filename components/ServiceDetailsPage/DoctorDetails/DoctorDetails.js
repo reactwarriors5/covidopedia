@@ -58,6 +58,7 @@ const DoctorDetails = ({ doctor }) => {
           <p className="ml-3 mt-3 text-gray-500 font-semibold">${doctor.fee}</p>
           </div>
           <div>
+         
           {doctor && doctor.fee && (
             <AppointmentModal doctorId={doctor._id} doctorFee={doctor.fee} />
           )}

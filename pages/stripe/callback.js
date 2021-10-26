@@ -1,19 +1,21 @@
 import { useEffect } from 'react'
 import { SyncOutlined } from '@ant-design/icons'
+import { useDispatch } from 'react-redux'
+import { loggin } from '../../features/userSlice/userSlice'
 import axios from 'axios'
 axios.defaults.withCredentials = true
 
 const StripeCallback = () => {
+  const dispatch = useDispatch()
   useEffect(() => {
     axios
       .post(`${process.env.NEXT_PUBLIC_API}/get-account-status`)
-      .then(res => {
-        console.log(res)
-        // dispatch({
-        //   type: 'LOGIN',
-        //   payload: res.data,
-        // })
-        // window.localStorage.setItem('user', JSON.stringify(res.data))
+      .then(response => {
+        dispatch(
+          loggin({
+            user: response.data,
+          })
+        )
         window.location.href = '/dashboard'
       })
   }, [])

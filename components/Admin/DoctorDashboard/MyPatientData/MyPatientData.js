@@ -1,44 +1,21 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import axios from 'axios'
 import DashboardHeader from "../../DashboardHeader/DashboardHeader";
 import PatientCard from "../PatientCard/PatientCard";
-
-const patientCardData = [
-  {
-    patientId: "P0001",
-    patientName: "Shakil Atik",
-    patientPhone: "+8801555222555",
-    appointmentTime: "06 OCT 2021, 10.15 A.M",
-    patientEmail: "example@atik.com",
-    patientAddress: "Savar, Dhaka, Bangladesh",
-    patientAge: "20",
-    patientGender: "Male",
-    patientBloodGroup: "B +",
-  },
-  {
-    patientId: "P0001",
-    patientName: "Shakil Atik",
-    patientPhone: "+8801555222555",
-    appointmentTime: "06 OCT 2021, 10.15 A.M",
-    patientEmail: "example@atik.com",
-    patientAddress: "Savar, Dhaka, Bangladesh",
-    patientAge: "20",
-    patientGender: "Male",
-    patientBloodGroup: "B +",
-  },
-  {
-    patientId: "P0001",
-    patientName: "Shakil Atik",
-    patientPhone: "+8801555222555",
-    appointmentTime: "06 OCT 2021, 10.15 A.M",
-    patientEmail: "example@atik.com",
-    patientAddress: "Savar, Dhaka, Bangladesh",
-    patientAge: "20",
-    patientGender: "Male",
-    patientBloodGroup: "B +",
-  },
-];
+axios.defaults.withCredentials = true
 
 const MyPatientData = ({ sidebarOpen, setSidebarOpen }) => {
+  const [patientCardData,setPatientCardData]=useState([]);
+
+  const getAppointments = async () => {
+    const { data } = await axios.get(`${process.env.NEXT_PUBLIC_API}/doctor-appointments`)
+    setPatientCardData(data)
+    console.log(data)
+  }
+
+  useEffect(() => {
+    getAppointments()
+  }, [])
   return (
     <section className="flex-1">
       {/* common component */}

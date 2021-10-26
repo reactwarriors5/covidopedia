@@ -1,6 +1,5 @@
-import React, { useState, useEffect } from 'react'
+import React, { useEffect, useState } from "react";
 import axios from 'axios'
-import doctorData from './FakeData/doctorData.json'
 import TeamMemberDetails from './TeamMemberDetails'
 axios.defaults.withCredentials = true
 

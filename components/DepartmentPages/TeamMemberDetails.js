@@ -1,20 +1,8 @@
 import React from 'react'
 import Link from 'next/link'
-import { useDispatch } from 'react-redux'
-import { doctorInfo } from '../../features/doctorSlice/doctorSlice'
 
 const TeamMemberDetails = props => {
-  const { name, department, image, _id } = props.doctor
-
-  const dispatch = useDispatch()
-
-  const handleDoctor = () => {
-    dispatch(
-      doctorInfo({
-        doctor: props.doctor,
-      })
-    )
-  }
+  const { name, biography, department, image, _id } = props.doctor
 
   return (
     <div className='flex flex-col items-center'>
@@ -26,10 +14,8 @@ const TeamMemberDetails = props => {
       <div className='flex flex-col items-center'>
         <p className='text-lg font-bold'>{name}</p>
         <p className='text-sm text-gray-800'>{department}</p>
-        <button
-          onClick={handleDoctor}
-          className='flex items-center justify-center mt-4'
-        >
+        
+        <button className='flex items-center justify-center mt-4'>
           <Link
             href={`/doctorDetailsPage/${_id}`}
             className='p-1 border border-gray-300 rounded font-body hover:bg-indigo-500 hover:text-white hover:border-none'

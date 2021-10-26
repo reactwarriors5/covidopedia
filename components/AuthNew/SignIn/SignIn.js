@@ -38,7 +38,6 @@ const SignIn = ({ handleRender }) => {
             user: response.data,
           })
         )
-        window.localStorage.setItem('user', JSON.stringify(response.data))
         toast.info('Welcome to Covidopedia!')
         router.push('/')
       })

@@ -7,11 +7,16 @@ import { useRouter } from "next/router";
 import { useSelector } from "react-redux";
 import { selectUser } from "../../../features/userSlice/userSlice";
 axios.defaults.withCredentials = true
+import { useSelector } from 'react-redux'
+import { selectUser } from '../../../features/userSlice/userSlice'
+import { useRouter } from 'next/router'
 
 const AppointmentModal = ({ doctorId, doctorFee }) => {
+
   const user = useSelector(selectUser);
   const router = useRouter();
-
+  const user = useSelector(selectUser)
+  const [visible, setVisible] = useState(false)
   const [isModalVisible, setIsModalVisible] = useState(false);
   const [patient, setPatient] = useState({
     name: '',
@@ -22,17 +27,19 @@ const AppointmentModal = ({ doctorId, doctorFee }) => {
     fee: doctorFee,
   })
 
+
+
   const showModal = () => {
-    setIsModalVisible(true)
-  }
+    setIsModalVisible(true);
+  };
 
   const handleOk = () => {
-    setIsModalVisible(false)
-  }
+    setIsModalVisible(false);
+  };
 
   const handleCancel = () => {
-    setIsModalVisible(false)
-  }
+    setIsModalVisible(false);
+  };
 
   const handleChange = e => {
     const newPatientInfo = { ...patient }
@@ -53,8 +60,10 @@ const AppointmentModal = ({ doctorId, doctorFee }) => {
   //   )
   //   console.log(data)
   // }
+
   const handleSubmit = async e => {
     e.preventDefault()
+    if (user === null) return router.push('/login')
     console.log(patient)
     
     // check if user is logged in//
@@ -71,8 +80,6 @@ const AppointmentModal = ({ doctorId, doctorFee }) => {
 
     const stripe = await loadStripe(process.env.NEXT_PUBLIC_STRIPE_KEY)
     stripe.redirectToCheckout({ sessionId: data })
-
-    setIsModalVisible(false)
   }
 
   return (
@@ -80,11 +87,8 @@ const AppointmentModal = ({ doctorId, doctorFee }) => {
       <button className="btn-home mt-4 uppercase tracking-wider" onClick={showModal}>
         Book an Appointment
       </button>
-      {/* <br />
-      <Button type='primary' onClick={() => fetchPatientApp()}>
-        Get Patient Appointments
-      </Button> */}
-      <Modal
+     
+     <Modal
         title='Appointment'
         visible={isModalVisible}
         onOk={handleOk}
