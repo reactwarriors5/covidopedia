@@ -37,8 +37,7 @@ const AppointmentCard = ({ appointmentCardData }) => {
           {/* actions & buttons div -- right */}
           <div className="flex items-center justify-start">
             <button className="ml-3 btn-home">View</button>
-            <button className="ml-3 btn-home">Accept</button>
-            <button className="ml-3 btn-home">Cancel</button>
+            <button className="ml-3 btn-home">Process</button>
           </div>
         </div>
       </div>

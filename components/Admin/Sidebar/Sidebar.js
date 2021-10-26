@@ -187,7 +187,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }) => {
                 </li>
               </>
             )}
-            {user !== null && user.user && user.user.role === 'admin' && (
+            {/* {user !== null && user.user && user.user.role === 'admin' && ( */}
               <>
                 <li className='flex items-center justify-start space-y-5'>
                   <FontAwesomeIcon
@@ -195,12 +195,22 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }) => {
                     className='mt-5 mr-3'
                     icon={faClinicMedical}
                   />
-                  <Link href='/allVendors' className='px-2 py-3 space-x-3 '>
-                    <a className='text-lg text-white'>Vendors List</a>
+                  <Link href='/totalRevenue' className='px-2 py-3 space-x-3 '>
+                    <a className='text-lg text-white'>Total Revenue</a>
+                  </Link>
+                </li>
+                <li className='flex items-center justify-start space-y-5'>
+                  <FontAwesomeIcon
+                    size='lg'
+                    className='mt-5 mr-3'
+                    icon={faClinicMedical}
+                  />
+                  <Link href='/invoices' className='px-2 py-3 space-x-3 '>
+                    <a className='text-lg text-white'>Invoices</a>
                   </Link>
                 </li>
               </>
-            )}
+            
           </ul>
           {/* logout menu here */}
           <ul className='pt-4 space-y-1 lg:pb-48 pb-96'>

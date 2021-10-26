@@ -5,11 +5,11 @@ import { faCheck } from '@fortawesome/free-solid-svg-icons'
 
 const SkillsOfDoctor = () => {
     return (
-        <section class="lg:mx-20 mx-4 body-font overflow-hidden">
-            <div class=" py-24 mx-auto">
+        <section class="lg:mx-20 mx-4 overflow-hidden">
+            {/* <div class=" py-24 mx-auto"> */}
                 <div class="flex flex-wrap -m-12">
-                <div class="p-12 md:w-1/2 flex flex-col items-start">
-                    <h2 class="text-4xl font-bold">Skills of Doctor</h2><br />
+                <div class="p-12 md:w-1/2 flex flex-col items-start my-8">
+                    <h4 class="text-2xl text-indigo-700 font-semibold">Skills of Doctor</h4>
                     <p class="leading-relaxed mb-8">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.</p>
                     <div class="w-full">
                         <div class="relative pt-1">
@@ -71,8 +71,9 @@ const SkillsOfDoctor = () => {
                         </div>
                     </div>
                 </div>
-                <div class="p-12 md:w-1/2 flex flex-col items-start">
-                    <h2 class="text-4xl font-bold">Benefits of Doctor</h2><br />
+                {/* benefits -- static */}
+                <div class="p-12 md:w-1/2 flex flex-col items-start my-8">
+                    <h2 class="text-2xl text-indigo-700 font-semibold">Benefits of Doctor</h2>
                     <p class="leading-relaxed mb-8">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.</p>
                     <div class="grid grid-cols-2 gap-3">
                         <div class="">
@@ -82,7 +83,7 @@ const SkillsOfDoctor = () => {
                         </div>
                         <div className="flex justify-start mt-2 gap-2">
                             <FontAwesomeIcon className='bg-blue-300 mt-1' icon={faCheck}></FontAwesomeIcon>
-                            <p>Excellence in Healthcare every</p>
+                            <p>Excellence in each healthcare </p>
                         </div>
                         <div className="flex justify-start mt-2 gap-2">
                             <FontAwesomeIcon className='bg-blue-300 mt-1' icon={faCheck}></FontAwesomeIcon>
@@ -130,7 +131,7 @@ const SkillsOfDoctor = () => {
                     </div>
           </div>
         </div>
-      </div>
+      {/* </div> */}
     </section>
   );
 };

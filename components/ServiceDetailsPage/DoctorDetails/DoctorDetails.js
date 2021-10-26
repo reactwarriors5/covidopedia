@@ -2,47 +2,67 @@ import React, { useState } from 'react'
 import Image from 'next/image'
 import { Modal, Button } from 'antd'
 import AppointmentModal from '../../ServiceDetailsPage/Modal/AppointmentModal'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import {faMoneyBillAlt, faThumbsUp, faMapMarkerAlt, faComment, faPhoneAlt } from '@fortawesome/free-solid-svg-icons'
+
 
 const DoctorDetails = ({ doctor }) => {
   return (
-    <div className='px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-2 lg:py-20'>
-      <div className='flex flex-col overflow-hidden bg-white border rounded shadow-sm lg:flex-row sm:mx-auto'>
-        <div className='relative lg:w-1/2'>
+    <div className='bg-white px-4 py-8 my-8 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:container lg:px-2'>
+      {/* flex -- two divs */}
+      <div className="flex justify-between items-start">
+        {/* left div -- doc img and other infos */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:w-1/2">
+          {/* doc img div */}
+          <div className="ml-8">
           <img
             src={doctor.image}
             alt=''
-            className='object-cover w-full lg:absolute h-80 lg:h-full'
+            className='object-cover h-30'
           />
-          <svg
-            className='absolute top-0 right-0 hidden h-full text-white lg:inline-block'
-            viewBox='0 0 20 104'
-            fill='currentColor'
-          >
-            <polygon points='17.3036738 5.68434189e-14 20 5.68434189e-14 20 104 0.824555778 104'></polygon>
-          </svg>
-        </div>
-        <div className='flex flex-col justify-center p-8 bg-white lg:p-16 lg:pl-10 lg:w-1/2'>
-          <h5 className='mb-3 text-3xl font-extrabold leading-none sm:text-4xl'>
+          </div>
+          
+          {/* doc info div */}
+        <div className="mr-3 font-semibold text-gray-500">
+        <h5 className='text-xl font-bold sm:text-4xl'>
             {doctor.name}
           </h5>
-          <p className='mb-5 text-gray-800'>
-            <span className='font-bold'>{doctor.department}</span>
+          <p className='pb-2 font-semibold text-gray-500'>BDS, MDS - Oral & Maxillofacial Surgery
           </p>
-          <p className='mb-5 text-gray-800'>
-            Highly qualified and practical experienced doctor with a diversity
-            of skills and special interests. Always prepared for all type of
-            surgeries and emergencies cases.
+          <p className='pb-2 font-semibold text-gray-500'>Department of <span className='text-indigo-500 font-semibold'>{doctor.department}</span> 
           </p>
-          <p className='mb-5 text-gray-800'>Phone 123456789</p>
-          <p className='mb-5 text-gray-800'>Email info@creativesplanet.com</p>
-          <p className='mb-5 text-gray-800'>Website www.creativesplanet.com</p>
-          <p className='mb-5 text-gray-800'>Fax 123456789</p>
-          <h1 className='mb-3 text-3xl font-extrabold leading-none sm:text-4xl'>
-            Make Appointment
-          </h1>
+          {/* location div */}
+          <div className="flex items-center justify-start -mt-4">
+          <FontAwesomeIcon icon={faMapMarkerAlt} />
+          <p className="ml-2 mt-3">Dhaka, Bangladesh - <span className='text-blue-500 font-semibold'>Get Directions</span></p>
+          </div>
+          </div>
+          </div> 
+
+        {/* right div -- doc payment and appointment infos */}
+        <div className="-space-y-2 mr-8 text-md">
+        <div className="flex items-center justify-start">
+          <FontAwesomeIcon icon={faThumbsUp} />
+          <p className="ml-3 mt-3 text-gray-500 font-semibold">97%</p>
+          </div>
+          <div className="flex items-center justify-start">
+          <FontAwesomeIcon icon={faComment} />
+          <p className="ml-3 mt-3 text-gray-500 font-semibold">35 Feedbacks</p>
+          </div>
+          <div className="flex items-center justify-start">
+          <FontAwesomeIcon icon={faPhoneAlt} />
+          <p className="ml-3 mt-3 text-gray-500 font-semibold">+880-1432-456987</p>
+          </div>
+          <div className="flex items-center justify-start">
+          <FontAwesomeIcon icon={faMoneyBillAlt} />
+          <p className="ml-3 mt-3 text-gray-500 font-semibold">${doctor.fee}</p>
+          </div>
+          <div>
+         
           {doctor && doctor.fee && (
             <AppointmentModal doctorId={doctor._id} doctorFee={doctor.fee} />
           )}
+          </div>
         </div>
       </div>
     </div>
@@ -50,3 +70,14 @@ const DoctorDetails = ({ doctor }) => {
 }
 
 export default DoctorDetails
+
+
+
+
+
+
+
+
+
+
+
