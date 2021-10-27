@@ -3,7 +3,6 @@ import { useRouter } from 'next/router'
 import axios from 'axios'
 axios.defaults.withCredentials = true
 import Navbar from '../../components/HomePage/HomePage/Navbar/Navbar'
-// import AboutDoctor from '../../components/ServiceDetailsPage/AboutDoctor/AboutDoctor'
 import Banner from '../../components/ServiceDetailsPage/Banner/Banner';
 import DoctorDetails from '../../components/ServiceDetailsPage/DoctorDetails/DoctorDetails'
 import DoctorDetailsTab from "../../components/ServiceDetailsPage/DoctorDetailsTab/DoctorDetailsTab"
@@ -27,13 +26,12 @@ const ServiceDetailsPage = () => {
 
   return (
     <div className="bg-gray-100"> 
-    
     {doctor && (
      <>
       <Navbar />
       <Banner />
       {doctor && <DoctorDetails doctor={doctor} />}
-      <DoctorDetailsTab />
+      <DoctorDetailsTab doctor={doctor} />
       {/* <AboutDoctor />
       <SkillsOfDoctor />
       <DoctorExperience /> */}
