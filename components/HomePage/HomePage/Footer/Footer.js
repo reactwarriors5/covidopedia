@@ -4,11 +4,11 @@ import { faAngleDoubleRight } from '@fortawesome/free-solid-svg-icons'
 
 const Footer = () => {
     return (
-        <div style={{ backgroundColor: "#15558d" }}>
+        <div className="bg-indigo-900">
             <div className="px-1 pt-10 mx-8">
                 <div className="grid lg:grid-cols-4 gap-10 md:grid-cols-2 sm:grid-cols-1 mb-5">
                     <div>
-                        <h1 className="text-4xl tracking-wide text-white font-black">COVIDOPEDIA</h1>
+                        <h4 className="text-4xl tracking-wider text-indigo-200 ">COVIDOPEDIA</h4>
                         <p className="font-medium tracking-wide text-white">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
                         <div className="flex items-center mt-4 space-x-4 sm:mt-0">
                             <a
@@ -40,7 +40,7 @@ const Footer = () => {
                     </div>
 
                     <div>
-                        <p className="text-xl font-extrabold tracking-wide text-white">For Patients</p>
+                        <p className="text-xl font-extrabold tracking-wide text-indigo-200">For Patients</p>
                         <ul className="mt-2 space-y-2">
                             <li>
                                 <FontAwesomeIcon className="text-white" icon={faAngleDoubleRight} />
@@ -66,7 +66,7 @@ const Footer = () => {
                     </div>
 
                     <div>
-                        <p className="text-xl font-extrabold tracking-wide text-white">For Doctors</p>
+                        <p className="text-xl font-extrabold tracking-wide text-indigo-200">For Doctors</p>
                         <ul className="mt-2 space-y-2">
                             <li>
                                 <FontAwesomeIcon className="text-white" icon={faAngleDoubleRight} />
@@ -92,7 +92,7 @@ const Footer = () => {
                     </div>
 
                     <div>
-                        <p className="text-xl font-extrabold tracking-wide text-white">Contact Us</p>
+                        <p className="text-xl font-extrabold tracking-wide text-indigo-200">Contact Us</p>
                         <ul className="mt-2 space-y-2">
                             <li>
                                 <p className="text-white">Dhaka, Bangladesh.</p>

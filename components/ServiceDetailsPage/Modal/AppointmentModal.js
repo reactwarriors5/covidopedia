@@ -1,22 +1,18 @@
 import React, { useState } from 'react'
 import "antd/dist/antd.css";
-import { Modal, Button } from 'antd'
+import { Modal } from 'antd'
 import { loadStripe } from '@stripe/stripe-js'
 import axios from 'axios';
-import { useRouter } from "next/router";
-import { useSelector } from "react-redux";
 import { selectUser } from "../../../features/userSlice/userSlice";
+import { useSelector } from 'react-redux';
+import { useRouter } from 'next/router';
 axios.defaults.withCredentials = true
-import { useSelector } from 'react-redux'
-import { selectUser } from '../../../features/userSlice/userSlice'
-import { useRouter } from 'next/router'
 
 const AppointmentModal = ({ doctorId, doctorFee }) => {
 
   const user = useSelector(selectUser);
   const router = useRouter();
-  const user = useSelector(selectUser)
-  const [visible, setVisible] = useState(false)
+  // const [visible, setVisible] = useState(false)
   const [isModalVisible, setIsModalVisible] = useState(false);
   const [patient, setPatient] = useState({
     name: '',

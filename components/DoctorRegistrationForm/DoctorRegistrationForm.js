@@ -16,7 +16,7 @@ const DoctorRegistrationForm = () => {
     fee: '',
     biography: '',
     hospital: '',
-    form: '',
+    from: '',
     to: '',
     designation: '',
     address: '',
@@ -233,8 +233,8 @@ const DoctorRegistrationForm = () => {
               </label>
               <input
                 onChange={handleChange}
-                value={doctor.form}
-                name='form'
+                value={doctor.from}
+                name='from'
                 className='py-2 px-3 rounded-lg border-2 border-purple-300 mt-1 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent'
                 type='text'
                 placeholder='From'

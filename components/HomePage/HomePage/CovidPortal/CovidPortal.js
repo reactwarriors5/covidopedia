@@ -106,9 +106,9 @@ const CovidPortal = () => {
 
           {/* btn section */}
           <div className="text-center">
-            <button className="btn-brand-alt">
-              <Link href="/">
-                <a className="text-indigo-100 hover:text-white">
+            <button className="btn-brand">
+              <Link href="/covidPortalDetails">
+                <a className="text-indigo-700 text-xl hover:text-white">
                   {" "}
                   Explore more
                 </a>

@@ -6,15 +6,15 @@ import SkillsOfDoctor from '../SkillsOfDoctor/SkillsOfDoctor';
 
 
 const { TabPane } = Tabs;
-const ServiceDetailsPage = () => {
+const ServiceDetailsPage = ({doctor}) => {
     return (
       <section className='bg-white px-4 py-8 my-8 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:container lg:px-2'>
          <Tabs defaultActiveKey="1" centered>
             <TabPane tab="Overview" key="1">
-            <Overview/>
+            <Overview doctor={doctor}/>
             </TabPane>
             <TabPane tab="Expertise" key="2">
-            <SkillsOfDoctor/>
+            <SkillsOfDoctor doctor={doctor}/>
             </TabPane>
             <TabPane tab="Business Hours" key="3">
             Upcoming Feature.....

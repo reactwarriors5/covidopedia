@@ -27,14 +27,14 @@ const DoctorDetails = ({ doctor }) => {
         <h5 className='text-xl font-bold sm:text-4xl'>
             {doctor.name}
           </h5>
-          <p className='pb-2 font-semibold text-gray-500'>BDS, MDS - Oral & Maxillofacial Surgery
+          <p className='pb-2 font-semibold text-gray-500'>{doctor.designation}, <span>{doctor.hospital}</span>
           </p>
           <p className='pb-2 font-semibold text-gray-500'>Department of <span className='text-indigo-500 font-semibold'>{doctor.department}</span> 
           </p>
           {/* location div */}
           <div className="flex items-center justify-start -mt-4">
-          <FontAwesomeIcon icon={faMapMarkerAlt} />
-          <p className="ml-2 mt-3">Dhaka, Bangladesh - <span className='text-blue-500 font-semibold'>Get Directions</span></p>
+          <FontAwesomeIcon className="-mt-4" icon={faMapMarkerAlt} />
+          <p className="ml-2 mt-3">{doctor.address}, <span>{doctor.city}, </span> <span>{doctor.country} </span> - <span className='text-blue-500 font-semibold'>Get Directions</span></p>
           </div>
           </div>
           </div> 
