@@ -13,6 +13,8 @@ import {
   faSignOutAlt,
   faCalendarCheck,
   faMoneyBillAlt,
+  faFileInvoiceDollar,
+  faUserDoctorHair,
 } from '@fortawesome/free-solid-svg-icons'
 import { useSelector } from 'react-redux'
 import { selectUser } from '../../../features/userSlice/userSlice'
@@ -192,7 +194,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }) => {
                   <FontAwesomeIcon
                     size='lg'
                     className='mt-5 mr-3'
-                    icon={faCalendarCheck}
+                    icon={faUserMd}
                   />
                   <Link href='/allDoctors' className='px-2 py-3 space-x-3 '>
                     <a className='text-lg text-white'>Doctors</a>
@@ -222,7 +224,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }) => {
                   <FontAwesomeIcon
                     size='lg'
                     className='mt-5 mr-3'
-                    icon={faClinicMedical}
+                    icon={faFileInvoiceDollar}
                   />
                   <Link href='/invoices' className='px-2 py-3 space-x-3 '>
                     <a className='text-lg text-white'>Invoices</a>
