@@ -44,7 +44,7 @@ const DashboardHeader = ({ sidebarOpen, setSidebarOpen }) => {
 
             {/* Header: Right side */}
             <div className='flex items-center'>
-              {/* <h3>Welcome {user !== null && user.user && user.user.name}</h3> */}
+              <h3>{user !== null && user.user && user.user.name}</h3>
               <div class="ml-3 relative "  >
                 <div onClick={isOpen}>
                   <button type="button" class="max-w-xs bg-gray-800 rounded-full flex items-center text-sm focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white" id="user-menu-button" aria-expanded="false" aria-haspopup="true">
@@ -55,8 +55,8 @@ const DashboardHeader = ({ sidebarOpen, setSidebarOpen }) => {
 
                 <div className={menuItem ? "visible" : "invisible"}>
                   <div class="origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5 focus:outline-none" role="menu" aria-orientation="vertical" aria-labelledby="user-menu-button" tabindex="-1" >
-
-                    <a href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-0">Your Profile</a>
+                  <h3 class="block px-4 py-2 text-sm text-gray-700">{user !== null && user.user && user.user.name}</h3>
+                    <a href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-0">Profile</a>
 
                     <a href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-1">Settings</a>
 
