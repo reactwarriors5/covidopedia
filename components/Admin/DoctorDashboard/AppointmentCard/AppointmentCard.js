@@ -1,4 +1,5 @@
 import React from "react";
+import PatientModal from "../PatientModal/PatientModal"
 
 const AppointmentCard = ({ appointmentCardData }) => {
   // console.log(appointmentCardData)
@@ -36,7 +37,7 @@ const AppointmentCard = ({ appointmentCardData }) => {
           </div>
           {/* actions & buttons div -- right */}
           <div className="flex items-center justify-start">
-            <button className="ml-3 btn-home">View</button>
+            <PatientModal appointmentCardData={appointmentCardData} />
             <button className="ml-3 btn-home">Process</button>
           </div>
         </div>

@@ -5,8 +5,8 @@ import React from 'react'
 
 const Banner = () => {
 
-    const doctorUser = useSelector(selectADoctor)
-    console.log(doctorUser);
+    // const doctorUser = useSelector(selectADoctor)
+    // console.log(doctorUser);
     return (
         <section>
             <div className="w-full h-auto bg-indigo-700">
