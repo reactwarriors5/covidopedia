@@ -13,6 +13,8 @@ import {
   faSignOutAlt,
   faCalendarCheck,
   faMoneyBillAlt,
+  faFileInvoiceDollar,
+  faUserDoctorHair,
 } from '@fortawesome/free-solid-svg-icons'
 import { useSelector } from 'react-redux'
 import { selectUser } from '../../../features/userSlice/userSlice'
@@ -68,9 +70,8 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }) => {
     <section className='w-64'>
       {/* Sidebar backdrop (mobile only) */}
       <div
-        className={`fixed inset-0  bg-gray-900 bg-opacity-30 z-40 lg:hidden lg:z-auto transition-opacity duration-200 ${
-          sidebarOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'
-        }`}
+        className={`fixed inset-0  bg-gray-900 bg-opacity-30 z-40 lg:hidden lg:z-auto transition-opacity duration-200 ${sidebarOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'
+          }`}
         aria-hidden='true'
       ></div>
       {/* //////////////////////// */}
@@ -79,9 +80,8 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }) => {
       <div
         id='sidebar'
         ref={sidebar}
-        className={`absolute z-40 left-0 top-0 lg:static lg:left-auto lg:top-auto lg:translate-x-0 transform min-h-full overflow-y-hidden lg:overflow-y-hidden  w-64 flex-shrink-0 p-4 transition-transform duration-200 ease-in-out text-gray-100 font-body bg-indigo-800 ${
-          sidebarOpen ? 'translate-x-0' : '-translate-x-64'
-        }`}
+        className={`absolute z-40 left-0 top-0 lg:static lg:left-auto lg:top-auto lg:translate-x-0 transform min-h-full overflow-y-hidden lg:overflow-y-hidden  w-64 flex-shrink-0 p-4 transition-transform duration-200 ease-in-out text-gray-100 font-body bg-indigo-800 ${sidebarOpen ? 'translate-x-0' : '-translate-x-64'
+          }`}
       >
         {/* Sidebar header */}
         <div className='flex justify-between pr-3 mb-10 sm:px-2'>
@@ -188,8 +188,28 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }) => {
                 </li>
               </>
             )}
-            {/* {user !== null && user.user && user.user.role === 'admin' && ( */}
+            {user !== null && user.user && user.user.role === 'admin' && (
               <>
+              <li className='flex items-center justify-start space-y-5'>
+                  <FontAwesomeIcon
+                    size='lg'
+                    className='mt-5 mr-3'
+                    icon={faUserMd}
+                  />
+                  <Link href='/allDoctors' className='px-2 py-3 space-x-3 '>
+                    <a className='text-lg text-white'>Doctors</a>
+                  </Link>
+                </li>
+                <li className='flex items-center justify-start space-y-5'>
+                  <FontAwesomeIcon
+                    size='lg'
+                    className='mt-5 mr-3'
+                    icon={faCalendarCheck}
+                  />
+                  <Link href='/allAppointments' className='px-2 py-3 space-x-3 '>
+                    <a className='text-lg text-white'>Appointments</a>
+                  </Link>
+                </li>
                 <li className='flex items-center justify-start space-y-5'>
                   <FontAwesomeIcon
                     size='lg'
@@ -204,14 +224,15 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }) => {
                   <FontAwesomeIcon
                     size='lg'
                     className='mt-5 mr-3'
-                    icon={faClinicMedical}
+                    icon={faFileInvoiceDollar}
                   />
                   <Link href='/invoices' className='px-2 py-3 space-x-3 '>
                     <a className='text-lg text-white'>Invoices</a>
                   </Link>
                 </li>
               </>
-            
+            )}
+
           </ul>
           {/* logout menu here */}
           <ul className='pt-4 space-y-1 lg:pb-48 pb-96'>
