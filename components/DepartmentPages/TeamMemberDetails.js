@@ -2,7 +2,7 @@ import React from 'react'
 import Link from 'next/link'
 
 const TeamMemberDetails = props => {
-  const { name, department, image, _id } = props.doctor
+  const { name, biography, department, image, _id } = props.doctor
 
   return (
     <div className='flex flex-col items-center'>
@@ -14,6 +14,7 @@ const TeamMemberDetails = props => {
       <div className='flex flex-col items-center'>
         <p className='text-lg font-bold'>{name}</p>
         <p className='text-sm text-gray-800'>{department}</p>
+        
         <button className='flex items-center justify-center mt-4'>
           <Link
             href={`/doctorDetailsPage/${_id}`}

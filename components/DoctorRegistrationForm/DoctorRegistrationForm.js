@@ -12,9 +12,16 @@ const DoctorRegistrationForm = () => {
     email: '',
     department: '',
     degree: '',
-    experience: '',
     image: '',
     fee: '',
+    biography: '',
+    hospital: '',
+    form: '',
+    to: '',
+    designation: '',
+    address: '',
+    city: '',
+    country: '',
   })
 
   //Handle form state
@@ -97,8 +104,8 @@ const DoctorRegistrationForm = () => {
   }
 
   return (
-    <div className='flex h-screen bg-white items-center justify-center  mt-5 mb-10'>
-      <div className='grid rounded-lg shadow-lg bg-gray-100 w-11/12 md:w-9/12 lg:w-1/2'>
+    <div className='flex bg-white items-center justify-center mx-11  mt-4 mb-10'>
+      <div className='grid rounded-lg shadow-lg bg-gray-100  w-full '>
         <div className='flex justify-center'>
           <div className='flex'>
             <h1 className='text-gray-600 pt-5 font-bold md:text-2xl text-xl'>
@@ -108,95 +115,205 @@ const DoctorRegistrationForm = () => {
         </div>
 
         <form onSubmit={handleSubmit}>
-          <div className='grid grid-cols-1 mt-5 mx-7'>
+          <div className='grid grid-cols-2 gap-1'>
+            <div className='grid grid-cols-1 mt-5 mx-7'>
+              <label className='uppercase md:text-sm text-xs text-gray-500 text-light font-semibold'>
+                Full Name
+              </label>
+              <input
+                className='py-2 px-3 rounded-lg border-2 border-purple-300 mt-1 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent'
+                type='text'
+                onChange={handleChange}
+                value={doctor.name}
+                name='name'
+                placeholder='Enter Full Name'
+              />
+            </div>
+            <div className='grid grid-cols-1 mt-5 mx-7'>
+              <label className='uppercase md:text-sm text-xs text-gray-500 text-light font-semibold'>
+                Email
+              </label>
+              <input
+                className='py-2 px-3 rounded-lg border-2 border-purple-300 mt-1 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent'
+                type='email'
+                value={doctor.email}
+                onChange={handleChange}
+                name='email'
+                placeholder='Enter Your Email'
+              />
+            </div>
+          </div>
+
+          <div className='grid grid-cols-2 gap-1'>
+            <div className='grid grid-cols-1 mt-5 mx-7'>
+              <label className='uppercase md:text-sm text-xs text-gray-500 text-light font-semibold'>
+                Select Department
+              </label>
+              <select
+                onChange={handleChange}
+                value={doctor.department}
+                name='department'
+                className='py-2 px-3 rounded-lg border-2 border-purple-300 mt-1 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent'
+              >
+                <option>Neurology</option>
+                <option>Hematology</option>
+                <option>Plastic Surgery</option>
+                <option>Pharmacology</option>
+                <option>Paleontology</option>
+                <option>Gastrologic</option>
+              </select>
+            </div>
+
+            <div className='grid grid-cols-1 mt-5 mx-7'>
+              <label className='uppercase md:text-sm text-xs text-gray-500 text-light font-semibold'>
+                Academic Qualification
+              </label>
+              <input
+                onChange={handleChange}
+                value={doctor.degree}
+                name='degree'
+                className='py-2 px-3 rounded-lg border-2 border-purple-300 mt-1 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent'
+                type='text'
+                placeholder='Academic qualification'
+              />
+            </div>
+          </div>
+
+          <div className='grid grid-cols-2 gap-1'>
+            <div className='grid grid-cols-1 mt-5 mx-7'>
+              <label className='uppercase md:text-sm text-xs text-gray-500 text-light font-semibold'>
+                Appointment Fee
+              </label>
+              <input
+                className='py-2 px-3 rounded-lg border-2 border-purple-300 mt-1 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent'
+                type='text'
+                onChange={handleChange}
+                value={doctor.fee}
+                name='fee'
+                placeholder='Enter Appointment Fee'
+              />
+            </div>
+          </div>
+
+          <div className='grid grid-cols-1 mt-8 mx-7'>
             <label className='uppercase md:text-sm text-xs text-gray-500 text-light font-semibold'>
-              Full Name
+              About Me
             </label>
             <input
-              className='py-2 px-3 rounded-lg border-2 border-purple-300 mt-1 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent'
+              onChange={handleChange}
+              value={doctor.biography}
+              name='biography'
+              className='py-2 px-3 h-20 rounded-lg border-2 border-purple-300 mt-1 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent'
               type='text'
-              onChange={handleChange}
-              value={doctor.name}
-              name='name'
-              placeholder='Enter Full Name'
-            />
-          </div>
-          <div className='grid grid-cols-1 mt-5 mx-7'>
-            <label className='uppercase md:text-sm text-xs text-gray-500 text-light font-semibold'>
-              Email
-            </label>
-            <input
-              className='py-2 px-3 rounded-lg border-2 border-purple-300 mt-1 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent'
-              type='email'
-              value={doctor.email}
-              onChange={handleChange}
-              name='email'
-              placeholder='Enter Your Email'
+              placeholder='Biography'
             />
           </div>
 
-          <div className='grid grid-cols-1 mt-5 mx-7'>
-            <label className='uppercase md:text-sm text-xs text-gray-500 text-light font-semibold'>
-              Select Department
-            </label>
-            <select
-              onChange={handleChange}
-              value={doctor.department}
-              name='department'
-              className='py-2 px-3 rounded-lg border-2 border-purple-300 mt-1 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent'
-            >
-              <option>Neurology</option>
-              <option>Hematology</option>
-              <option>Plastic Surgery</option>
-              <option>Pharmacology</option>
-              <option>Paleontology</option>
-              <option>Gastrologic</option>
-            </select>
+          <div className='mx-8'>
+            <h3 className="mt-12 uppercase font-bold">Experience</h3>
           </div>
 
-          <div className='grid grid-cols-1 mt-5 mx-7'>
-            <label className='uppercase md:text-sm text-xs text-gray-500 text-light font-semibold'>
-              Academic Qualification
-            </label>
-            <input
-              onChange={handleChange}
-              value={doctor.degree}
-              name='degree'
-              className='py-2 px-3 rounded-lg border-2 border-purple-300 mt-1 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent'
-              type='text'
-              placeholder='Academic qualification'
-            />
+          <div className='grid grid-cols-3 gap-1'>
+            <div className='grid grid-cols-1 mt-5 mx-7'>
+              <label className='uppercase md:text-sm text-xs text-gray-500 text-light font-semibold'>
+                Hospital Name
+              </label>
+              <input
+                onChange={handleChange}
+                value={doctor.hospital}
+                name='hospital'
+                className='py-2 px-3 rounded-lg border-2 border-purple-300 mt-1 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent'
+                type='text'
+                placeholder='Hospital Name'
+              />
+            </div>
+            <div className='grid grid-cols-1 mt-5 mx-7'>
+              <label className='uppercase md:text-sm text-xs text-gray-500 text-light font-semibold'>
+                From
+              </label>
+              <input
+                onChange={handleChange}
+                value={doctor.form}
+                name='form'
+                className='py-2 px-3 rounded-lg border-2 border-purple-300 mt-1 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent'
+                type='text'
+                placeholder='From'
+              />
+            </div>
+            <div className='grid grid-cols-1 mt-5 mx-7'>
+              <label className='uppercase md:text-sm text-xs text-gray-500 text-light font-semibold'>
+                To
+              </label>
+              <input
+                onChange={handleChange}
+                value={doctor.to}
+                name='to'
+                className='py-2 px-3 rounded-lg border-2 border-purple-300 mt-1 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent'
+                type='text'
+                placeholder='to'
+              />
+            </div>
+            <div className='grid grid-cols-1 mt-5 mx-7'>
+              <label className='uppercase md:text-sm text-xs text-gray-500 text-light font-semibold'>
+                Designation
+              </label>
+              <input
+                onChange={handleChange}
+                value={doctor.designation}
+                name='designation'
+                className='py-2 px-3 rounded-lg border-2 border-purple-300 mt-1 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent'
+                type='text'
+                placeholder='designation'
+              />
+            </div>
           </div>
 
-          <div className='grid grid-cols-1 mt-5 mx-7'>
-            <label className='uppercase md:text-sm text-xs text-gray-500 text-light font-semibold'>
-              Experience
-            </label>
-            <select
-              onChange={handleChange}
-              value={doctor.experience}
-              name='experience'
-              className='py-2 px-3 rounded-lg border-2 border-purple-300 mt-1 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent'
-            >
-              <option>One year</option>
-              <option>Two year</option>
-              <option>Three year</option>
-            </select>
+          <div className="mx-8">
+            <h3 className="mt-12 uppercase font-bold">Contact Details</h3>
           </div>
 
-          <div className='grid grid-cols-1 mt-5 mx-7'>
-            <label className='uppercase md:text-sm text-xs text-gray-500 text-light font-semibold'>
-              Appointment Fee
-            </label>
-            <input
-              className='py-2 px-3 rounded-lg border-2 border-purple-300 mt-1 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent'
-              type='text'
-              onChange={handleChange}
-              value={doctor.fee}
-              name='fee'
-              placeholder='Enter Appointment Fee'
-            />
+          <div className='grid grid-cols-3 gap-1'>
+            <div className='grid grid-cols-1 mt-5 mx-7'>
+              <label className='uppercase md:text-sm text-xs text-gray-500 text-light font-semibold'>
+                Address
+              </label>
+              <input
+                onChange={handleChange}
+                value={doctor.address}
+                name='address'
+                className='py-2 px-3 rounded-lg border-2 border-purple-300 mt-1 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent'
+                type='text'
+                placeholder='address'
+              />
+            </div>
+            <div className='grid grid-cols-1 mt-5 mx-7'>
+              <label className='uppercase md:text-sm text-xs text-gray-500 text-light font-semibold'>
+                City
+              </label>
+              <input
+                onChange={handleChange}
+                value={doctor.city}
+                name='city'
+                className='py-2 px-3 rounded-lg border-2 border-purple-300 mt-1 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent'
+                type='text'
+                placeholder='City'
+              />
+            </div>
+            <div className='grid grid-cols-1 mt-5 mx-7'>
+              <label className='uppercase md:text-sm text-xs text-gray-500 text-light font-semibold'>
+                Country
+              </label>
+              <input
+                onChange={handleChange}
+                value={doctor.country}
+                name='country'
+                className='py-2 px-3 rounded-lg border-2 border-purple-300 mt-1 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent'
+                type='text'
+                placeholder='country'
+              />
+            </div>
           </div>
+
 
           <div className='grid grid-cols-1 mt-5 mx-7'>
             <label className='uppercase md:text-sm text-xs text-gray-500 text-light font-semibold mb-1'>
