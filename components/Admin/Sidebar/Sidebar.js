@@ -188,6 +188,8 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }) => {
                 </li>
               </>
             )}
+
+            
             {user !== null && user.user && user.user.role === 'admin' && (
               <>
               <li className='flex items-center justify-start space-y-5'>

@@ -8,11 +8,7 @@ const AllPatientTable = () => {
     const getAllPatient = async () => {
         const { data } = await axios.get(`${process.env.NEXT_PUBLIC_API}/allPatient`)
         setPatientInfo(data)
-        // console.log(data.data)
-        console.log(data);
-
     }
-    //   console.log(patientInfo)
 
     useEffect(() => {
         getAllPatient()
