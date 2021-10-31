@@ -10,7 +10,7 @@ const pharmacy = () => {
         <div>
             <Navbar />
             <PharmaNav />
-            <div className="grid grid-cols-12 gap-2">
+            <div className="grid grid-cols-12">
                 <div class="col-span-3">
                     <PharmaSidebar />
                 </div>

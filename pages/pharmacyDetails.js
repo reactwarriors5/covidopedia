@@ -2,13 +2,24 @@ import React from 'react';
 import Navbar from '../components/HomePage/HomePage/Navbar/Navbar';
 import PharmaNav from '../components/Pharmacy/PharmaNav/PharmaNav';
 import Footer from '../components/HomePage/HomePage/Footer/Footer';
+import PharmaCardDetails from '../components/Pharmacy/PharmaCardDetails/PharmaCardDetails';
+import PharmaDetailsTab from '../components/Pharmacy/PharmaDetailsTab/PharmaDetailsTab';
+import AboutPharmacy from '../components/Pharmacy/AboutPharmacy/AboutPharmacy';
 
 const pharmacyDetails = () => {
     return (
-        <div>
+        <div className="bg-gray-100">
             <Navbar />
             <PharmaNav />
-            <div className="container">
+            <AboutPharmacy/>
+            <PharmaDetailsTab/>
+            <Footer />
+        </div>
+    );
+};
+
+export default pharmacyDetails;
+{/* <div className="container">
                 <div class="m-5 card flex justify-around items-center">
                     <div class="">
                         <img class="h-60"
@@ -65,10 +76,4 @@ const pharmacyDetails = () => {
                         </div>
                     </div>
                 </div>
-            </div>
-            <Footer />
-        </div>
-    );
-};
-
-export default pharmacyDetails;
+            </div> */}

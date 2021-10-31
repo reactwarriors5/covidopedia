@@ -8,8 +8,8 @@ const Footer = () => {
             <div className="px-1 pt-10 mx-8">
                 <div className="grid lg:grid-cols-4 gap-10 md:grid-cols-2 sm:grid-cols-1 mb-5">
                     <div>
-                        <h4 className="text-4xl tracking-wider text-indigo-200 ">COVIDOPEDIA</h4>
-                        <p className="font-medium tracking-wide text-white">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                        <h4 className="text-4xl tracking-wider text-indigo-200 font-bold ">COVIDOPEDIA</h4>
+                        <p className="font-medium tracking-wide text-white text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
                         <div className="flex items-center mt-4 space-x-4 sm:mt-0">
                             <a
                                 href="/"
