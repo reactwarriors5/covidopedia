@@ -1,10 +1,20 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faShoppingCart } from '@fortawesome/free-solid-svg-icons'
 import Link from 'next/link'
+import { useDispatch } from 'react-redux';
+import { medicineInfo } from '../../../features/medicineSlice/medicineSlice';
 
 const MedicinesDetails = (props) => {
     const { name, price, Image } = props.medicine
+
+    const [detailsMedicine, setDetailsMedicine] = useState({})
+    useEffect(() => setDetailsMedicine(props.medicine), [])
+
+    const dispatch = useDispatch()
+    const handleMedicine = () => {
+        dispatch(medicineInfo(detailsMedicine))
+    }
     return (
         <div className="overflow-hidden rounded bg-gray-100">
 
@@ -12,6 +22,7 @@ const MedicinesDetails = (props) => {
                 <Link href="/medicineDetails">
                     <a>
                         <img
+                            onClick={handleMedicine}
                             src={Image}
                             className="object-cover w-full h-64 rounded transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110"
                             alt=""
