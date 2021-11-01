@@ -10,7 +10,6 @@ const PharmaCardDetails = (props) => {
     useEffect(() => setDetailsPharma(props.pharma), [])
     const dispatch = useDispatch()
     const handlePharma=()=>{
-        
         dispatch(
             pharmaInfo({detailsPharma})
           )
