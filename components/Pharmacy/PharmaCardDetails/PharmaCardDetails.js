@@ -1,10 +1,20 @@
-import React from 'react';
+import React, { useState,useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faMapMarkerAlt, faStar } from '@fortawesome/free-solid-svg-icons'
 import Link from "next/link";
+import { useDispatch } from 'react-redux';
+import { pharmaInfo } from '../../../features/pharmaSlice/pharmaSlice';
 const PharmaCardDetails = (props) => {
-    console.log(props.pharma);
     const { name, image, mobile, address, pharmacy, openTime } = props.pharma;
+    const [detailsPharma, setDetailsPharma] = useState([])
+    useEffect(() => setDetailsPharma(props.pharma), [])
+    const dispatch = useDispatch()
+    const handlePharma=()=>{
+        
+        dispatch(
+            pharmaInfo({detailsPharma})
+          )
+    }
     return (
         <div className="flex justify-between items-start mb-8 shadow-sm p-5 bg-white">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:w-1/2">
@@ -65,6 +75,7 @@ const PharmaCardDetails = (props) => {
                     >
                         <button
                             type="button"
+                            onClick={handlePharma}
                         >
                             VIEW DETAILS
                         </button>
