@@ -1,113 +1,57 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+// import {MedicinesData} from "../MedicinesData/MedicinesData.json";
+import MedicinesDetails from '../MedicinesDetails/MedicinesDetails';
+
+const MedicinesData = [
+    {
+        "name": "seclo tablet",
+        "price": "55",
+        "Image": "http://www.squarepharma.com.bd/products/Seclo%2040%20Capsule.jpg"
+    },
+    {
+        "name": "Napa Extra",
+        "price": "15",
+        "Image": "https://emedi.com.bd/wp-content/uploads/2020/09/Napa-Extra-Tablet.jpg"
+    },
+    {
+        "name": "Barri tablet",
+        "price": "15",
+        "Image": "https://beximco-pharma.com/cdn/bpl/product/img/barri-1.jpg"
+    },
+    {
+        "name": "Kinexa tablet",
+        "price": "15",
+        "Image": "https://beximco-pharma.com/cdn/bpl/product/img/kinexa-1.jpg"
+    },
+    {
+        "name": "Billi",
+        "price": "15",
+        "Image": "https://beximco-pharma.com/cdn/bpl/product/img/billi-1.jpg"
+    }
+]
 
 const Medicines = () => {
+    const [medicines, setMedicines] = useState([]);
+
+    useEffect(() => setMedicines(MedicinesData),[])
+    console.log(medicines)
     return (
         <div className="">
             <div>
-                <nav style={{ backgroundColor: "" }} class="py-4 max-w-7xl mx-auto">
+                <nav style={{ backgroundColor: "" }} class="pt-5 max-w-7xl mx-auto">
                     <div class="h-16">
-                        <h1 class="">Medlife Medical</h1>
-                        <p>96 Red Hawk Road Cyrus, MN 56323</p>
+                        <h1 class="">beximco pharma</h1>
+                        <p>Dhaka, Bangladesh.</p>
                         <p>Showing 6 of 98 products</p>
                     </div>
                 </nav>
             </div>
-            <div className="grid grid-cols-3 gap-4">
-                <div class="container mx-4 my-4">
-                    <div class="w-64 border">
-                        <img
-                            src="https://static.toiimg.com/thumb/msid-79951534,width-1200,height-900,resizemode-4/.jpg"
-                            class="w-full"
-                            alt="..."
-                        />
-                        <div class="p-4">
-                            <h5 class="text-gray-500 font-bold tracking-widest mb-2 uppercase">Benzaxapine Croplex</h5>
-                        </div>
-                        <div className="p-4 flex justify-between">
-                            <p>$19.00 $45.00</p>
-                            <p>btn</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="container mx-4 my-4">
-                    <div class="w-64 border">
-                        <img
-                            src="https://static.toiimg.com/thumb/msid-79951534,width-1200,height-900,resizemode-4/.jpg"
-                            class="w-full"
-                            alt="..."
-                        />
-                        <div class="p-4">
-                            <h5 class="text-gray-500 font-bold tracking-widest mb-2 uppercase">Benzaxapine Croplex</h5>
-                        </div>
-                        <div className="p-4 flex justify-between">
-                            <p>$19.00 $45.00</p>
-                            <p>btn</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="container mx-4 my-4">
-                    <div class="w-64 border">
-                        <img
-                            src="https://static.toiimg.com/thumb/msid-79951534,width-1200,height-900,resizemode-4/.jpg"
-                            class="w-full"
-                            alt="..."
-                        />
-                        <div class="p-4">
-                            <h5 class="text-gray-500 font-bold tracking-widest mb-2 uppercase">Benzaxapine Croplex</h5>
-                        </div>
-                        <div className="p-4 flex justify-between">
-                            <p>$19.00 $45.00</p>
-                            <p>btn</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="container mx-4 my-4">
-                    <div class="w-64 border">
-                        <img
-                            src="https://static.toiimg.com/thumb/msid-79951534,width-1200,height-900,resizemode-4/.jpg"
-                            class="w-full"
-                            alt="..."
-                        />
-                        <div class="p-4">
-                            <h5 class="text-gray-500 font-bold tracking-widest mb-2 uppercase">Benzaxapine Croplex</h5>
-                        </div>
-                        <div className="p-4 flex justify-between">
-                            <p>$19.00 $45.00</p>
-                            <p>btn</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="container mx-4 my-4">
-                    <div class="w-64 border">
-                        <img
-                            src="https://static.toiimg.com/thumb/msid-79951534,width-1200,height-900,resizemode-4/.jpg"
-                            class="w-full"
-                            alt="..."
-                        />
-                        <div class="p-4">
-                            <h5 class="text-gray-500 font-bold tracking-widest mb-2 uppercase">Benzaxapine Croplex</h5>
-                        </div>
-                        <div className="p-4 flex justify-between">
-                            <p>$19.00 $45.00</p>
-                            <p>btn</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="container mx-4 my-4">
-                    <div class="w-64 border">
-                        <img
-                            src="https://static.toiimg.com/thumb/msid-79951534,width-1200,height-900,resizemode-4/.jpg"
-                            class="w-full"
-                            alt="..."
-                        />
-                        <div class="p-4">
-                            <h5 class="text-gray-500 font-bold tracking-widest mb-2 uppercase">Benzaxapine Croplex</h5>
-                        </div>
-                        <div className="p-4 flex justify-between">
-                            <p>$19.00 $45.00</p>
-                            <p>btn</p>
-                        </div>
-                    </div>
+           
+            <div className="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
+                <div className="grid gap-5 lg:grid-cols-3 sm:max-w-sm sm:mx-auto lg:max-w-full">
+                    {
+                        medicines.map((medicine) => <MedicinesDetails medicine={medicine}/>)
+                    }
                 </div>
             </div>
         </div>
@@ -115,3 +59,4 @@ const Medicines = () => {
 };
 
 export default Medicines;
+
