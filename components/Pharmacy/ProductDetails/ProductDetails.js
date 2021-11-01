@@ -16,12 +16,32 @@ const ProductDetails = () => {
                     </p>
                 </div>
                 <h3 className="text-lg py-3">Highlights</h3>
-                <ul>
-                    <li>Safi syrup is known for its best purifying syrup for blood.</li>
-                    <li>It helps in eliminating the toxins from the bloodstream.</li>
-                    <li>It improves digestion.</li>
-                    <li>It also helps in indigestion and constipation.</li>
-                </ul>
+                <div>
+                    <div className="flex justify-start ">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="25" fill="currentColor" class="bi bi-dot " viewBox="0 0 16 16">
+                            <path d="M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z" />
+                        </svg>
+                        <p className="flex items-end">Safi syrup is known for its best purifying syrup for blood.</p>
+                    </div>
+                    <div className="flex justify-start ">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="25" fill="currentColor" class="bi bi-dot" viewBox="0 0 16 16">
+                            <path d="M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z" />
+                        </svg>
+                        <p>It helps in eliminating the toxins from the bloodstream.</p>
+                    </div>
+                    <div className="flex justify-start ">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="25" fill="currentColor" class="bi bi-dot" viewBox="0 0 16 16">
+                            <path d="M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z" />
+                        </svg>
+                        <p>It improves digestion.</p>
+                    </div>
+                    <div className="flex justify-start ">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="25" fill="currentColor" class="bi bi-dot" viewBox="0 0 16 16">
+                            <path d="M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z" />
+                        </svg>
+                        <p>It also helps in indigestion and constipation.</p>
+                    </div>
+                </div>
                 <h3 className="text-lg py-3">Directions for use</h3>
                 <div className="grid grid-cols-3">
                     <p className="col-span-2">Adults: Take 2 tablespoons once a day in a glass full of water.</p>
