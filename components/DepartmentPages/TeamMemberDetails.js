@@ -5,8 +5,6 @@ const TeamMemberDetails = (props) => {
   const { name, biography, department, image, _id } = props.doctor;
 
   return (
-   
-
     <div className="flex flex-col justify-center w-full px-8 mx-6 my-12 text-center text-gray-100 bg-gray-800 rounded-md md:w-96 lg:w-80 xl:w-64">
       <img
         alt=""

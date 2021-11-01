@@ -5,12 +5,12 @@ import Footer from '../components/HomePage/HomePage/Footer/Footer';
 import PharmaSidebar from '../components/Pharmacy/PharmaSidebar/PharmaSidebar';
 import Medicines from '../components/Pharmacy/Medicines/Medicines';
 
-const pharmacyMedicies = () => {
+const pharmacyMedicines = () => {
     return (
         <div>
             <Navbar />
             <PharmaNav />
-            <div className="grid grid-cols-12 gap-2">
+            <div className="grid grid-cols-12">
                 <div class="col-span-3">
                     <PharmaSidebar />
                 </div>
@@ -23,4 +23,4 @@ const pharmacyMedicies = () => {
     );
 };
 
-export default pharmacyMedicies;
+export default pharmacyMedicines;
