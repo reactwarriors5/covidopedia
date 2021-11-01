@@ -1,5 +1,5 @@
 import React from "react";
-
+import Link from "next/link";
 const Vendors = () => {
   return (
     <section className="bg-vendorBg">
@@ -22,9 +22,11 @@ const Vendors = () => {
             </a>
           </button>
           <button className="btn-vendor">
-            <a href="#" className="text-lg hover:text-white">
-              View All Vendors
-            </a>
+            <Link href="/pharmacy">
+              <a href="#" className="text-lg hover:text-white">
+                View All Vendors
+              </a>
+            </Link>
           </button>
         </div>
 
