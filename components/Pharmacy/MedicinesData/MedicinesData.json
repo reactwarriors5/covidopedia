@@ -1,27 +1,32 @@
 [
     {
-        "name": "Oliver Aguilerra",
-        "price": "15",
-        "Image": "https://images.pexels.com/photos/932638/pexels-photo-932638.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=3&amp;h=750&amp;w=1260"
+        "name": "Seclo tablet",
+        "price": "55",
+        "Image": "http://www.squarepharma.com.bd/products/Seclo%2040%20Capsule.jpg"
     },
     {
-        "name": "Oliver Aguilerra",
+        "name": "Anclog®",
         "price": "15",
-        "Image": "https://images.pexels.com/photos/932638/pexels-photo-932638.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=3&amp;h=750&amp;w=1260"
+        "Image": "https://www.squarepharma.com.bd/products/ANCLOG-75.jpg"
     },
     {
-        "name": "Oliver Aguilerra",
+        "name": "Anema™",
         "price": "15",
-        "Image": "https://images.pexels.com/photos/932638/pexels-photo-932638.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=3&amp;h=750&amp;w=1260"
+        "Image": "https://www.squarepharma.com.bd/products/Anema_l.jpg"
     },
     {
-        "name": "Oliver Aguilerra",
+        "name": "Asynta™ Max",
         "price": "15",
-        "Image": "https://images.pexels.com/photos/932638/pexels-photo-932638.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=3&amp;h=750&amp;w=1260"
+        "Image": "https://www.squarepharma.com.bd/products/Asynta%20max%20Pic-01.jpg"
     },
     {
-        "name": "Oliver Aguilerra",
+        "name": "Anleptic®",
         "price": "15",
-        "Image": "https://images.pexels.com/photos/932638/pexels-photo-932638.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=3&amp;h=750&amp;w=1260"
+        "Image": "https://www.squarepharma.com.bd/products/ANLEPTIC-200-CR.jpg"
+    },
+    {
+        "name": "Ace®",
+        "price": "15",
+        "Image": "https://www.squarepharma.com.bd/products/Ace%20125%20Supp-01.jpg"
     }
 ]

@@ -1,48 +1,16 @@
 import React, { useEffect, useState } from 'react';
 import FilterItem from '../FilterItem/FilterItem';
-// import {MedicinesData} from "../MedicinesData/MedicinesData.json";
+import MedicinesData  from "../MedicinesData/MedicinesData.json";
 import MedicinesDetails from '../MedicinesDetails/MedicinesDetails';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faMapMarkerAlt, faStar } from '@fortawesome/free-solid-svg-icons'
 
-const MedicinesData = [
-    {
-        "name": "seclo tablet",
-        "price": "55",
-        "Image": "http://www.squarepharma.com.bd/products/Seclo%2040%20Capsule.jpg"
-    },
-    {
-        "name": "Napa Extra",
-        "price": "15",
-        "Image": "https://emedi.com.bd/wp-content/uploads/2020/09/Napa-Extra-Tablet.jpg"
-    },
-    {
-        "name": "Barri tablet",
-        "price": "15",
-        "Image": "https://beximco-pharma.com/cdn/bpl/product/img/barri-1.jpg"
-    },
-    {
-        "name": "Kinexa tablet",
-        "price": "15",
-        "Image": "https://beximco-pharma.com/cdn/bpl/product/img/kinexa-1.jpg"
-    },
-    {
-        "name": "Billi",
-        "price": "15",
-        "Image": "https://beximco-pharma.com/cdn/bpl/product/img/billi-1.jpg"
-    },
-    {
-        "name": "Billi",
-        "price": "15",
-        "Image": "https://doccure-laravel.dreamguystech.com/template/public/assets/img/products/product.jpg"
-    },
-]
 
 const Medicines = () => {
     const [medicines, setMedicines] = useState([]);
 
     useEffect(() => setMedicines(MedicinesData), [])
-    console.log(medicines)
+    // console.log(medicines)
     return (
         <div className="bg-gray-50">
             <div>
