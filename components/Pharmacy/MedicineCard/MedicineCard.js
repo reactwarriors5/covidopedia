@@ -6,8 +6,8 @@ const MedicineCard = () => {
     const medicine = useSelector(selectMedicine)
     console.log(medicine);
     return (
-        <div class="m-10 flex justify-between items-center bg-blue-lightest">
-            <div  class="p-8 bg-white rounded shadow-md flex card text-grey-darkest">
+        <div class="mt-5 mr-5 mb-5 ml-14 flex justify-between items-center bg-blue-lightest">
+            <div  class="p-8 bg-white rounded shadow-sm flex card text-grey-darkest">
                 <img class="w-1/3  rounded-l-sm" src={medicine.Image} alt="Room Image" />
                 <div class="ml-10">
                     <h1 className="text-lg font-bold">{medicine.name}</h1>

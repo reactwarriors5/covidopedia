@@ -165,7 +165,7 @@ const PharmaSidebar = () => {
                             </div>
                         </div>
 
-                        <button class="text-center w-full bg-blue-700  text-white py-3 font-medium">Search</button>
+                        <button class="text-center w-full bg-indigo-500  text-white py-3 font-medium">Search</button>
                     </form>
                 </div>
             </div>

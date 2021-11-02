@@ -16,7 +16,7 @@ const MedicinesDetails = (props) => {
         dispatch(medicineInfo(detailsMedicine))
     }
     return (
-        <div className="overflow-hidden rounded bg-gray-100">
+        <div className="overflow-hidden rounded bg-white">
 
             <div className="p-3 flex justify-between items-center ">
                 <Link href="/medicineDetails">
