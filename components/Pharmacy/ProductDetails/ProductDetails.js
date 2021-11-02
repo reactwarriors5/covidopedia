@@ -2,8 +2,8 @@ import React from 'react';
 
 const ProductDetails = () => {
     return (
-        <div class="m-10 bg-blue-lightest">
-            <div class="p-10  bg-white rounded shadow-md  card text-grey-darkest">
+        <div class="mt-5 mr-5 mb-5 ml-14 ">
+            <div class="p-10  bg-white rounded shadow-sm  card text-grey-darkest">
                 <h1 className="text-2xl pb-3">Product Details</h1>
                 <hr />
                 <h3 className="text-lg py-3">Description</h3>

@@ -1,7 +1,11 @@
 import React, { useState } from 'react';
 
-const PharmaNav = () => {
+
+const PharmaNav = (props) => {
     const [menuItem, setMenuItem] = useState(false);
+    console.log(props.message);
+    const { name } = props.message;
+
 
     const isOpen = () => {
         if (menuItem === false) {
@@ -17,7 +21,21 @@ const PharmaNav = () => {
                 <div class="flex ml-8  h-16">
                     <div class="">
                         <p class="text-white" >Home / Search</p>
-                        <p className="text-white font-bold text-xl">2245 matches found for : Pharmacy In United States</p>
+
+                        {
+                            name === 'pharmacy' ?
+                                <p className="text-white font-bold text-xl">2245 matches found for  Pharmacy In United States</p>
+                                :
+                                name === 'products' ?
+                                    <p className="text-white font-bold text-xl">Pain Relif 70 Products</p>
+                                    :
+                                    name === 'pharmacyDetails' ?
+                                        <p className="text-white font-bold text-xl">Pharmacy Details</p>
+                                        :
+                                        <p className="text-white font-bold text-xl">Product Description</p>
+
+                        }
+
                     </div>
                     <div class=" ml-auto mr-6 mt-3">
                         <div class="ml-4 flex items-center md:ml-6">

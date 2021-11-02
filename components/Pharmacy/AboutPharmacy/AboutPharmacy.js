@@ -85,7 +85,7 @@ const AboutPharmacy = () => {
                             </button>
                         </a>
                     </Link>
-                    <Link href="/pharmacyMedicies"
+                    <Link href="/pharmacyMedicines"
 
                     >
                         <a href=""
