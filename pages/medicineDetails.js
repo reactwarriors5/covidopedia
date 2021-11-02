@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Footer from '../components/HomePage/HomePage/Footer/Footer';
 import Navbar from '../components/HomePage/HomePage/Navbar/Navbar';
 import MedicineCard from '../components/Pharmacy/MedicineCard/MedicineCard';
 import PharmaNav from '../components/Pharmacy/PharmaNav/PharmaNav';
@@ -20,6 +21,7 @@ const medicineDetails = () => {
                     <ShippingCard />
                 </div>
             </div>
+            <Footer />
         </div>
     );
 };
