@@ -1,4 +1,5 @@
 import React from 'react';
+import Footer from '../components/HomePage/HomePage/Footer/Footer';
 import Navbar from '../components/HomePage/HomePage/Navbar/Navbar';
 import AddToCartBody from '../components/Pharmacy/AddToCart/AddToCartBody/AddToCartBody';
 import AddToCartSidebar from '../components/Pharmacy/AddToCart/AddToCartSidebar/AddToCartSidebar';
@@ -15,6 +16,7 @@ const addToCart = () => {
                     </div>
                 </div>
             </div>
+            <Footer />
         </>
     );
 };
