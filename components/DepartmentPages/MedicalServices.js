@@ -3,7 +3,7 @@ import servicedata from './FakeData/servicedata.json';
 import MedicalServiceDetails from './MedicalServiceDetails';
 
 
-const MedicalServices = () => {
+const MedicalServices = (props) => {
 
     const [services, setServices] = useState([]);
 
@@ -22,7 +22,7 @@ const MedicalServices = () => {
                         </div>
                         <div>
                             <h1 className="font-bold text-xl">Emergency Cases</h1>
-                            <h1 className="font-bold text-3xl">01815621323</h1>
+                            <h1 className="font-bold text-gray-700 text-3xl">{props.deptMobile}</h1>
                         </div>
                     </div>
                     <div className="px-6 py-2 text-justify">

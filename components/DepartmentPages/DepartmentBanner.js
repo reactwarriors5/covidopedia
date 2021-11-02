@@ -1,6 +1,8 @@
 import React from 'react'
 // violet
-const DepartmentBanner = () => {
+const DepartmentBanner = (props) => {
+  // console.log(props.deptName);
+  // const {name}=props.deptName;
   return (
     <section>
       <div
@@ -12,14 +14,14 @@ const DepartmentBanner = () => {
         <div className='mx-40 grid-cols-6'>
           <br />
           <br />
-          <h1 className='text-4xl font-bold'>Neurology</h1>
+          <h1 className='text-4xl font-bold'>{props.deptName}</h1>
           <br />
           <p className='text-md'>
             {' '}
             COVIDOPEDIA {'>'}
             {'>'} SERVICES {'>'}
             {'>'} MEDICINE {'>'}
-            {'>'} NEUROLOGY
+            {'>'} {props.deptName}
           </p>
           <br />
           <br />

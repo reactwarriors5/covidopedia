@@ -6,14 +6,18 @@ import MedicalServices from '../components/DepartmentPages/MedicalServices'
 import DepartmentFaq from '../components/DepartmentPages/DepartmentFaq'
 import DepartmentBanner from '../components/DepartmentPages/DepartmentBanner'
 import Navbar from '../components/HomePage/HomePage/Navbar/Navbar'
+import { useSelector } from 'react-redux'
+import { selectDepartment } from '../features/departmentSlice/departmentSlice'
 
 const DepartmentDetails = () => {
+  const dept = useSelector(selectDepartment);
+  console.log(dept)
   return (
     <div>
       <Navbar />
-      <DepartmentBanner />
-      <DepartmentSection />
-      <MedicalServices />
+      <DepartmentBanner deptName={dept.detailsDepartment.name}/>
+      <DepartmentSection deptImage={dept.detailsDepartment.image} />
+      <MedicalServices deptMobile={dept.detailsDepartment.mobile} />
       <LaboratoryServices />
      
       {/* <TeamMember /> */}
