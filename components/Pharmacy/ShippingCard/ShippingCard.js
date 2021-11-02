@@ -53,7 +53,7 @@ const ShippingCard = () => {
                             onClick={handleCheckout}
                         >
                             <Link href="/addToCart">
-                                <a class="">Proceed To Checkout</a>
+                                <a class="">Add to Cart</a>
                             </Link>
                         </button>
 
