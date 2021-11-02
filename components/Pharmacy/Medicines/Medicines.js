@@ -16,7 +16,7 @@ const Medicines = () => {
             <div>
                 <nav style={{ backgroundColor: "" }} class="flex pt-5 max-w-7xl ml-10 mx-auto">
                     <div class="h-16">
-                        <h1 class="text-lg font-bold text-gray-700">beximco pharma</h1>
+                        <h1 class="text-lg font-bold text-gray-700">Square Pharma</h1>
                         <div className="flex mb-1">
                             <FontAwesomeIcon className="mt-2 mr-2 " icon={faMapMarkerAlt} />
                             <p className=" mt-2">Noakhali,Bangladesh</p>
