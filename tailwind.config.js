@@ -9,6 +9,7 @@ module.exports = {
         BookAppointment: "url('/images/images-adnan/appointment.jpg')",
         Testimonial: "url('/images/images-adnan/testimonial.jpg')",
         vendorBg: `url("/asset/images-atik/meteor.svg")`,
+        newsBannerBg: `url("https://image.freepik.com/free-vector/covid19-coronavirus-lower-third-background-with-text-space_1017-24694.jpg")`,
       }),
       zIndex: {
         "-10": "-10",
