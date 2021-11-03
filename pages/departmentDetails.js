@@ -11,12 +11,12 @@ import { selectDepartment } from '../features/departmentSlice/departmentSlice'
 
 const DepartmentDetails = () => {
   const dept = useSelector(selectDepartment);
-  console.log(dept)
+ console.log(dept);
   return (
     <div>
       <Navbar />
       <DepartmentBanner deptName={dept.detailsDepartment.name}/>
-      <DepartmentSection deptImage={dept.detailsDepartment.image} />
+      <DepartmentSection deptImage={dept.detailsDepartment} />
       <MedicalServices deptMobile={dept.detailsDepartment.mobile} />
       <LaboratoryServices />
      

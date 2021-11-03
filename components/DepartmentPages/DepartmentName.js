@@ -3,11 +3,12 @@ import Link from 'next/link'
 import { useDispatch } from 'react-redux';
 import { departmentInfo } from '../../features/departmentSlice/departmentSlice';
 const DepartmentName = (props) => {
-    const { name, mobile, image } = props.deptName;
-    // console.log(props);
+    const { name, mobile, image1,image2,image3 } = props.deptName;
+   
     const [detailsDepartment, setDetailsDepartment] = useState({
-        name, mobile, image
+        name, mobile, image1,image2,image3,
     })
+
 
     const dispatch = useDispatch()
     const handleDepartment = () => {
