@@ -1,41 +1,39 @@
 import React, { useState } from 'react'
-import "antd/dist/antd.css";
+import 'antd/dist/antd.css'
 import { Modal } from 'antd'
 import { loadStripe } from '@stripe/stripe-js'
-import axios from 'axios';
-import { selectUser } from "../../../features/userSlice/userSlice";
-import { useSelector } from 'react-redux';
-import { useRouter } from 'next/router';
+import axios from 'axios'
+import { selectUser } from '../../../features/userSlice/userSlice'
+import { useSelector } from 'react-redux'
+import { useRouter } from 'next/router'
 axios.defaults.withCredentials = true
 
 const AppointmentModal = ({ doctorId, doctorFee }) => {
-
-  const user = useSelector(selectUser);
-  const router = useRouter();
+  const user = useSelector(selectUser)
+  const router = useRouter()
   // const [visible, setVisible] = useState(false)
-  const [isModalVisible, setIsModalVisible] = useState(false);
+  const [isModalVisible, setIsModalVisible] = useState(false)
   const [patient, setPatient] = useState({
     name: '',
     age: '',
+    email: '',
     gender: 'Male',
     message: '',
     doctor: doctorId,
     fee: doctorFee,
   })
 
-
-
   const showModal = () => {
-    setIsModalVisible(true);
-  };
+    setIsModalVisible(true)
+  }
 
   const handleOk = () => {
-    setIsModalVisible(false);
-  };
+    setIsModalVisible(false)
+  }
 
   const handleCancel = () => {
-    setIsModalVisible(false);
-  };
+    setIsModalVisible(false)
+  }
 
   const handleChange = e => {
     const newPatientInfo = { ...patient }
@@ -61,16 +59,16 @@ const AppointmentModal = ({ doctorId, doctorFee }) => {
     e.preventDefault()
     if (user === null) return router.push('/login')
     console.log(patient)
-    
-    // check if user is logged in//
-    if(user === null ) return router.push("/login")
 
+    // check if user is logged in//
+    if (user === null) return router.push('/login')
 
     // const { name, age, gender, message } = patient;
     const { data } = await axios.post(
       `${process.env.NEXT_PUBLIC_API}/appointment`,
       {
         ...patient,
+        email: user.user.email,
       }
     )
 
@@ -80,18 +78,21 @@ const AppointmentModal = ({ doctorId, doctorFee }) => {
 
   return (
     <>
-      <button className="btn-home mt-4 uppercase tracking-wider" onClick={showModal}>
+      <button
+        className='btn-home mt-4 uppercase tracking-wider'
+        onClick={showModal}
+      >
         Book an Appointment
       </button>
-     
-     <Modal
+
+      <Modal
         title='Appointment'
         visible={isModalVisible}
         onOk={handleOk}
         footer={null}
         onCancel={handleCancel}
       >
-        <form onSubmit={handleSubmit} className="space-y-4">
+        <form onSubmit={handleSubmit} className='space-y-4'>
           <div>
             <label for='name' className='block mb-2'>
               Patient Name
@@ -144,15 +145,17 @@ const AppointmentModal = ({ doctorId, doctorFee }) => {
               value={patient.message}
               placeholder='Message...'
             ></textarea>
-            <div className="mt-4">
-              <p>Appointment Fee: <span className="font-semibold text-indigo-600">${doctorFee}</span> </p>
+            <div className='mt-4'>
+              <p>
+                Appointment Fee:{' '}
+                <span className='font-semibold text-indigo-600'>
+                  ${doctorFee}
+                </span>{' '}
+              </p>
             </div>
           </div>
           <div>
-            <button
-              className='btn-home w-full'
-              type='submit'
-            >
+            <button className='btn-home w-full' type='submit'>
               Send
             </button>
           </div>

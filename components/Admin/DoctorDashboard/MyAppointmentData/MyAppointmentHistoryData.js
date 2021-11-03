@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react'
-import AppointmentCard from '../AppointmentCard/AppointmentCard'
+import AppointmentHistoryCard from '../AppointmentCard/AppointmentHistoryCard'
 import DashboardHeader from '../../DashboardHeader/DashboardHeader'
 
 import axios from 'axios'
 axios.defaults.withCredentials = true
 
-const MyAppointmentData = ({ sidebarOpen, setSidebarOpen }) => {
+const MyAppointmentHistoryData = ({ sidebarOpen, setSidebarOpen }) => {
   return (
     <section className='flex-1'>
       {/* common component */}
@@ -16,10 +16,10 @@ const MyAppointmentData = ({ sidebarOpen, setSidebarOpen }) => {
       {/* main content here */}
 
       <div className='p-5'>
-        <AppointmentCard />
+        <AppointmentHistoryCard />
       </div>
     </section>
   )
 }
 
-export default MyAppointmentData
+export default MyAppointmentHistoryData
