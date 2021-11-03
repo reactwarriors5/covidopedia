@@ -9,7 +9,7 @@ import PrescriptionModal from '../PatientModal/PrescriptionModal'
             <PrescriptionModal appointmentInfo={appointmentInfo} /> */
 }
 
-const AppointmentCard = () => {
+const AppointmentHistoryCard = () => {
   const [appointmentInfo, setAppointmentInfo] = useState([])
 
   useEffect(() => {
@@ -56,12 +56,6 @@ const AppointmentCard = () => {
                     >
                       Details
                     </th>
-                    <th
-                      scope='col'
-                      className='px-6 py-3 text-xs font-medium tracking-wider text-center text-gray-500 uppercase'
-                    >
-                      Action
-                    </th>
                   </tr>
                 </thead>
 
@@ -69,7 +63,7 @@ const AppointmentCard = () => {
                 <tbody className='bg-white divide-y divide-gray-200'>
                   {appointmentInfo.map((appointmentData, idx) => (
                     <tr key={idx}>
-                      {appointmentData.status === 'Pending' && (
+                      {appointmentData.status === 'Complete' && (
                         <>
                           <td className='px-6 py-4 whitespace-nowrap'>
                             <div className='text-sm text-gray-500'>
@@ -88,25 +82,11 @@ const AppointmentCard = () => {
                             </div>
                           </td>
                           <td className='px-6 py-4 text-sm text-gray-500 whitespace-nowrap'>
-                            {/*  {appointmentData.status === 'Pending' ? (
-                        <div className='text-sm text-gray-500'>pending</div>
-                      ) : (
-                        <div className='text-sm text-gray-500'>
-                          <a href={appointmentData.prescription}>
-                            Download Prescription
-                          </a>
-                        </div>
-                      )} */}
-                            <div className='text-sm text-gray-500'>
+                            <div className='text-sm xl:ml-16 text-gray-500'>
                               <PatientModal
                                 appointmentCardData={appointmentData}
                               />
                             </div>
-                          </td>
-                          <td className='px-6 py-4 text-sm text-gray-500 whitespace-nowrap'>
-                            <PrescriptionModal
-                              appointmentCardData={appointmentData}
-                            />
                           </td>
                         </>
                       )}
@@ -122,4 +102,4 @@ const AppointmentCard = () => {
   )
 }
 
-export default AppointmentCard
+export default AppointmentHistoryCard

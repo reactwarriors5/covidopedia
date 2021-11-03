@@ -35,7 +35,7 @@ const PatientModal = ({ appointmentCardData }) => {
   //   }, [id])
 
   return (
-    <>
+    <div className='xl:ml-28'>
       <button className='btn-home' onClick={showModal}>
         View
       </button>
@@ -64,7 +64,7 @@ const PatientModal = ({ appointmentCardData }) => {
           </p>
         </div>
       </Modal>
-    </>
+    </div>
   )
 }
 

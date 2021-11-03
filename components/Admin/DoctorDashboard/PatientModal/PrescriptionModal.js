@@ -74,7 +74,7 @@ const PrescriptionModal = ({ appointmentCardData }) => {
   //   }, [id])
 
   return (
-    <>
+    <div className='flex justify-end'>
       <button className='btn-home' onClick={showModal}>
         Process
       </button>
@@ -136,7 +136,7 @@ const PrescriptionModal = ({ appointmentCardData }) => {
           </form>
         </section>
       </Modal>
-    </>
+    </div>
   )
 }
 
