@@ -62,7 +62,7 @@ const Navbar = () => {
                       </a>
                     </Link>
                     <Link href='/login'>
-                      <a className='inline-flex items-center justify-center px-4 py-2 text-base font-semibold text-center text-white bg-indigo-600 rounded-full shadow-md hover:text-white hover:bg-indigo-700 focus:outline-none'>
+                      <a className='inline-flex items-center justify-center px-4 py-2 text-base font-semibold text-center text-white bg-indigo-700 rounded-full shadow-md hover:text-white hover:bg-indigo-700 focus:outline-none'>
                         Sign up
                       </a>
                     </Link>
@@ -77,7 +77,7 @@ const Navbar = () => {
                     </Link>
                     <button
                       onClick={e => handleLogout(e)}
-                      className='text-base px-2 py-2 rounded-lg font-semibold text-white whitespace-nowrap bg-indigo-500 '
+                      className='text-base px-2 py-2 rounded-lg font-semibold text-white whitespace-nowrap bg-indigo-700 '
                     >
                       Log Out
                     </button>
