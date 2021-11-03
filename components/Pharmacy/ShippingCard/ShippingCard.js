@@ -1,31 +1,32 @@
 import React, { useState } from 'react';
 import { toast } from 'react-toastify'
+import Link from 'next/link'
 
 const ShippingCard = () => {
     const [counter, setCounter] = useState(1);
-    const [price,setPrice]=useState(19)
-  
+    const [price, setPrice] = useState(19)
+
     const incrementCounter = () => {
-        
-        setCounter(counter+1)
-        setPrice(19*(counter+1)); 
-        
+
+        setCounter(counter + 1)
+        setPrice(19 * (counter + 1));
+
     };
     let decrementCounter = () => {
-        setCounter(counter-1)
-        setPrice(19*(counter-1)); 
+        setCounter(counter - 1)
+        setPrice(19 * (counter - 1));
     };
 
-    if (counter <=0) {
+    if (counter <= 0) {
         decrementCounter = () => {
             alert("It is invalid!")
         };
     }
-    const handleCheckout=()=>{
+    const handleCheckout = () => {
         toast.info('Checkout Successfully !')
-        
+
     }
-  
+
     return (
         <div className="mt-5 ml-4 ">
             <div class=" flex  space-y-10 justify-between items-center">
@@ -46,12 +47,16 @@ const ShippingCard = () => {
                                 <path fill-rule="evenodd" d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2Z" />
                             </svg>
                         </div>
-                        <button 
-                        class="text-center w-full bg-indigo-500  text-white py-3 font-medium"
-                        onClick={handleCheckout}
+
+                        <button
+                            class="text-center w-full bg-indigo-500  text-white py-3 font-medium"
+                            onClick={handleCheckout}
                         >
-                            Proceed To Checkout
+                            <Link href="/addToCart">
+                                <a class="">Add to Cart</a>
+                            </Link>
                         </button>
+
 
                         <div>
                             <div className="p-3 flex justify-between border-2">

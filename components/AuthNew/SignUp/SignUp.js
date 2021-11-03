@@ -123,7 +123,7 @@ const SignUp = ({ handleRender }) => {
               <button
                 type='submit'
                 disabled={loading}
-                className='w-full p-3 mt-5 bg-indigo-600 text-center rounded-sm text-gray-50 sm:w-auto sm:mt-0'
+                className='w-full p-3 mt-5 bg-indigo-700 text-center rounded-sm text-gray-50 sm:w-auto sm:mt-0'
               >
                 {loading ? <SyncOutlined spin /> : 'SUBMIT'}
               </button>

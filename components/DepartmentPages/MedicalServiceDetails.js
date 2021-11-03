@@ -9,7 +9,7 @@ const MedicalServiceDetails = (props) => {
                 <img className="w-20 h-20 justify-center p-2" src={iconImage} alt="" />
             </div>
             <div>
-                <h3 className="pb-2 font-bold">{serviceName}</h3>
+                <h3 className="pb-2 font-bold text-gray-700">{serviceName}</h3>
                 <p>{description}</p>
             </div>
 

@@ -3,6 +3,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 
 const DepartmentCard = ({ departments }) => {
+  console.log(departments)
   return (
     <div>
       <div className='overflow-hidden transition-shadow duration-300 bg-white rounded shadow-sm'>
