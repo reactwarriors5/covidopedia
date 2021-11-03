@@ -6,8 +6,6 @@ import Navbar from '../../components/HomePage/HomePage/Navbar/Navbar'
 import Banner from '../../components/ServiceDetailsPage/Banner/Banner';
 import DoctorDetails from '../../components/ServiceDetailsPage/DoctorDetails/DoctorDetails'
 import DoctorDetailsTab from "../../components/ServiceDetailsPage/DoctorDetailsTab/DoctorDetailsTab"
-// import DoctorExperience from '../../components/ServiceDetailsPage/DoctorExperience/DoctorExperience'
-// import SkillsOfDoctor from '../../components/ServiceDetailsPage/SkillsOfDoctor/SkillsOfDoctor'
 import Footer from '../../components/HomePage/HomePage/Footer/Footer'
 
 const ServiceDetailsPage = () => {

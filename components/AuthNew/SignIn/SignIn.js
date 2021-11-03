@@ -92,7 +92,7 @@ const SignIn = ({ handleRender }) => {
             </div>
             <button
               type='submit'
-              className='block w-full p-3 text-center bg-indigo-600 rounded-sm text-gray-50'
+              className='block w-full p-3 text-center bg-indigo-700 rounded-sm text-gray-50'
               disabled={loading}
             >
               {loading ? <SyncOutlined spin /> : 'SUBMIT'}
