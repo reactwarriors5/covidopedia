@@ -12,7 +12,7 @@ const paymentGateway = () => {
         <div class="">
             <Navbar />
             <PharmaNav message={message} />
-            <div className="grid grid-cols-12">
+            <div className="bg-gray-50 grid grid-cols-12">
                 <div class="col-span-7 my-5">
                     <BillingDtails />
                 </div>
