@@ -16,28 +16,38 @@ const PharmaNav = (props) => {
         }
     }
     return (
-        <nav style={{ backgroundColor: "#15558d" }} class=" dark:bg-gray-800  shadow py-4 ">
+        <nav  class="  bg-indigo-700  shadow py-4 ">
             <div class=" ">
                 <div class="flex ml-8  h-16">
                     <div class="">
-                        <p class="text-white" >Home / Search</p>
-
                         {
                             name === 'pharmacy' ?
-                                <p className="text-white font-bold text-xl">2245 matches found for  Pharmacy In United States</p>
+                                <div>
+                                    <p class="text-white" >Home /Pharmacy</p>
+                                    <p className="text-white font-bold text-xl"> All Pharmacy </p>
+                                </div>
                                 :
                                 name === 'products' ?
-                                    <p className="text-white font-bold text-xl">Pain Relif 70 Products</p>
+                                    <div>
+                                        <p class="text-white" >Home /Products</p>
+                                        <p className="text-white font-bold text-xl">All Products</p>
+                                    </div>
                                     :
                                     name === 'pharmacyDetails' ?
-                                        <p className="text-white font-bold text-xl">Pharmacy Details</p>
+                                        <div>
+                                            <p class="text-white" >Home /Details</p>
+                                            <p className="text-white font-bold text-xl">Pharmacy Details</p>
+                                        </div>
                                         :
-                                        <p className="text-white font-bold text-xl">Product Description</p>
+                                        <div>
+                                            <p class="text-white" >Home /Description</p>
+                                            <p className="text-white font-bold text-xl">Product Description</p>
+                                        </div>
 
                         }
 
                     </div>
-                    <div class=" ml-auto mr-6 mt-3">
+                    {/* <div class=" ml-auto mr-6 mt-3">
                         <div class="ml-4 flex items-center md:ml-6">
                             <div class="ml-3 relative">
                                 <div class="relative inline-block text-left">
@@ -92,7 +102,7 @@ const PharmaNav = (props) => {
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> */}
                 </div>
             </div>
         </nav>

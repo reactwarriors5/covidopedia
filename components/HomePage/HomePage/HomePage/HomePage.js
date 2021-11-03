@@ -9,6 +9,8 @@ import Testimonial from "../Testimonial/Testimonial";
 import TeamMember from "../../../DepartmentPages/TeamMember";
 import Navbar from "../Navbar/Navbar";
 import CovidPortal from "../CovidPortal/CovidPortal";
+import Faq from "../../../Faq/Faq";
+
 
 const HomePage = () => {
   return (
@@ -21,6 +23,7 @@ const HomePage = () => {
       <TeamMember />
       <Contents />
       <Vendors />
+      <Faq/>
       <Testimonial />
       <Footer />
     </main>

@@ -3,6 +3,7 @@ import "antd/dist/antd.css";
 import { Tabs } from 'antd';
 import Overview from '../Overview/Overview';
 import SkillsOfDoctor from '../SkillsOfDoctor/SkillsOfDoctor';
+import BusinessHours from '../../Pharmacy/BuisnessHours/BusinessHours';
 
 
 const { TabPane } = Tabs;
@@ -17,7 +18,7 @@ const ServiceDetailsPage = ({doctor}) => {
             <SkillsOfDoctor doctor={doctor}/>
             </TabPane>
             <TabPane tab="Business Hours" key="3">
-            Upcoming Feature.....
+            <BusinessHours/>
             </TabPane>
         </Tabs>
       </section>

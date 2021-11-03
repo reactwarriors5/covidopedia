@@ -24,7 +24,7 @@ const AddToCartSidebar = () => {
                     <span>Total cost</span>
                     <span>$135</span>
                 </div>
-                <button class="bg-indigo-500 font-semibold hover:bg-indigo-600 py-3 text-sm text-white uppercase w-full">Checkout</button>
+                <button class="bg-indigo-700 font-semibold hover:bg-indigo-700 py-3 text-sm text-white uppercase w-full">Checkout</button>
             </div>
         </div>
     );
