@@ -70,7 +70,7 @@ const PharmaCardDetails = (props) => {
                 
                 >
                     <a href=""
-                     className="text-indigo-500 bg-transparent border border-solid border-indigo-500 hover:bg-indigo-500 hover:text-white active:bg-indigo-600 font-bold uppercase px-8 py-3 rounded outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
+                     className="text-indigo-700 bg-transparent border border-solid border-indigo-700 hover:bg-indigo-700 hover:text-white active:bg-indigo-700 font-bold uppercase px-8 py-3 rounded outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
                     >
                         <button
                             type="button"
@@ -82,7 +82,7 @@ const PharmaCardDetails = (props) => {
                 </Link>
                <Link href="/pharmacyMedicines">
                <a href=""
-                className="bg-indigo-500 text-white active:bg-indigo-600 font-bold uppercase text-base px-8 py-3 rounded shadow-md hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150" 
+                className="bg-indigo-700 text-white active:bg-indigo-700 font-bold uppercase text-base px-8 py-3 rounded shadow-md hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150" 
                >
                <button 
                type="button"

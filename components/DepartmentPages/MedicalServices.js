@@ -21,7 +21,7 @@ const MedicalServices = (props) => {
 
                         </div>
                         <div>
-                            <h1 className="font-bold text-xl">Emergency Cases</h1>
+                            <h1 className="font-bold text-xl text-gray-700">Emergency Cases</h1>
                             <h1 className="font-bold text-gray-700 text-3xl">{props.deptMobile}</h1>
                         </div>
                     </div>
@@ -40,12 +40,12 @@ const MedicalServices = (props) => {
                         </svg>
                     </div>
                     <div>
-                        <h1 className="text-md">Download Our brochures </h1>
+                        <h1 className="text-md font-semibold text-gray-700">Download Our brochures </h1>
                     </div>
                 </div>
             </div>
             <div class="col-span-2  p-5 border-2 w-11/12">
-                <h1 className="font-bold text-3xl mb-5">Wide range of facilities and medical services</h1>
+                <h1 className="font-bold text-3xl mb-5 text-gray-700">Wide range of facilities and medical services</h1>
                 <p className="mb-3">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Veritatis dolorem, esse quia similique eos, dicta eligendi minus dignissimos dolores tenetur sapiente laboriosam? Repellendus error quidem similique,
                     sunt mollitia eaque inventore fugit ipsa omnis non doloremque!</p>
                 <div className="grid grid-cols-2">
