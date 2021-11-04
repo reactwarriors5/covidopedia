@@ -2,7 +2,7 @@ import React from "react";
 
 const MaskInstructions = () => {
   return (
-    <section className="relative px-5 pb-16 md:px-12 lg:px-24 max-w-7xl">
+    <section className="relative px-5 pb-24 md:px-12 lg:px-24 max-w-7xl">
       <div className="p-4 bg-white">
         <div className="lg:grid lg:grid-flow-row-dense lg:grid-cols-2 lg:gap-12 lg:items-center">
           <div className="lg:col-start-2 md:pl-20">

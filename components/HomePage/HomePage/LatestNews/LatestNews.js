@@ -32,17 +32,6 @@ const LatestNews = ({ newsArticle }) => {
   }, [countryData]);
   // /////////////////////////////////////////////////////
 
-  const { Option } = Select;
-
-  // state for selection//
-  const [selectedCountry, setSelectedCountry] = useState();
-
-  function handleChange(value) {
-    // console.log(`selected ${value}`);
-    setSelectedCountry(value);
-    // console.log(selectedCountry);
-  }
-  //   console.log(countryData.country_name);
   return (
     <section>
       <div className="relative px-5 py-12 items-left md:px-12 lg:px-24 max-w-7xl">

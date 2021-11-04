@@ -15,7 +15,12 @@ const CountryCard = ({ country }) => {
         </Col>
         <Col span={12}>
           <Card>
-            <Statistic title="Continent" value={country.continent} />
+            <Statistic
+              title="New Deaths"
+              value={country.new_deaths}
+              valueStyle={{ color: "#cf1322" }}
+              prefix={<ArrowUpOutlined />}
+            />
           </Card>
         </Col>
       </Row>
@@ -23,11 +28,7 @@ const CountryCard = ({ country }) => {
         {/* active cases */}
         <Col span={12}>
           <Card>
-            <Statistic
-              title="Active Cases"
-              value={country.active_cases}
-              precision={2}
-            />
+            <Statistic title="Active Cases" value={country.active_cases} />
           </Card>
         </Col>
         {/* new cases */}
@@ -36,7 +37,6 @@ const CountryCard = ({ country }) => {
             <Statistic
               title="New Cases"
               value={country.new_cases}
-              precision={2}
               valueStyle={{ color: "#cf1322" }}
               prefix={<ArrowUpOutlined />}
             />
@@ -50,7 +50,6 @@ const CountryCard = ({ country }) => {
             <Statistic
               title="Total Deaths"
               value={country.deaths}
-              precision={2}
               valueStyle={{ color: "#cf1322" }}
             />
           </Card>
@@ -61,11 +60,8 @@ const CountryCard = ({ country }) => {
             <Statistic
               title="Recovered"
               value={country.total_recovered}
-              precision={2}
               valueStyle={{ color: "#3f8600" }}
               prefix={<ArrowUpOutlined />}
-              //   prefix={<ArrowDownOutlined />}
-              //   suffix="%"
             />
           </Card>
         </Col>
