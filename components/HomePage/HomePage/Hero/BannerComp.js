@@ -3,7 +3,7 @@ import { Carousel } from "antd";
 import Hero from "./Hero";
 import Hero1 from "./Hero1";
 import Hero2 from "./Hero2";
-import Map from "../Map/Map";
+// import Map from "../Map/Map";
 
 const BannerComp = () => {
   return (
@@ -12,10 +12,10 @@ const BannerComp = () => {
         <Hero />
       </div>
       <div>
-        <Map />
+        <Hero1 />
       </div>
       <div>
-        <Hero1 />
+        <Hero2 />
       </div>
     </Carousel>
   );
