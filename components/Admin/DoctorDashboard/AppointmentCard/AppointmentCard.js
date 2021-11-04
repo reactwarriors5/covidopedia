@@ -1,49 +1,125 @@
-import React from "react";
-import PatientModal from "../PatientModal/PatientModal"
+import React, { useState, useEffect } from 'react'
+import axios from 'axios'
+axios.defaults.withCredentials = true
+import PatientModal from '../PatientModal/PatientModal'
+import PrescriptionModal from '../PatientModal/PrescriptionModal'
 
-const AppointmentCard = ({ appointmentCardData }) => {
+{
+  /** <PatientModal appointmentInfo={appointmentInfo} />
+            <PrescriptionModal appointmentInfo={appointmentInfo} /> */
+}
+
+const AppointmentCard = () => {
+  const [appointmentInfo, setAppointmentInfo] = useState([])
+
+  useEffect(() => {
+    const getAppointments = async () => {
+      const { data } = await axios.get(
+        `${process.env.NEXT_PUBLIC_API}/doctor-appointments`
+      )
+      setAppointmentInfo(data)
+      console.log(data)
+    }
+    getAppointments()
+  }, [])
   // console.log(appointmentCardData)
   return (
-    <div className="items-center px-8 py-3 lg:px-8">
-      <div className="p-6 mx-auto bg-white border rounded-lg shadow-md lg:w-full">
-        {/* details div -- left */}
-        <div className="flex flex-col items-center justify-between py-2 rounded-lg lg:flex-row">
-          <div className="flex items-start justify-start w-full lg:justify-start lg:w-1/2">
-            {/* image here */}
-            <img
-              src="https://storage.googleapis.com/indie-hackers.appspot.com/avatars/300x300_DUFTlhOdmSdoT9F4r1Woo40pyML2.webp"
-              alt="placeholder"
-              className="rounded-lg"
-            />
-            {/* patient details here */}
-            <div className="flex flex-col w-full text-gray-500 lg:ml-4">
-              <h4 className="my-4 text-lg font-bold tracking-widest text-indigo-600 uppercase lg:mt-0 title-font">
-                {appointmentCardData.patient.name}
-              </h4>
-              <p className="mb-3 text-base leading-relaxed text-gray-600">
-                {appointmentCardData.createdAt}
-              </p>
-              <p className="mb-3 text-base leading-relaxed text-gray-600">
-                {/* {appointmentCardData.patientAddress} */}
-                Dhaka
-              </p>
-              <p className="mb-3 text-base leading-relaxed text-gray-600">
-                {/* {appointmentCardData.patientEmail} */}
-              </p>
-              <p className="mb-3 text-base leading-relaxed text-gray-600">
-                {/* {appointmentCardData.patientPhone} */}
-              </p>
+    <section>
+      <div className='flex flex-col'>
+        <div className='-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8'>
+          <div className='inline-block min-w-full py-2 align-middle sm:px-6 lg:px-8'>
+            <div className='overflow-hidden border-b border-gray-200 shadow sm:rounded-lg'>
+              <table className='min-w-full divide-y divide-gray-200'>
+                <thead className='bg-gray-50'>
+                  <tr>
+                    <th
+                      scope='col'
+                      className='px-6 py-3 text-xs font-medium tracking-wider text-left text-gray-500 uppercase'
+                    >
+                      Patient Name
+                    </th>
+                    <th
+                      scope='col'
+                      className='px-6 py-3 text-xs font-medium tracking-wider text-left text-gray-500 uppercase'
+                    >
+                      Appointment Time
+                    </th>
+                    <th
+                      scope='col'
+                      className='px-6 py-3 text-xs font-medium tracking-wider text-left text-gray-500 uppercase'
+                    >
+                      Amount
+                    </th>
+                    <th
+                      scope='col'
+                      className='px-6 py-3 text-xs font-medium tracking-wider text-center text-gray-500 uppercase'
+                    >
+                      Details
+                    </th>
+                    <th
+                      scope='col'
+                      className='px-6 py-3 text-xs font-medium tracking-wider text-center text-gray-500 uppercase'
+                    >
+                      Action
+                    </th>
+                  </tr>
+                </thead>
+
+                {/* table body here...can be transferred into another component */}
+                <tbody className='bg-white divide-y divide-gray-200'>
+                  {appointmentInfo.map((appointmentData, idx) => (
+                    <tr key={idx}>
+                      {appointmentData.status === 'Pending' && (
+                        <>
+                          <td className='px-6 py-4 whitespace-nowrap'>
+                            <div className='text-sm text-gray-500'>
+                              {appointmentData.name}
+                            </div>
+                          </td>
+                          <td className='px-6 py-4 text-sm text-gray-500 whitespace-nowrap'>
+                            <div className='text-sm text-gray-500'>
+                              12/08/2021
+                            </div>
+                          </td>
+
+                          <td className='px-6 py-4 text-sm text-gray-500 whitespace-nowrap'>
+                            <div className='text-sm text-gray-500'>
+                              ${appointmentData.fee}
+                            </div>
+                          </td>
+                          <td className='px-6 py-4 text-sm text-gray-500 whitespace-nowrap'>
+                            {/*  {appointmentData.status === 'Pending' ? (
+                        <div className='text-sm text-gray-500'>pending</div>
+                      ) : (
+                        <div className='text-sm text-gray-500'>
+                          <a href={appointmentData.prescription}>
+                            Download Prescription
+                          </a>
+                        </div>
+                      )} */}
+                            <div className='text-sm text-gray-500'>
+                              <PatientModal
+                                appointmentCardData={appointmentData}
+                              />
+                            </div>
+                          </td>
+                          <td className='px-6 py-4 text-sm text-gray-500 whitespace-nowrap'>
+                            <PrescriptionModal
+                              appointmentCardData={appointmentData}
+                            />
+                          </td>
+                        </>
+                      )}
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
             </div>
-          </div>
-          {/* actions & buttons div -- right */}
-          <div className="flex items-center justify-start">
-            <PatientModal appointmentCardData={appointmentCardData} />
-            <button className="ml-3 btn-home">Process</button>
           </div>
         </div>
       </div>
-    </div>
-  );
-};
+    </section>
+  )
+}
 
-export default AppointmentCard;
+export default AppointmentCard

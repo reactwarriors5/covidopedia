@@ -29,13 +29,13 @@ const CovidPortal = () => {
   return (
     <section className="p-4 my-20 text-gray-800 lg:p-8">
       {/* header */}
-      <div className="max-w-xl text-center md:mx-auto lg:max-w-2xl md:mb-12">
+      <div className="max-w-xl text-center lg:mx-auto lg:max-w-2xl lg:mb-12">
         <div>
           <p className="inline-block px-3 py-px mb-4 text-xs font-semibold tracking-wider uppercase bg-red-400 rounded-full text-red-50">
             What's new
           </p>
         </div>
-        <h3 className="max-w-lg mb-6 font-sans text-3xl font-bold leading-none tracking-tight text-indigo-800 sm:text-4xl md:mx-auto">
+        <h3 className="max-w-lg mb-6 font-sans text-3xl font-bold leading-none tracking-tight text-indigo-800 sm:text-4xl lg:mx-auto">
           <span className="relative inline-block">
             <svg
               viewBox="0 0 52 24"
@@ -63,126 +63,138 @@ const CovidPortal = () => {
           </span>{" "}
           PORTAL
         </h3>
-        <p className="mt-12 text-lg text-gray-500 lg:text-2xl">
+        <p className="mt-12 text-lg text-gray-500 uppercase lg:text-2xl">
           Get Real-time News & Stay Updated Daily
-        </p>
-        <br />
-        <p className="mb-20 text-xl font-bold text-gray-600 uppercase lg:text-2xl">
-          Last Updated{"  :"}
-          <span className="ml-5 font-extrabold text-red-700">
-            {worldData.statistic_taken_at}
-          </span>
         </p>
       </div>
 
       {/* main */}
-      <div className="container mx-auto my-8 space-y-12">
-        <div className="flex flex-col rounded-md shadow-sm lg:flex-row">
-          <div className="flex items-center justify-center flex-1 ">
-            <img
-              src="https://images.unsplash.com/photo-1584931423298-c576fda54bd2?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1170&q=80"
-              alt=""
-              className="object-cover w-full h-64"
-            />
-          </div>
-          <div className="flex flex-col justify-center flex-1 px-6 py-12 text-center bg-gray-50">
-            <div>
-              <span className="text-xs font-semibold text-indigo-500 uppercase">
-                Total Cases
-              </span>
-              <h4 className="text-3xl font-bold">{worldData.total_cases}</h4>
-            </div>
-            <div className="mt-6">
-              <span className="text-xs font-semibold text-red-500 uppercase">
-                New Cases
-              </span>
-              <h4 className="text-3xl font-bold text-red-800">
-                {worldData.new_cases}
-              </h4>
-            </div>
-          </div>
-        </div>
-        <div className="flex flex-col overflow-hidden rounded-md shadow-sm lg:flex-row-reverse">
-          <div className="flex items-center justify-center flex-1 ">
-            <img
-              src="https://images.unsplash.com/photo-1601841197690-6f0838bdb005?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1170&q=80"
-              alt=""
-              className="object-cover w-full h-64"
-            />
-          </div>
-          <div className="flex flex-col justify-center flex-1 px-6 py-12 text-center bg-gray-50">
-            <div>
-              <span className="text-xs font-semibold text-indigo-500 uppercase">
-                Active Cases
-              </span>
-              <h4 className="text-3xl font-bold">{worldData.active_cases}</h4>
-            </div>
-            <div className="mt-6">
-              <span className="text-xs font-semibold text-red-500 uppercase">
-                Critical Cases
-              </span>
-              <h4 className="text-3xl font-bold text-red-800">
-                {worldData.serious_critical}
-              </h4>
-            </div>
-          </div>
-        </div>
-        <div className="flex flex-col overflow-hidden rounded-md shadow-sm lg:flex-row">
-          <div className="flex items-center justify-center flex-1 ">
-            <img
-              src="https://images.unsplash.com/photo-1584036561566-baf8f5f1b144?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1632&q=80"
-              alt=""
-              className="object-cover w-full h-64"
-            />
-          </div>
-          <div className="flex flex-col items-center justify-center flex-1 px-6 py-12 text-center bg-gray-50">
-            <div>
-              <span className="text-xs font-semibold text-indigo-500 uppercase">
-                Total Recovered
-              </span>
-              <h4 className="text-3xl font-bold">
-                {worldData.total_recovered}
-              </h4>
-            </div>
-            <div className="mt-6">
-              <span className="text-xs font-semibold text-red-500 uppercase">
-                Per 1M Death Ratio
-              </span>
-              <h4 className="text-3xl font-bold text-red-800">
-                {worldData.deaths_per_1m_population}
-              </h4>
-            </div>
-          </div>
-        </div>
+      <section class="overflow-hidden">
+        <div class="container p-5 mx-auto lg:p-8 max-w-7xl">
+          <div class="flex flex-wrap mx-auto lg:flex-nowrap">
+            <a href="">
+              <div class="flex w-full">
+                <div class="relative flex flex-col items-start m-1 transition duration-300 ease-in-out delay-150 transform bg-white shadow-xl rounded-xl -translate-x-8 lg:w-80 lg:hover:-translate-x-12 lg:hover:-translate-y-8">
+                  <img
+                    class="object-cover object-center w-full rounded-t-xl lg:h-48 md:h-36"
+                    src="https://images.unsplash.com/photo-1584931423298-c576fda54bd2?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1170&q=80"
+                    alt="blog"
+                  />
+                  <div class="px-6 py-8 mt-2">
+                    <span class="text-xs font-semibold text-indigo-500 uppercase">
+                      Total Cases
+                    </span>
+                    <h4 className="text-3xl font-bold">
+                      {worldData.total_cases}
+                    </h4>
 
-        <div className="flex flex-col overflow-hidden rounded-md shadow-sm lg:flex-row-reverse">
-          <div className="flex items-center justify-center flex-1 ">
-            <img
-              src="https://images.unsplash.com/photo-1587351441779-330ae80d3340?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1090&q=80"
-              alt=""
-              className="object-cover w-full h-64"
-            />
-          </div>
-          <div className="flex flex-col items-center justify-center flex-1 px-6 py-12 text-center bg-gray-50">
-            <div>
-              <span className="text-xs font-semibold text-indigo-500 uppercase">
-                Total Deaths
-              </span>
-              <h4 className="text-3xl font-bold">{worldData.total_deaths}</h4>
-            </div>
-            <div className="mt-6">
-              <span className="text-xs font-semibold text-red-500 uppercase">
-                New Deaths
-              </span>
-              <h4 className="text-3xl font-bold text-red-800">
-                {worldData.new_deaths}
-              </h4>
-            </div>
+                    <div className="mt-6">
+                      <span className="text-xs font-semibold text-red-500 uppercase">
+                        New Cases
+                      </span>
+                      <h4 className="text-3xl font-bold text-red-800">
+                        {worldData.new_cases}
+                      </h4>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </a>
+            <a href="">
+              <div class="flex w-full">
+                <div class="relative flex flex-col items-start m-1 transition duration-300 ease-in-out delay-150 transform bg-white shadow-xl rounded-xl -translate-x-12 lg:w-80 lg:hover:-translate-x-20 lg:hover:-translate-y-8">
+                  <img
+                    class="object-cover object-center w-full rounded-t-xl lg:h-48 md:h-36"
+                    src="https://images.unsplash.com/photo-1601841197690-6f0838bdb005?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1170&q=80"
+                  />
+                  <div class="px-6 py-8 mt-2">
+                    <span class="text-xs font-semibold text-indigo-500 uppercase">
+                      Active Cases
+                    </span>
+                    <h4 className="text-3xl font-bold">
+                      {worldData.active_cases}
+                    </h4>
+
+                    <div className="mt-6">
+                      <span className="text-xs font-semibold text-red-500 uppercase">
+                        Critical Cases
+                      </span>
+                      <h4 className="text-3xl font-bold text-red-800">
+                        {worldData.serious_critical}
+                      </h4>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </a>
+            <a href="">
+              <div class="flex w-full">
+                <div class="relative flex flex-col items-start m-1 transition duration-300 ease-in-out delay-150 transform bg-white shadow-xl rounded-xl lg:w-80 -translate-x-20 lg:hover:-translate-x-28 lg:hover:-translate-y-8">
+                  <img
+                    class="object-cover object-center w-full rounded-t-xl lg:h-48 md:h-36"
+                    src="https://images.unsplash.com/photo-1584036561566-baf8f5f1b144?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1632&q=80"
+                  />
+                  <div class="px-6 py-8 mt-2">
+                    <span class="text-xs font-semibold text-indigo-500 uppercase">
+                      Total Recovered
+                    </span>
+                    <h4 className="text-3xl font-bold">
+                      {worldData.total_recovered}
+                    </h4>
+
+                    <div className="mt-6">
+                      <span className="text-xs font-semibold text-red-500 uppercase">
+                        Death Ratio (Per 1M)
+                      </span>
+                      <h4 className="text-3xl font-bold text-red-800">
+                        {worldData.deaths_per_1m_population}
+                      </h4>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </a>
+            <a href="">
+              <div class="flex w-full">
+                <div class="relative flex flex-col items-start m-1 transition duration-300 ease-in-out delay-150 transform bg-white shadow-xl rounded-xl lg:w-80 -translate-x-24 lg:hover:-translate-x-32 lg:hover:-translate-y-8">
+                  <img
+                    class="object-cover object-center w-full rounded-t-xl lg:h-48 md:h-36"
+                    src="https://images.unsplash.com/photo-1587351441779-330ae80d3340?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1090&q=80"
+                  />
+                  <div class="px-6 py-8 mt-2">
+                    <span class="text-xs font-semibold text-indigo-500 uppercase">
+                      Total Deaths
+                    </span>
+                    <h4 className="text-3xl font-bold">
+                      {worldData.total_deaths}
+                    </h4>
+
+                    <div className="mt-6">
+                      <span className="text-xs font-semibold text-red-500 uppercase">
+                        New Deaths
+                      </span>
+                      <h4 className="text-3xl font-bold text-red-800">
+                        {worldData.new_deaths}
+                      </h4>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </a>
           </div>
         </div>
-      </div>
+      </section>
+
+      <br />
+      <p className="mt-8 text-xl font-light text-center text-gray-600 uppercase lg:text-2xl">
+        Last Updated{"  :"}
+        <span className="ml-5 font-normal text-red-700">
+          {worldData.statistic_taken_at}
+        </span>
+      </p>
+
       {/* btn section */}
-      <div className="pt-16 text-center">
+      <div className="pt-12 text-center">
         <button className="btn-home">
           <Link href="/covidPortalDetails">
             <a className="text-lg text-white">Explore more{" >>"}</a>

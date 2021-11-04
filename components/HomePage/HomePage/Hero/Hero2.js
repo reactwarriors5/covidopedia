@@ -23,20 +23,6 @@ const Hero2 = () => {
             <br className="hidden md:inline lg:hidden" /> Uncompromising
             Excellence. Commitment to Care.
           </p>
-          <div className="flex flex-col space-y-4 sm:items-center sm:justify-center sm:flex-row sm:space-y-0 sm:space-x-4 lg:justify-start">
-            <a
-              href="#"
-              className="px-8 py-3 text-lg font-semibold text-white bg-indigo-500 rounded hover:bg-indigo-600"
-            >
-              Subscribe
-            </a>
-            <a
-              href="#"
-              className="px-8 py-3 text-lg font-semibold border border-purple-300 rounded hover:border-indigo-500"
-            >
-              Be a Patreon
-            </a>
-          </div>
         </div>
       </div>
     </section>
