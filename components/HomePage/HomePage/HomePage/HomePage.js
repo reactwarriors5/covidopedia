@@ -11,19 +11,18 @@ import Navbar from "../Navbar/Navbar";
 import CovidPortal from "../CovidPortal/CovidPortal";
 import Faq from "../../../Faq/Faq";
 
-
 const HomePage = () => {
   return (
     <main>
       <Navbar />
       <BannerComp />
-      <BookAppointment />
+      {/* <BookAppointment /> */}
       <CovidPortal />
       <Departments />
       <TeamMember />
       <Contents />
       <Vendors />
-      <Faq/>
+      <Faq />
       <Testimonial />
       <Footer />
     </main>

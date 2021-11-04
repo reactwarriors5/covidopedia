@@ -1,23 +1,24 @@
-import React from 'react'
-import { Carousel } from 'antd'
-import Hero from './Hero'
-import Hero1 from './Hero1'
-import Hero2 from './Hero2'
+import React from "react";
+import { Carousel } from "antd";
+import Hero from "./Hero";
+import Hero1 from "./Hero1";
+import Hero2 from "./Hero2";
+import Map from "../Map/Map";
 
 const BannerComp = () => {
   return (
-    <Carousel autoplay effect='fade'>
+    <Carousel effect="fade">
       <div>
         <Hero />
       </div>
       <div>
-        <Hero1 />
+        <Map />
       </div>
       <div>
-        <Hero2 />
+        <Hero1 />
       </div>
     </Carousel>
-  )
-}
+  );
+};
 
-export default BannerComp
+export default BannerComp;
