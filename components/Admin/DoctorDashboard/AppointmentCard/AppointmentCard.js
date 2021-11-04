@@ -13,16 +13,16 @@ const AppointmentCard = () => {
   const [appointmentInfo, setAppointmentInfo] = useState([])
 
   useEffect(() => {
-    const getAppointments = async () => {
-      const { data } = await axios.get(
-        `${process.env.NEXT_PUBLIC_API}/doctor-appointments`
-      )
-      setAppointmentInfo(data)
-      console.log(data)
-    }
     getAppointments()
-  }, [])
-  // console.log(appointmentCardData)
+  }, [appointmentInfo])
+
+  const getAppointments = async () => {
+    const { data } = await axios.get(
+      `${process.env.NEXT_PUBLIC_API}/doctor-appointments`
+    )
+    setAppointmentInfo(data)
+  }
+
   return (
     <section>
       <div className='flex flex-col'>
@@ -106,6 +106,8 @@ const AppointmentCard = () => {
                           <td className='px-6 py-4 text-sm text-gray-500 whitespace-nowrap'>
                             <PrescriptionModal
                               appointmentCardData={appointmentData}
+                              appointmentInfo={appointmentInfo}
+                              setAppointmentInfo={setAppointmentInfo}
                             />
                           </td>
                         </>

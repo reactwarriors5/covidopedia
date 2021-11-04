@@ -6,7 +6,6 @@ import axios from 'axios'
 axios.defaults.withCredentials = true
 
 const PatientModal = ({ appointmentCardData }) => {
-  console.log(appointmentCardData)
   const [isModalVisible, setIsModalVisible] = useState(false)
 
   const showModal = () => {

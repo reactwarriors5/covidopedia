@@ -7,7 +7,11 @@ import { toast } from 'react-toastify'
 import { SyncOutlined } from '@ant-design/icons'
 axios.defaults.withCredentials = true
 
-const PrescriptionModal = ({ appointmentCardData }) => {
+const PrescriptionModal = ({
+  appointmentCardData,
+  appointmentInfo,
+  setAppointmentInfo,
+}) => {
   const [loading, setLoading] = useState(false)
   const { name, age, gender, patient, doctor, message, _id } =
     appointmentCardData
@@ -38,14 +42,23 @@ const PrescriptionModal = ({ appointmentCardData }) => {
     axios
       .post(`${process.env.NEXT_PUBLIC_API}/create-pdf`, presData)
       .then(() => {
-        axios.post(`${process.env.NEXT_PUBLIC_API}/upload-pdf`, patientEmail)
+        axios
+          .post(`${process.env.NEXT_PUBLIC_API}/upload-pdf`, patientEmail)
+          .then(res => {
+            const newArr = [...appointmentInfo]
+            newArr.splice(
+              newArr.findIndex(e => e._id === res.data._id),
+              1
+            )
+            setAppointmentInfo(newArr)
+          })
+
         toast.success('Prescription created & sent to patients email.')
         setLoading(false)
         setIsModalVisible(false)
       })
   }
 
-  console.log(appointmentCardData)
   const [isModalVisible, setIsModalVisible] = useState(false)
 
   const showModal = () => {
@@ -90,7 +103,7 @@ const PrescriptionModal = ({ appointmentCardData }) => {
             Generate Prescription
           </h2>
 
-          <form onSubmit={createPdf}>
+          <form onSubmit={() => createPdf}>
             <div className='grid grid-cols-1 gap-6 mt-4 '>
               <div>
                 <label
