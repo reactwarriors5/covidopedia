@@ -89,8 +89,7 @@ const BillingDtails = () => {
                         </div>
 
                         <button
-                            style={{ backgroundColor: "#09e5ab" }}
-                            class="text-white  text-sm  p-4 rounded "
+                            class="text-white  text-md  p-4 rounded font-bold bg-indigo-700"
                             type="submit"
                         >
                             Confirm and Pay

@@ -49,11 +49,11 @@ const ShippingCard = () => {
                         </div>
 
                         <button
-                            class="text-center w-full bg-indigo-500  text-white py-3 font-medium"
+                            class="text-center w-full bg-indigo-500  py-3 font-medium"
                             onClick={handleCheckout}
                         >
                             <Link href="/addToCart">
-                                <a class="">Add to Cart</a>
+                                <a class="text-white">Add to Cart</a>
                             </Link>
                         </button>
 
