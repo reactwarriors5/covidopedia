@@ -52,10 +52,10 @@ const PharmaSidebar = () => {
         }
     }
     return (
-        <div className="mt-5 ">
-            <div class="bg-white flex flex-col space-y-10 justify-center items-center">
+        <div className="mt-5 bg-gray-50">
+            <div class=" flex flex-col space-y-10 justify-center items-center">
 
-                <div class="bg-white w-5/6  shadow-xl rounded p-5">
+                <div class="bg-white w-5/6  shadow-sm rounded p-5">
                     <div className="divide-y">
                         <h1 class="text-3xl font-medium">Search Filter</h1>
                         <hr />
@@ -165,7 +165,7 @@ const PharmaSidebar = () => {
                             </div>
                         </div>
 
-                        <button class="text-center w-full bg-indigo-700 border-solid border-2 ring-1  text-white py-3 font-medium">Search</button>
+                        <button class="text-center w-full bg-indigo-700  border-1 ring-1  text-white py-3 font-medium">Search</button>
                     </form>
                 </div>
             </div>
