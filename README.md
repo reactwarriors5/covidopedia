@@ -74,3 +74,4 @@ Back-end: Node.js, Express.js.
 Authentication: Firebase & JWT Auth.
 Database: Mongoose.
 Payment: Stripe.
+### Backend Link->https://github.com/reactwarriors5/covidopedia-server
